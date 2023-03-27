@@ -2,9 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { Formulario } from './components/Formulario/Formulario'
-import './bootstrap.min.css'
 import { Navbar } from './components/navbar/navbar'
 import { Carrito } from './components/Carrito/carrito'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
 	const saludar = console.log('Hola!')
@@ -13,8 +14,9 @@ function App() {
     <div className="App">
     
 	<Navbar />
-	<Formulario />
-  
+  <ItemListContainer greeting='estoy saludando' />
+
+   
     </div>
   )
 }

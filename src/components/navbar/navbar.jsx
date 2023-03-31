@@ -1,6 +1,4 @@
-import { CartWidget } from "../CartWidget/CartWidget";
-
-export function Navbar(){
+export function NavBar(){
     return (
 <nav className="navbar navbar-expand-lg bg-white navprops">
 <div className="container-fluid">
@@ -12,7 +10,6 @@ export function Navbar(){
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0 ul-class miclass">
-
 
             <li className="nav-item dropdown">
                 <a className="nav-link dropdown text-dark" href="pages/fragancias.html" role="button"
@@ -155,7 +152,7 @@ export function Navbar(){
                 aria-label="Search"></input>
             <button className="btn btn-outline-ligth" type="submit">Buscar</button>
         </form>
-        <div> <CartWidget /></div>
+        <div></div>
     </div>
 </div>
 </nav>

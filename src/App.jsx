@@ -2,7 +2,9 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavBar } from './components/Navbar/Navbar'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
-import { productos } from './utils/mockFetch';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+
+
 
 
 
@@ -14,6 +16,8 @@ function App() {
     
 	<NavBar />
   <ItemListContainer />
+  <ItemDetailContainer />
+
    
     </div>
   )

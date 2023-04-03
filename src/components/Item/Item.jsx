@@ -1,18 +1,20 @@
 
 const Item = (producto) => {
   return (
-    <><><>
-        <div className='card w-25'></div>
-        <img src={producto.img} className='card-img-top 2-200' alt="imagen" /></>
-        <div className='card-body'>
-            <label>Nombre: {producto.nombre}</label>
-            <label>Marca: {producto.marca}</label>
-            <label>{producto.precio}</label>
-            <label>Cantidad:{producto.stock}</label>
-        </div></>
-        <div className='card-footer-compra'>
-            <button className='btn btn-outline-dark'>Comprar</button>               
-        </div></>
+    <>
+        <div className="grid-container"></div>        
+        <div className='grid-item'>
+            <img src={producto.img} className='imgclass' alt="imagen" />
+            <label className="nombre">{producto.nombre}</label>
+            <label className="marca">{producto.marca}</label>
+            <label className="precio">${producto.precio}</label>
+            <label className="cantidad">{producto.stock}</label>
+            <div className='card-footer-compra'>
+            <button className='btn btn-outline-dark boton'>Comprar</button>               
+        </div>
+        </div>
+    </>
+        
   )
 }
 

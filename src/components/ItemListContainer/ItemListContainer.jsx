@@ -17,7 +17,7 @@ export const ItemListContainer = () => {
     <div>
         
         { 
-        productos.length == 0 ?
+        productos.length > 0 ?
         <div className='style-productos'>
         <ItemList productos={productos} />
         </div>

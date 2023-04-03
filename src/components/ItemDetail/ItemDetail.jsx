@@ -1,6 +1,7 @@
 import { ItemCount } from "../ItemCount/ItemCount"
 
-const ItemDetail = ({product}) => {
+
+export const ItemDetail = ({product}) => {
 const onAdd = (cantidad) =>{
   console.log(cantidad)
 }
@@ -15,13 +16,14 @@ const onAdd = (cantidad) =>{
             <h4>Precio: {product.precio}</h4>
             <h4>Cantidad: {product.cantidad}</h4>
         </div>
-        <div className="col-6">
-
-          <ItemCount initial={1} stock={10} onAdd={onAdd} />
+        <div className="col">
+          <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+          {/* <ItemCount initial={1} stock={10} onAdd={onAdd} /> */}
         </div>
 
     </div>
   )
 }
 
-export default ItemDetail
+
+

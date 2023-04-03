@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail'
 import { mockFetch } from '../../utils/mockFetch'
+import { ItemDetail } from '../ItemDetail/ItemDetail'
+import { ItemCount } from '../ItemCount/ItemCount'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
@@ -12,7 +13,7 @@ const ItemDetailContainer = () => {
 
   return (
     <ItemDetail product={product} />
+    
   )
 }
-
 export default ItemDetailContainer

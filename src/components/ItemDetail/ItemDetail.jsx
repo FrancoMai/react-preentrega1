@@ -13,6 +13,7 @@ const onAdd = (cantidad) =>{
 
             <img src={product.img} alt="imagen" className="w-20" />
             <h3>Nombre: {product.nombre}</h3>
+            {/* <h3>Nombre: {product.producto}</h3> */}
             <h4>Precio: {product.precio}</h4>
             <h4>Cantidad: {product.cantidad}</h4>
         </div>

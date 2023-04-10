@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { mockFetch } from '../../utils/mockFetch'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
-import { ItemCount } from '../ItemCount/ItemCount'
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
+    const {pid} = useParams()
+    console.log(pid)
+    
     useEffect(()=> {
-        mockFetch('1')
+        mockFetch(pid)
         .then((resp)=> setProduct (resp))
         .catch((err)=> console.log(err))
 },[])

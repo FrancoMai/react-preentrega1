@@ -48,33 +48,63 @@ body {
   padding: 0;
 }
 
+.navbar{
+  justify-content: space-between;
+}
+
+.navprops {
+  display: inline-block;
+  text-align: justify;
+  justify-content: space-between;
+
+}
+
+.container-fluid {
+  display: inline-block;
+  text-align: justify;
+  justify-content: space-between;
+
+}
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: minmax(250px, auto);
+  display: flex;
+  padding: 100px;
+  margin: 30px;
+
+  /* display: grid;
+  grid-template-columns: repeat(250px, 3fr);
+  grid-auto-rows: repeat(3, auto);
   gap: 60px;
-  padding: 80px;
+  padding: 100px;
   grid-auto-flow: dense;
-  row-gap: 100px;
+  row-gap: 100px; */
+ 
   
 }
+.grid-item {
+  display: inline-block;
+  max-width: 250px;  
+  margin: 50px;
+  align-items: center;
+  justify-content: center;  
+  border-radius: 4px;
+  transition: transform 0.3s ease-in-out;
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+.style-productos {
+  display: inline-block;  
+
+}
+
 .grid-item:hover {
   filter: opacity(0.9);
   transform: scale(1.04);
 }
- .grid-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  transition: transform 0.3s ease-in-out;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
- .imgclass {
+
+.imgclass {
   background-size: cover;
   height: auto;
   width: auto;
@@ -83,47 +113,49 @@ body {
 }
 
 .nombre{
-    text-align: center;
+    display:flex; 
     font-size: 20px;
     margin-top: 20px ;
-    text-decoration:underline;
-    display:flex;
-    text-align: center;
+    text-align: center; 
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     width: 100%;
-    font-size: 20px;
     text-decoration: none;
    
 }
 .precio{
-  text-align: center;
+    display:flex; 
     font-size: 20px;
     margin-top: 10px ;
-    text-decoration:underline;
-    display:flex;
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     width: 100%;
-    font-size: 20px;
     text-decoration: none;
 }
 
 .marca{
-  text-align: center;
+    display:flex;
     font-size: 20px;
     margin-top: 10px ;
-    text-decoration:underline;
-    display:flex;
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     width: 100%;
-    font-size: 20px;
     text-decoration: none;
 }
 
-.boton{
+.boton1 {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
   margin-top: 5px;
+
+}
+
+.contador{
+  display: flex;
+  margin-top: 150px;
+  text-align: center;
 }

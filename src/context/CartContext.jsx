@@ -25,17 +25,17 @@ export const CartContextProvider = ({children}) => {
              setCartList([])
 
         }
-         const eliminarItem = (cantidad) => {
-           const updatedProducts = [...cartList]
-           const index = updatedProducts.findIndex((product) => product.cantidad === cantidad)
-           updatedProducts.splice(index, 1)
-           setCartList(updatedProducts)
+      //    const eliminarItem = (cantidad) => {
+      //      const updatedProducts = [...cartList]
+      //      const index = updatedProducts.findIndex((product) => product.cantidad === cantidad)
+      //      updatedProducts.splice(index, 1)
+      //      setCartList(updatedProducts)
         
+      // }
+       const eliminarItem = (id) => {
+       const updatedProducts = cartList.filter(product => product.id !== id);
+       setCartList(updatedProducts);
       }
-    //   const eliminarItem = (id) => {
-    //    const updatedProducts = cartList.filter(product => product.id !== id);
-    //    setCartList(updatedProducts);
-    //  }
     return (
         <CartContext.Provider value={{
             cartList,

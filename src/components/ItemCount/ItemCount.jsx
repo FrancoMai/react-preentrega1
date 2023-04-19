@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export const ItemCount = ({initial=0, stock, agregarAlCart, actualizarCantidad}) => {
+export const ItemCount = ({initial=1, stock, agregarAlCart, actualizarCantidad}) => {
     // if (initial < min || initial > max) initial = min
     const [contador, setContador] = useState (initial)
     // const { agregarProducto } = useCartContext();
@@ -20,7 +20,7 @@ export const ItemCount = ({initial=0, stock, agregarAlCart, actualizarCantidad})
 
             agregarAlCart(contador)
       actualizarCantidad(contador)
-      setContador(0)
+      setContador(1)
     }
     // { contador, increment, decrement, reset }
     return (

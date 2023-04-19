@@ -16,7 +16,7 @@ const CartContainer = () => {
             <label>Cantidad:{product.cantidad}</label>
             <label>Precio:{product.precio}</label>
             <label>{product.stock}</label>
-            <button onClick={()=> eliminarItem(product.cantidad)}>x</button>
+            <button onClick={()=> eliminarItem(product.id)}>x</button>
           </div>
         ))}
         <button onClick={() => vaciarCarrito()}>Vaciar Carrito</button>

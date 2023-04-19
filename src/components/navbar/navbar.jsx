@@ -1,11 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 
 export function NavBar(){
     return (
 <nav className="navbar navbar-expand-lg bg-white navprops">
 <div className="container-fluid">
     <NavLink className={({isActive})=> isActive ? 'btn btn-outline-dark' : 'btn btn-outline-white'} to='/'>
-    <a className="navbar-brand" href="index.html">PERFUMERIA KARINA</a>
+    <div className="navbar-brand" href="index.html">PERFUMERIA KARINA</div>
     </NavLink>
     
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -19,145 +20,157 @@ export function NavBar(){
 
             <li className="nav-item dropdown">
             
-                <a className="nav-link dropdown text-dark" href="pages/fragancias.html" role="button"
+                <div className="nav-link dropdown text-dark" href="pages/fragancias.html" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Fragancias
-                </a>
+                </div>
                 
                 <ul className="dropdown-menu">
+                    <li>
                 <NavLink className={({isActive})=> isActive ? 'btn btn-outline-dark' : 'btn btn-outline-white'} to='/categoria/perfumesimportados'>
-                    <li><a className="dropdown-item" href="pages/fragancias.html">Hombres</a></li>
+                        
+                        <div className="dropdown-item" href="pages/fragancias.html">Hombres</div>
+                    
                 </NavLink>
+                    </li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
+                    <li>
                 <NavLink to='/categoria/perfumesnacionales'>
-                    <li><a className="dropdown-item" href="pages/fragancias.html">Mujeres</a></li>
+                        
+                        <div className="dropdown-item" href="pages/fragancias.html">Mujeres</div>
+                        
                 </NavLink>
+                        </li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
+                    <li>
                 <NavLink to='/categoria/perfumesnacionales'>
-                    <li><a className="dropdown-item" href="pages/fragancias.html">Niños y Bebes</a></li>
+                        
+                        <div className="dropdown-item" href="pages/fragancias.html">Niños y Bebes</div>
+                        
                 </NavLink>
+                        </li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/fragancias.html">Unisex</a></li>
+                    <li><div className="dropdown-item" href="pages/fragancias.html">Unisex</div></li>
 
                 </ul>
             </li>
             <li className="nav-item dropdown">
-                <a className="nav-link dropdown text-dark" href="pages/maquillaje.html" role="button"
+                <div className="nav-link dropdown text-dark" href="pages/maquillaje.html" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Maquillaje
-                </a>
+                </div>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="pages/maquillaje.html">Labios</a></li>
+                    <li><div className="dropdown-item" href="pages/maquillaje.html">Labios</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/maquillaje.html">Rostro</a></li>
+                    <li><div className="dropdown-item" href="pages/maquillaje.html">Rostro</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/maquillaje.html">Ojos</a></li>
+                    <li><div className="dropdown-item" href="pages/maquillaje.html">Ojos</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/maquillaje.html">Manos y Uñas</a></li>
+                    <li><div className="dropdown-item" href="pages/maquillaje.html">Manos y Uñas</div></li>
                 </ul>
             </li>
             <li className="nav-item dropdown">
-                <a className="nav-link dropdown text-dark" href="pages/accesorios.html" role="button"
+                <div className="nav-link dropdown text-dark" href="pages/accesorios.html" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Accesorios
-                </a>
+                </div>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="pages/accesorios.html">Collares</a></li>
+                    <li><div className="dropdown-item" href="pages/accesorios.html">Collares</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/accesorios.html">Anillos</a></li>
+                    <li><div className="dropdown-item" href="pages/accesorios.html">Anillos</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/accesorios.html">Aros</a></li>
+                    <li><div className="dropdown-item" href="pages/accesorios.html">Aros</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/accesorios.html">Accesorios Exclusivos</a></li>
+                    <li><div className="dropdown-item" href="pages/accesorios.html">Accesorios Exclusivos</div></li>
                 </ul>
             </li>
             <li className="nav-item dropdown">
-                <a className="nav-link dropdown text-dark" href="pages/capilar.html" role="button"
+                <div className="nav-link dropdown text-dark" href="pages/capilar.html" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Capilar
-                </a>
+                </div>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="pages/capilar.html">Shampoo</a></li>
+                    <li><div className="dropdown-item" href="pages/capilar.html">Shampoo</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/capilar.html">Acondicionador</a></li>
+                    <li><div className="dropdown-item" href="pages/capilar.html">Acondicionador</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/capilar.html">Máscaras</a></li>
+                    <li><div className="dropdown-item" href="pages/capilar.html">Máscaras</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/capilar.html">Ampollas</a></li>
+                    <li><div className="dropdown-item" href="pages/capilar.html">Ampollas</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/capilar.html">Sets</a></li>
+                    <li><div className="dropdown-item" href="pages/capilar.html">Sets</div></li>
                 </ul>
             </li>
             <li className="nav-item dropdown">
-                <a className="nav-link dropdown text-dark" href="pages/skincare.html" role="button"
+                <div className="nav-link dropdown text-dark" href="pages/skincare.html" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Skin Care
-                </a>
+                </div>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="pages/skincare.html">Limpiadores</a></li>
+                    <li><div className="dropdown-item" href="pages/skincare.html">Limpiadores</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/skincare.html">Exfoliantes</a></li>
+                    <li><div className="dropdown-item" href="pages/skincare.html">Exfoliantes</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/skincare.html">Cremas Hidratantes</a></li>
+                    <li><div className="dropdown-item" href="pages/skincare.html">Cremas Hidratantes</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/skincare.html">Tratamiento Anti-Age</a></li>
+                    <li><div className="dropdown-item" href="pages/skincare.html">Tratamiento Anti-Age</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/skincare.html">Tratamiento Anti-Ácne</a></li>
+                    <li><div className="dropdown-item" href="pages/skincare.html">Tratamiento Anti-Ácne</div></li>
                 </ul>
             </li>
             <li className="nav-item dropdown">
-                <a className="nav-link dropdown text-dark" href="pages/sets.html" role="button"
+                <div className="nav-link dropdown text-dark" href="pages/sets.html" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Sets
-                </a>
+                </div>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="pages/sets.html">Sets de Fragancias</a></li>
+                    <li><div className="dropdown-item" href="pages/sets.html">Sets de Fragancias</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/sets.html">Sets de Baño</a></li>
+                    <li><div className="dropdown-item" href="pages/sets.html">Sets de Baño</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/sets.html">Sets de Cremas</a></li>
+                    <li><div className="dropdown-item" href="pages/sets.html">Sets de Cremas</div></li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
-                    <li><a className="dropdown-item" href="pages/sets.html">Sets de Maquillaje</a></li>
+                    <li><div className="dropdown-item" href="pages/sets.html">Sets de Maquillaje</div></li>
                 </ul>
             </li>
         </ul>
@@ -166,6 +179,11 @@ export function NavBar(){
                 aria-label="Search"></input>
             <button className="btn btn-outline-ligth" type="submit">Buscar</button>
         </form>
+        <Link to='/carrito'>
+        <div> 🛒 </div>
+        </Link>
+        
+
         <div></div>
     </div>
 </div>

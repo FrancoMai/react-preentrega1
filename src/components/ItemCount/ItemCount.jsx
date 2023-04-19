@@ -1,8 +1,10 @@
 import { useState } from "react"
 
-export const ItemCount = ({initial=0, onAdd, stock}) => {
+
+export const ItemCount = ({initial=0, stock, agregarAlCart, actualizarCantidad}) => {
     // if (initial < min || initial > max) initial = min
     const [contador, setContador] = useState (initial)
+    // const { agregarProducto } = useCartContext();
     
     const increment = () => {
         if (contador < stock)
@@ -14,12 +16,11 @@ export const ItemCount = ({initial=0, onAdd, stock}) => {
         setContador (contador - 1)
     }
     
-    const reset = () =>{
-        setContador (initial)
-    }
-    
     function handleOnAdd() {
-        onAdd(contador)
+
+            agregarAlCart(contador)
+      actualizarCantidad(contador)
+      setContador(0)
     }
     // { contador, increment, decrement, reset }
     return (
@@ -30,8 +31,9 @@ export const ItemCount = ({initial=0, onAdd, stock}) => {
         <button className="btn btn-outline-dark" onClick={handleOnAdd}>Agregar al carrito</button>
     </div>
     )
-
+        
 } 
+
 
 // export const ItemCount = ({initial=1, stock=10, min=1, onAdd}) => {
 //     const [contador, increment, decrement, reset] = useCount (11, 10, 1) 

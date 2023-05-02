@@ -9,7 +9,6 @@ const Item = ({product}) => {
             <label className="name">{product.name}</label>
             <label className="brand">{product.brand}</label>
             <label className="price">${product.price}</label>
-            <label className="quantity">{product.quantity}</label>
             <div className='card-footer-buy'>
             <Link className= 'buton1' to= {`/detail/${product.id}`}>
             <button className='btn btn-outline-dark'>Detalle</button>    

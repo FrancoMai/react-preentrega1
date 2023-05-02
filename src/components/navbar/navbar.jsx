@@ -1,9 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
+import "./Navbar.css"
+import { useCartContext } from "../../context/CartContext";
+import { CartWidget } from "../CartWidget/CartWidget";
 
 
 export function Navbar(){
+    const {totalQuantity} = useCartContext()
     return (
-<nav className="navbar navbar-expand-lg bg-white navprops">
+<nav className="navbar navbar-expand-lg bg-white">
 <div className="container-fluid">
     <NavLink className={({isActive})=> isActive ? 'btn btn-outline-dark' : 'btn btn-outline-white'} to='/'>
     <div className="navbar-brand" href="index.html">PERFUMERIA KARINA</div>
@@ -27,7 +31,7 @@ export function Navbar(){
                 
                 <ul className="dropdown-menu">
                     <li>
-                <NavLink className={({isActive})=> isActive ? 'btn btn-outline-dark' : 'btn btn-outline-white'} to='/category/perfumesimportados'>
+                <NavLink to='/category/perfumesimportados'>
                         
                         <div className="dropdown-item" href="pages/fragancias.html">Hombres</div>
                     
@@ -79,27 +83,6 @@ export function Navbar(){
                         <hr className="dropdown-divider"></hr>
                     </li>
                     <li><div className="dropdown-item" href="pages/maquillaje.html">Manos y Uñas</div></li>
-                </ul>
-            </li>
-            <li className="nav-item dropdown">
-                <div className="nav-link dropdown text-dark" href="pages/accesorios.html" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Accesorios
-                </div>
-                <ul className="dropdown-menu">
-                    <li><div className="dropdown-item" href="pages/accesorios.html">Collares</div></li>
-                    <li>
-                        <hr className="dropdown-divider"></hr>
-                    </li>
-                    <li><div className="dropdown-item" href="pages/accesorios.html">Anillos</div></li>
-                    <li>
-                        <hr className="dropdown-divider"></hr>
-                    </li>
-                    <li><div className="dropdown-item" href="pages/accesorios.html">Aros</div></li>
-                    <li>
-                        <hr className="dropdown-divider"></hr>
-                    </li>
-                    <li><div className="dropdown-item" href="pages/accesorios.html">Accesorios Exclusivos</div></li>
                 </ul>
             </li>
             <li className="nav-item dropdown">
@@ -179,12 +162,18 @@ export function Navbar(){
                 aria-label="Search"></input>
             <button className="btn btn-outline-ligth" type="submit">Buscar</button>
         </form>
+
+
         <Link to='/cart'>
-        <div> 🛒 </div>
+            {totalQuantity() > 0 && totalQuantity()}
+            <CartWidget />
         </Link>
+
         
 
-        <div></div>
+        <div>
+
+        </div>
     </div>
 </div>
 </nav>

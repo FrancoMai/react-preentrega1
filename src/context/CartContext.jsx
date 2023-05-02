@@ -45,7 +45,6 @@ export const CartContextProvider = ({children}) => {
             setCartList(cartList.filter(product => product.id !== pid ))          
         }
     }
-// [1,2,3,4,5,6,7].filter(nro => nro !== numero) -> [1]
     const emptyCart = () => {
         setCartList([])
     }

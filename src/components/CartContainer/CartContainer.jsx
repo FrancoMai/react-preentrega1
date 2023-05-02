@@ -56,7 +56,8 @@ const CartContainer = () => {
     
     return (
         <>
-        {id && <h2>El id de la orden de la compra es: {id}</h2>}
+        {id && <h2>Gracias por elegirnos! <br></br><br></br>
+            El id de la orden de la compra es: {id}</h2>}
         {cartList.length === 0 ? 
             <center>
                 <h2>No hay productos</h2>
@@ -80,7 +81,7 @@ const CartContainer = () => {
                         <input                         
                             type="text"
                             name="name"
-                            placeholder="ingrese el nomber"
+                            placeholder="ingrese el nombre"
                             onChange={handleOnChange}
                             value={formData.name}
                         />

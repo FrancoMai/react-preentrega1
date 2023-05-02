@@ -1,70 +1,70 @@
-export let productos = [
+export let products = [
     {
         id: "10",
-        nombre: "Phanton",
+        name: "Phanton",
         stock: true,
-        marca: "PACO RABANNE",
-        precio:"17.500",
-        cantidad: "10",
+        brand: "PACO RABANNE",
+        price:17.500,
+        quantity: 10,
         img: "/img/imagen1.png",
-        categoria: "perfumesimportados",
-        producto: "10"
+        category: "perfumesimportados",
+        product: "1"
 
     },
     {
         id: "2",
-        nombre: "Smiling Men",
+        name: "Smiling Men",
         stock: true,
-        marca: "YSV",
-        precio:"17.500",
-        cantidad: "10",
+        brand: "YSV",
+        price:17.500,
+        quantity: 10,
         img: "/img/imagen2.png",
-        categoria: "perfumesimportados",
-        producto: "2"
+        category: "perfumesimportados",
+        product: "2"
     },
     {
         id: "3",
-        nombre: "Smiling Women",
+        name: "Smiling Women",
         stock: true,
-        marca: "YSV",
-        precio:"17.500",
-        cantidad: "10",
+        brand: "YSV",
+        price:17.500,
+        quantity: 10,
         img: "/img/imagen3.png",
-        categoria: "perfumesnacionales",
-        producto: "3"
+        category: "perfumesnacionales",
+        product: "3"
     },
     {
         id: "4",
-        nombre: "Memori Cédre Secret",
+        name: "Memori Cédre Secret",
         stock: true,
-        marca: "KENZO",
-        precio:"17.500",
-        cantidad: "10",
+        brand: "KENZO",
+        price:17.500,
+        quantity: 10,
         img: "/img/imagen4.png",
-        categoria: "perfumesnacionales",
-        producto: "4"
+        category: "perfumesnacionales",
+        product: "4"
     },
     {
         id: "5",
-        nombre: "My Way",
+        name: "My Way",
         stock: true,
-        marca: "GIORGIO ARMANI",
-        precio:"17.500",
-        cantidad: "10",
+        brand: "GIORGIO ARMANI",
+        price:17.500,
+        quantity: 10,
         img: "/img/imagen5.png",
-        categoria: "perfumesimportados",
-        producto: "5"
+        category: "perfumesimportados",
+        product: "5"
     },
     {
         id: "6",
-        nombre: "Kenzo Flower",
+        name: "Kenzo Flower",
         stock: true,
-        marca: "KENZO",
-        precio:"17.500",
-        cantidad: "10",
+        brand: "KENZO",
+        price:17.500,
+        quantity: 10,
         img: "/img/imagen6.png",
-        categoria: "perfumesnacionales",
-        producto: "6"
+        category: "perfumesnacionales",
+        product: "6"
     }
     ]
 
@@ -73,7 +73,7 @@ export let productos = [
 export let mockFetch = (id) => {
 return new Promise ((res,rej) => {
     setTimeout(() =>{
-        res(id ? productos.find (prod => prod.id == id) : productos)
+        res(id ? products.find (prod => prod.id == id) : products)
     }, 1000)
 
 } )

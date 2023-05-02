@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 
 
-export function NavBar(){
+export function Navbar(){
     return (
 <nav className="navbar navbar-expand-lg bg-white navprops">
 <div className="container-fluid">
@@ -27,7 +27,7 @@ export function NavBar(){
                 
                 <ul className="dropdown-menu">
                     <li>
-                <NavLink className={({isActive})=> isActive ? 'btn btn-outline-dark' : 'btn btn-outline-white'} to='/categoria/perfumesimportados'>
+                <NavLink className={({isActive})=> isActive ? 'btn btn-outline-dark' : 'btn btn-outline-white'} to='/category/perfumesimportados'>
                         
                         <div className="dropdown-item" href="pages/fragancias.html">Hombres</div>
                     
@@ -37,7 +37,7 @@ export function NavBar(){
                         <hr className="dropdown-divider"></hr>
                     </li>
                     <li>
-                <NavLink to='/categoria/perfumesnacionales'>
+                <NavLink to='/category/perfumesnacionales'>
                         
                         <div className="dropdown-item" href="pages/fragancias.html">Mujeres</div>
                         
@@ -47,7 +47,7 @@ export function NavBar(){
                         <hr className="dropdown-divider"></hr>
                     </li>
                     <li>
-                <NavLink to='/categoria/perfumesnacionales'>
+                <NavLink to='/category/perfumesnacionales'>
                         
                         <div className="dropdown-item" href="pages/fragancias.html">Niños y Bebes</div>
                         
@@ -179,7 +179,7 @@ export function NavBar(){
                 aria-label="Search"></input>
             <button className="btn btn-outline-ligth" type="submit">Buscar</button>
         </form>
-        <Link to='/carrito'>
+        <Link to='/cart'>
         <div> 🛒 </div>
         </Link>
         

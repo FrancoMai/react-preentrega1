@@ -9,43 +9,110 @@ export const useCartContext = () => useContext(CartContext)
 export const CartContextProvider = ({children}) => {
        const [cartList, setCartList] = useState ([])
 
-       const agregarProducto = (newProduct) => {
-        const index = cartList.findIndex(
-          (product) => product.id === newProduct.id
-        )
-        if (index === -1) {
-          setCartList([...cartList, newProduct])
-        } else {
-          const updatedProducts = [...cartList]
-          updatedProducts[index].cantidad += cantidad
-          setCartList(updatedProducts)
-        }
-      }
-        const vaciarCarrito = () => {
-             setCartList([])
+       const addToCart = (newProduct) =>{
 
-        }
-      //    const eliminarItem = (cantidad) => {
-      //      const updatedProducts = [...cartList]
-      //      const index = updatedProducts.findIndex((product) => product.cantidad === cantidad)
-      //      updatedProducts.splice(index, 1)
-      //      setCartList(updatedProducts)
+        const indexProduct = cartList.findIndex(product => product.id === newProduct.id)  //  -1
         
-      // }
-       const eliminarItem = (id) => {
-       const updatedProducts = cartList.filter(product => product.id !== id);
-       setCartList(updatedProducts);
-      }
-    return (
+        if (indexProduct === -1 ) {
+            setCartList([
+                ...cartList,
+                newProduct
+            ])              
+        } else {
+            cartList[indexProduct].quantity += newProduct.quantity
+            setCartList( [ ...cartList ] )
+        }
+
+    }
+    // localStorage.setItem('nombre', 'valor')
+
+    // cantidad total de productos
+    const totalQuantity = () => cartList.reduce( (totalQuantity, objProduct) => totalQuantity += objProduct.quantity ,0 ) // retorna un valor
+
+    // precio total de productos
+    const totalPrice = () => {
+        return cartList.reduce((totalPrice, objProduct) => totalPrice += (objProduct.price * objProduct.quantity), 0)
+    }
+    // eliminar por item
+    const deleteProduct = (pid) =>{
+
+        const indexProduct = cartList.findIndex(product => product.id === pid)
+
+        if (cartList[indexProduct].quantity > 1) {
+            cartList[indexProduct].quantity = cartList[indexProduct].quantity -  1            
+            setCartList( [...cartList] )
+        } else {
+            setCartList(cartList.filter(product => product.id !== pid ))          
+        }
+    }
+// [1,2,3,4,5,6,7].filter(nro => nro !== numero) -> [1]
+    const emptyCart = () => {
+        setCartList([])
+    }
+
+    return( 
         <CartContext.Provider value={{
             cartList,
-            setCartList,
-            vaciarCarrito,
-            agregarProducto,
-            eliminarItem
+            addToCart,
+            emptyCart,
+            totalPrice,
+            totalQuantity,
+            deleteProduct
         }}>
             {children}
-        </CartContext.Provider>
-    )
+        </CartContext.Provider>       
+    )                                                                                                                                                                           
 }
+
+
+//        const addProduct = () => {
+//         cartList((newProduct) => {
+
+//           const itemFound = newProduct.find(
+//             (product) => product.id === id)
+
+//             if (itemFound) {
+//               return newProduct.map ((product) => {
+//                 if (item.id === id) {
+//                   return {...product, quantity: quantity + 1}
+//                 } else {
+//                 return product
+//                 }
+//               })
+//             } else {
+//               return setCartList([...cartList, newProduct])
+//             }
+//           })
+        
+
+   
+        
+//       }
+//         const vaciarCarrito = () => {
+//              setCartList([])
+
+//         }
+//       //    const eliminarItem = (cantidad) => {
+//       //      const updatedProducts = [...cartList]
+//       //      const itemFound = updatedProducts.finditemFound((product) => product.cantidad === cantidad)
+//       //      updatedProducts.splice(itemFound, 1)
+//       //      setCartList(updatedProducts)
+        
+//       // }
+//        const eliminarItem = (id) => {
+//        const updatedProducts = cartList.filter((product) => product.id !== id);
+//        setCartList(updatedProducts);
+//       }
+//     return (
+//         <CartContext.Provider value={{
+//             cartList,
+//             setCartList,
+//             vaciarCarrito,
+//             addProduct,
+//             eliminarItem
+//         }}>
+//             {children}
+//         </CartContext.Provider>
+//     )
+// }
 

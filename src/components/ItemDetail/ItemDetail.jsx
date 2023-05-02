@@ -1,34 +1,43 @@
 import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
 import { ItemCount } from "../ItemCount/ItemCount"
+import { Link } from "react-router-dom"
 
 export const ItemDetail = ({product}) => {
-  const [cantidad, setCantidad] = useState(1)
-
-const { agregarProducto } = useCartContext()
+  const [quantity, updateQuantity] = useState(false)
+  const { addToCart } = useCartContext()
   
-const agregarAlCart = (cantidad) =>{
-  console.log(cantidad)
-  agregarProducto({ ...product, cantidad })
+const onAdd = (quantity) => {
+  console.log(quantity)
+  addToCart({ ...product, quantity })
+  updateQuantity(true)
 }
 
-const actualizarCantidad = (nuevaCantidad) => {
-  setCantidad(nuevaCantidad)
-}
+// const updateQuantity = (newQuantity) => {
+//   setquantity(newQuantity)
+// }
 
   return (
     <div className="row">
 
         <div className="detail">
+            <div key={product.id}>
 
             <img src={product.img} alt="imagen" className="w-20 imgdetail" />
-            <h3>Nombre: {product.nombre}</h3>
-            <h4>Precio: {product.precio}</h4>
-            <h4>Cantidad: {product.cantidad}</h4>
+            <h3>Nombre: {product.name}</h3>
+            <h4>Precio: {product.price}</h4>
+            <h4>Cantidad: {product.quantity}</h4>
+            </div>
         </div>
         <div className="col">
-          <ItemCount initial={cantidad} actualizarCantidad={actualizarCantidad} stock={product.cantidad} agregarAlCart={agregarAlCart}  />
-          
+          {quantity ?
+          <>
+          <Link className="btn btn-outline-dark" to='/cart'>Terminar Compra</Link>
+          <Link className="btn btn-outline-dark" to='/'>Seguir Comprando</Link>
+          </>
+          :
+          <ItemCount initial={1} updateQuantity={updateQuantity} quantity={product.quantity} addToCart={addToCart} onAdd={onAdd} />
+          }
         </div>
 
     </div>

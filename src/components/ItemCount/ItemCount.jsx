@@ -1,43 +1,66 @@
 import { useState } from "react"
 
 
-export const ItemCount = ({initial=1, stock, agregarAlCart, actualizarCantidad}) => {
-    // if (initial < min || initial > max) initial = min
-    const [contador, setContador] = useState (initial)
-    // const { agregarProducto } = useCartContext();
+export const ItemCount = ({initial=1, quantity, addToCart, updateQuantity}) => {
+
+    const [counter, setcounter] = useState (initial)
+
     
     const increment = () => {
-        if (contador < stock)
-        setContador (contador + 1)
+        if (counter < quantity)
+        setcounter (counter + 1)
     }
     
     const decrement = () => {
-        if (contador > initial)
-        setContador (contador - 1)
+        if (counter > initial)
+        setcounter (counter - 1)
     }
     
     function handleOnAdd() {
 
-            agregarAlCart(contador)
-      actualizarCantidad(contador)
-      setContador(1)
+        addToCart(counter)
+        updateQuantity(counter)
+        setcounter(initial)
     }
-    // { contador, increment, decrement, reset }
+
     return (
-    <div className="contador">
-        <button className="btn btn-outline-dark" onClick={increment}>+</button>
-         <label>:{contador}</label>
-        <button className="btn btn-outline-dark" onClick={decrement}>-</button>
-        <button className="btn btn-outline-dark" onClick={handleOnAdd}>Agregar al carrito</button>
-    </div>
+    
+    
+    // <div className="counter">
+
+    // <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+    //     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    //     aria-expanded="false" aria-label="Toggle navigation">
+    //     <span className="navbar-toggler-icon"></span>
+    // </button>
+
+    // <div className="collapse navbar-collapse" id="navbarSupportedContent">
+    //     <ul className="navbar-nav me-auto mb-2 mb-lg-0 ul-class miclass">
+
+    //         <li className="nav-item dropdown">
+            
+    //             <div className="nav-link dropdown text-dark" href="pages/fragancias.html" role="button"
+    //                 data-bs-toggle="dropdown" aria-expanded="false">
+    //                 Fragancias
+    //             </div>
+                
+    //             <ul className="dropdown-menu">
+    //             <li></li>
+    //                     </ul>
+    //                 </li>
+    //             </ul>
+    //         </div>
+    //     </div>
+    <>
+    
+    <label>{counter}</label>
+   <button className="btn btn-outline-dark" onClick={increment}>+</button>
+   <button className="btn btn-outline-dark" onClick={decrement}>-</button>
+   <button className="btn btn-outline-dark" onClick={addToCart}>Agregar al carrito</button> 
+    </>
     )
-        
-} 
+    }
 
 
-// export const ItemCount = ({initial=1, stock=10, min=1, onAdd}) => {
-//     const [contador, increment, decrement, reset] = useCount (11, 10, 1) 
-        
-        
         
      

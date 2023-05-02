@@ -1,15 +1,17 @@
 import Item from "../Item/Item"
 
 
-export const ItemList = ({productos}) => {
+export const ItemList = ({products}) => {
   return (
-    productos.map (producto => <Item key={producto.id}
-        nombre={producto.nombre}
-        marca={producto.marca}
-        precio={producto.precio}
-        stock={producto.stock}
-        img={producto.img}
-        producto = {producto} /> 
+    products.map ( product => 
+        <Item key={product.id}
+        nombre={product.name}
+        marca={product.brand}
+        precio={product.price}
+        stock={product.stock}
+        cantidad={product.quantity}
+        img={product.img}
+        product={product} /> 
     )
   )
 }

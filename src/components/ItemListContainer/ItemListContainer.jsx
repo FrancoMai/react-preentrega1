@@ -184,6 +184,8 @@ import { collection, getDocs, getFirestore, query, where } from 'firebase/firest
 
 import { ItemList } from "../ItemList/ItemList.jsx"
 import { Loading } from "../Loading/Loading.jsx"
+import Banner from "../Banner/Banner.jsx"
+import Swiperjsx from "../Swiper/Swiper.jsx"
 
 const ItemListContainer = () => {
     const [products, setproducts] = useState([])
@@ -207,13 +209,17 @@ const ItemListContainer = () => {
    
     return (
         <>
+        <Banner />
+        <Swiperjsx slides={products}/>
             { isLoading 
                 ?
                     <Loading />  
                 :
+                
                     <ItemList 
                         products = {products}
                     />
+                    
             
             }       
               

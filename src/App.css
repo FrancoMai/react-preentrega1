@@ -31,10 +31,13 @@ body {
  
   
 }
-.grid-item {
+.itemcss {
   display: inline-block;
   max-width: 250px;  
-  margin: 50px;
+  margin-top: 20px;
+  margin-bottom: 60px ;
+  margin-left: 40px;
+  margin-right: 20px;
   align-items: center;
   justify-content: center;  
   border-radius: 4px;
@@ -49,7 +52,7 @@ body {
 
 }
 
-.grid-item:hover {
+.itemcss:hover {
   filter: opacity(0.9);
   transform: scale(1.04);
 }
@@ -62,7 +65,7 @@ body {
   max-width: 250px;
 }
 
-.nombre{
+.name{
     display:flex; 
     font-size: 20px;
     margin-top: 20px ;
@@ -73,7 +76,7 @@ body {
     text-decoration: none;
    
 }
-.precio{
+.price{
     display:flex; 
     font-size: 20px;
     margin-top: 10px ;
@@ -84,7 +87,7 @@ body {
     text-decoration: none;
 }
 
-.marca{
+.brand{
     display:flex;
     font-size: 20px;
     margin-top: 10px ;
@@ -95,7 +98,7 @@ body {
     text-decoration: none;
 }
 
-.boton1 {
+.button1 {
   display: flex;
   justify-content: center;
   align-items:center;
@@ -104,8 +107,90 @@ body {
 
 }
 
-.contador{
+.counter{
   display: flex;
   margin-top: 30px;
   text-align: center;
+}
+
+.textobanner {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+  padding: 0;
+  background-color: rgb(223, 217, 207);
+  font-size: 20px;
+}
+
+.swiper-img-class {
+  background-size: cover;
+  max-height: 200px;
+  max-width: 200px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-swiper{
+  background-size: cover;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  margin-left: 80px;
+  margin-right: 50px;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  margin-bottom: 2px;
+}
+
+.micarousel {
+  margin-top: 2px;
+}
+
+.latest-releases {
+  display: inline-block;
+  width: 100%;
+  margin-top: 50px;
+  
+}
+.latest-releases h3 {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.more-recomend{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.banner-gif{
+  display: inline-block;
+  width: 100%;
+
+}
+
+.banner-gif img {
+  object-fit:contain;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
+
 }

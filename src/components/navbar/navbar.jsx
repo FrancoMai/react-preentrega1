@@ -9,7 +9,7 @@ export function Navbar(){
     return (
 <nav className="navbar navbar-expand-lg bg-white">
 <div className="container-fluid">
-    <NavLink className={({isActive})=> isActive ? 'btn btn-outline-dark' : 'btn btn-outline-white'} to='/'>
+    <NavLink to='/'>
     <div className="navbar-brand" href="index.html">PERFUMERIA KARINA</div>
     </NavLink>
     
@@ -91,7 +91,13 @@ export function Navbar(){
                     Capilar
                 </div>
                 <ul className="dropdown-menu">
-                    <li><div className="dropdown-item" href="pages/capilar.html">Shampoo</div></li>
+                    <li>
+
+                <NavLink to='/category/capilar'>
+                    <div className="dropdown-item" href="pages/capilar.html">Shampoo</div>
+                </NavLink>
+
+                    </li>
                     <li>
                         <hr className="dropdown-divider"></hr>
                     </li>
@@ -158,7 +164,7 @@ export function Navbar(){
             </li>
         </ul>
         <form className="d-flex" role="search">
-            <input className="form-control me-2 escribe-aqui" type="search" placeholder="Escribe Aquí"
+            <input className="form-control me-2 escribe-aqui" value={search} onChange={searcher} type="search" placeholder="Escribe Aquí"
                 aria-label="Search"></input>
             <button className="btn btn-outline-ligth" type="submit">Buscar</button>
         </form>

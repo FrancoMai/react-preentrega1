@@ -120,7 +120,7 @@ body {
   margin-top: 5px;
   padding: 0;
   background-color: rgb(223, 217, 207);
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .swiper-img-class {
@@ -193,4 +193,86 @@ body {
   max-width: 100%;
   max-height: 100%;
 
+}
+.form-control{
+  text-align: center;
+  max-width:70% ;
+  justify-content: center;
+  align-items: center;
+  margin-left: 190px;
+}
+.h2input{
+
+  margin-left: 190px;
+
+}
+
+.itemdetailcss{
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.formcss {
+  
+
+
+  padding: 100px;
+}
+
+.itemcartcss {
+  margin-left: 20px;
+  display: block;
+}
+
+.imgcartcss {
+  background-size: cover;
+  max-height: 250px;
+  max-width: 250px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deletecartbutton {
+  display: inline-block;
+  background-size: cover;
+  object-fit: cover;
+  justify-content: center;
+  text-align:inherit;
+  max-width: 35px;
+  max-height: 35px;
+  margin-left: 20px;
+
+}
+.totalprice {
+  margin-top: 50px;
+}
+.btnemptycart{
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.brandcart{
+display: block;
+
+}
+.namecart{
+  display: inline-block;
+text-align:center;
+}
+.cantidadcart{
+  font-size: 20px;
+}
+
+.noproducts{
+  text-align: center;
+  justify-content: center;
+  padding: 200px;
+}
+
+.counternumber{
+  margin-left: 20px;
 }

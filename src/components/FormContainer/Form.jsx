@@ -1,11 +1,6 @@
-
-
 export const Form = ({ formData, errors, validateForm, onChange }) => {
 
-    /**
-     * If the form is valid, then log 'enviar formulario' to the console.
-     */
-    const hanleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault()
         
         if(validateForm()){
@@ -15,7 +10,7 @@ export const Form = ({ formData, errors, validateForm, onChange }) => {
 
     return (
         <center>
-            <form onSubmit={hanleSubmit} > 
+            <form onSubmit={handleSubmit}> 
                 <label>Nombre:</label><br></br>
 
                 <input 
@@ -39,7 +34,7 @@ export const Form = ({ formData, errors, validateForm, onChange }) => {
                 <br />
                 {errors && errors.email && <span>{errors.email}</span>}
                 <br/>
-                <button type="submit">Enviar</button>
+                <button className="btn btn-succes" type="submit">Enviar</button>
             </form>
         </center>
     )

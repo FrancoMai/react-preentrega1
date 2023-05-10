@@ -17,15 +17,16 @@ const onAdd = (quantity) => {
 // }
 
   return (
-    <div className="row">
+    <div className="row itemdetailcss">
 
         <div className="detail">
             <div key={product.id}>
 
             <img src={product.img} alt="imagen" className="w-20 imgdetail" />
-            <h3>Nombre: {product.name}</h3>
-            <h4>Precio: {product.price}</h4>
-            <h4>Cantidad: {product.quantity}</h4>
+            <h3>{product.name}</h3>
+            <h4>{product.brand}</h4>
+            <h4>Precio: ${product.price}</h4>
+            <h4>Disponible: {product.quantity}</h4>
             </div>
         </div>
         <div className="col">

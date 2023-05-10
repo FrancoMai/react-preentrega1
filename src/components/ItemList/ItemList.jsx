@@ -12,6 +12,7 @@ export const ItemList = ({products}) => {
         cantidad={product.quantity}
         img={product.img}
         product={product} /> 
+        
     )
   )
 }

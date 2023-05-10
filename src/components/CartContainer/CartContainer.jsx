@@ -59,55 +59,84 @@ const CartContainer = () => {
         {id && <h2>Gracias por elegirnos! <br></br><br></br>
             El id de la orden de la compra es: {id}</h2>}
         {cartList.length === 0 ? 
-            <center>
+            <center className="noproducts">
                 <h2>No hay productos</h2>
                 <Link to='/'> ⬅ Ir a ver productos</Link>
             </center>
         :
-            <div>
+            <div className="itemcartcss">
                     { cartList.map((product) => (
                         <div key={product.id}>
-                            <img src={product.img} alt='imagen' className="w-25" />
-                            Nombre: {product.name}  
-                            Cantidad: {product.quantity}
-                            <button className="btn btn-danger" onClick={()=> deleteProduct(product.id)}> {' '} X {' '} </button>
+                            <img src={product.img} alt='imagen' className="imgcartcss" />
+                            <h4 className="namecart">{product.name}</h4>
+                            <h4 className="brandcart">{product.brand}</h4> 
+                            <h4 className="cantidadcart">Cantidad: {product.quantity}<button className="btn btn-danger deletecartbutton" onClick={()=> deleteProduct(product.id)}>X</button></h4>
             </div>
                     ))}
                     
-                    <h3>Precio Total: {totalPrice()}</h3>
-                    <button onClick={emptyCart}>Vaciar Carrito</button>
+                    <button className="btn btn-outline-dark btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
+                    <h3 className="totalprice">Precio Total: {totalPrice()}</h3>
 
-                    <form onSubmit={handleSubmit}>
-                        <input                         
+
+                    <form className="formcss" onSubmit={handleSubmit}>
+                <div className="form-row">
+
+                    <div className="col-sm-3 my-1">
+
+
+                        <input    
+                            className="form-control"
+                            id="inlineFormInputName"                     
                             type="text"
                             name="name"
                             placeholder="ingrese el nombre"
                             onChange={handleOnChange}
                             value={formData.name}
                         />
-                        <input                         
+
+                    </div>
+                    <div className="col-sm-3 my-1">
+                        <input         
+                            className="form-control"                
                             type="text"
                             name="phone"
                             placeholder="ingrese el teléfono"
                             onChange={handleOnChange}
                             value={formData.phone}
                         />
-                        <input                         
+                        </div>
+
+                        <div className="col-sm-3 my-1">
+
+                        <input
+                            className="form-control"                         
                             type="text"
                             name="email"
                             placeholder="ingrese el mail"
                             onChange={handleOnChange}
                             value={formData.email}
                         />
-                        <input                         
+                        </div>
+                        <div className="col-sm-3 my-1">
+                        <input   
+                            className="form-control"                      
                             type="text"
                             name="repetirMail"
                             placeholder="repetir el mail "
                             onChange={()=>{}}
                             // value={''}
                             />
-                        <button >Generar Orden</button>
+                            </div>
+                            <div className="form-row align-items-center">
+                            <div className="col-sm-3 my-1">
+
+                        <button className="btn btn-primary" type="submit">Generar Orden</button>
+                            </div>
+                            </div>
+
+                    </div>
                     </form>
+
             </div>
         }
         </>

@@ -7,13 +7,13 @@ import { Form } from "./From"
 const FormWithValidation = withFormValidation(Form)
 
 export const FormContainer = ()=> {
-    const [ formData,setFormData ] = useState({
+    const [ formData,setformData ] = useState({
         nombre: '',
         email: ''
     })
 
     const onChange = (e) => {
-        setFormData({
+        setformData({
             ...formData,
             [e.target.name]: e.target.value
         })

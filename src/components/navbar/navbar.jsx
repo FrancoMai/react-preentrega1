@@ -4,6 +4,7 @@ import { useCartContext } from "../../context/CartContext";
 import { CartWidget } from "../CartWidget/CartWidget";
 
 
+
 export function Navbar(){
     const {totalQuantity} = useCartContext()
     return (
@@ -163,26 +164,23 @@ export function Navbar(){
                 </ul>
             </li>
         </ul>
-        <form className="d-flex" role="search">
-            <input className="form-control me-2 escribe-aqui" value={search} onChange={searcher} type="search" placeholder="Escribe Aquí"
+        {/* <form className="d-flex" role="search">
+            <input className="form-control me-2 escribe-aqui" type="search" placeholder="Escribe Aquí"
                 aria-label="Search"></input>
             <button className="btn btn-outline-ligth" type="submit">Buscar</button>
-        </form>
-
+        </form> */}
 
         <Link to='/cart'>
             {totalQuantity() > 0 && totalQuantity()}
             <CartWidget />
         </Link>
 
-        
-
-        <div>
-
-        </div>
     </div>
 </div>
-</nav>
-    
-    )
-}
+</nav>   
+)
+ }
+
+
+
+

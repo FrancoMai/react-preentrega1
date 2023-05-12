@@ -130,7 +130,7 @@ const CartContainer = () => {
                             <div className="form-row align-items-center">
                             <div className="col-sm-3 my-1">
 
-                        <button className="btn btn-primary" type="submit">Generar Orden</button>
+                        <button className="btn btn-primary btnorder" type="submit">Generar Orden</button>
                             </div>
                             </div>
 

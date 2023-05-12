@@ -54,7 +54,7 @@ export const ItemCount = ({initial=1, quantity, onAdd}) => {
     
    <button className="btn btn-outline-dark" onClick={increment}>+</button>
    <button className="btn btn-outline-dark" onClick={decrement}>-</button>
-    <label className="counternumber"> {counter}</label><br />
+    :<label className="counternumber"> {counter}</label><br />
    <button className="btn btn-outline-dark" onClick={handleOnAdd}>Agregar al carrito</button> <br />
     </>
     )

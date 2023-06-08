@@ -2,23 +2,13 @@ import { addDoc, collection, doc, getFirestore, updateDoc, writeBatch } from "fi
 import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import { useState } from "react"
-import { useForm } from "react-hook-form";
+import { Form } from "../FormContainer/Form"
 
 
 
 
-const CartContainer = () => {
+const CartContainer = (formData) => {
     const [id, setId] = useState(null)
-    const Form = () => {
-        const { register, handleSubmit, formState: { errors } } = useForm ({
-            defaultValues: {
-            name: '',
-            direccion: ''
-            }
-        });
-        const onSubmit = (formData) => {
-            console.log(formData);
-        }
     // const [inFormData, setinFormData] = useState({})
     //     name: '',
     //     phone: '',
@@ -157,57 +147,11 @@ const CartContainer = () => {
 
             </div>  */}
 
-
-
-
-         <center>
-            <form onSubmit={handleSubmit(onSubmit)}> 
-                <div>
-                    <p>
-                        <label>Nombre:</label><br></br>
-                    </p>
-                <input 
-                    type='text' 
-                    name='name' 
-                    placeholder="ingrese el nombre" 
-                    {...register('name', {required: true })}
-                />
-                {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}                   
-                </div>
-
-                <br/>
-                <br/>
-                <label>Email:</label><br></br>
-                <input 
-                    type='text' 
-                    name='email' 
-                    placeholder="ejemplo@gmail.com"   
-                    {...register('email', {
-                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i})}
-                />
-                <br />
-                {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
-                <br/>
-                <div>
-                <label>Dirección:</label><br></br>
-                 <input type="text" {...register('direccion', {
-                     required: true
-                 })} />
-             </div>
-                 <div>
-                 <label>Telefono:</label><br></br>
-                     <input type="text" {...register('telefono')} />
-                 </div>
-                 <div>
-                 <button className="btn btn-primary btnorder" type="submit" onClick={onHandleSubmit}>Generar Orden</button>
-                 </div>
-            </form>
-        </center>
                 
 
 
  
-
+            <Form />
 
 
 
@@ -223,7 +167,7 @@ const CartContainer = () => {
 
  
 
-}
+
 
  
 export default CartContainer

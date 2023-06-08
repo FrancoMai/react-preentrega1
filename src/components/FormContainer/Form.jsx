@@ -1,64 +1,64 @@
-// import { useForm } from "react-hook-form";
-// import { onHandleSubmit } from "../CartContainer/CartContainer";
+import { useForm } from "react-hook-form";
 
-//  export const Form = () => {
-//     const { register, handleSubmit, formState: { errors } } = useForm ({
-//         defaultValues: {
-//         name: '',
-//         direccion: ''
-//         }
-//     });
 
-//     const onSubmit = (formData) => {
-//         console.log(formData);
-//     }
+ export const Form = (formData) => {
+    const { register, handleSubmit, formState: { errors } } = useForm ({
+        defaultValues: {
+        name: '',
+        direccion: ''
+        }
+    });
 
-//     return (
-//         <center>
-//             <form onSubmit={handleSubmit(onSubmit)}> 
-//                 <div>
-//                     <p>
-//                         <label>Nombre:</label><br></br>
-//                     </p>
-//                 <input 
-//                     type='text' 
-//                     name='name' 
-//                     placeholder="ingrese el nombre" 
-//                     {...register('name', {required: true })}
-//                 />
-//                 {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}                   
-//                 </div>
+    const onSubmit = (formData) => {
+        console.log(formData);
+    }
 
-//                 <br/>
-//                 <br/>
-//                 <label>Email:</label><br></br>
-//                 <input 
-//                     type='text' 
-//                     name='email' 
-//                     placeholder="ejemplo@gmail.com"   
-//                     {...register('email', {
-//                     pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i})}
-//                 />
-//                 <br />
-//                 {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
-//                 <br/>
-//                 <div>
-//                 <label>Dirección:</label><br></br>
-//                  <input type="text" {...register('direccion', {
-//                      required: true
-//                  })} />
-//              </div>
-//                  <div>
-//                  <label>Telefono:</label><br></br>
-//                      <input type="text" {...register('telefono')} />
-//                  </div>
-//                  <div>
-//                  <button className="btn btn-primary btnorder" type="submit" onClick={onHandleSubmit}>Generar Orden</button>
-//                  </div>
-//             </form>
-//         </center>
-//     )
-// }
+    return (
+        <center>
+            <form onSubmit={handleSubmit(onSubmit)}> 
+                <div>
+                    <p>
+                        <label>Nombre:</label><br></br>
+                    </p>
+                <input 
+                    type='text' 
+                    name='name' 
+                    placeholder="ingrese el nombre" 
+                    {...register('name', {required: true })}
+                />
+                {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}                   
+                </div>
+
+                <br/>
+                <br/>
+                <label>Email:</label><br></br>
+                <input 
+                    type='text' 
+                    name='email' 
+                    placeholder="ejemplo@gmail.com"   
+                    {...register('email', {
+                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i})}
+                />
+                <br />
+                {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
+                <br/>
+                <div>
+                <label>Dirección:</label><br></br>
+                 <input type="text" {...register('direccion', {
+                     required: true
+                 })} />
+             </div>
+                 <div>
+                 <label>Telefono:</label><br></br>
+                     <input type="text" {...register('telefono')} />
+                 </div>
+                 <div>
+                 <button className="btn btn-primary btnorder" type="submit" onClick={onSubmit}>Generar Orden</button>
+                 </div>
+            </form>
+        </center>
+    )
+}
 
 
 

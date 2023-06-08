@@ -2,16 +2,28 @@ import { addDoc, collection, doc, getFirestore, updateDoc, writeBatch } from "fi
 import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import { useState } from "react"
+import { useForm } from "react-hook-form";
+
 
 
 
 const CartContainer = () => {
     const [id, setId] = useState(null)
-    const [formData, setFormData] = useState({
-        name: '',
-        phone: '',
-        email: ''
-    })
+    const Form = () => {
+        const { register, handleSubmit, formState: { errors } } = useForm ({
+            defaultValues: {
+            name: '',
+            direccion: ''
+            }
+        });
+        const onSubmit = (formData) => {
+            console.log(formData);
+        }
+    // const [inFormData, setinFormData] = useState({})
+    //     name: '',
+    //     phone: '',
+    //     email: ''
+    
     const { 
         cartList, 
         emptyCart, 
@@ -21,10 +33,11 @@ const CartContainer = () => {
     
     console.log(cartList)
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
+    
+    const onHandleSubmit = (onSubmit) => {
+        onSubmit.preventDefault()
 
-        const order={
+        const order = {
             buyer: formData, // crear furmulario 
             items: cartList.map(({id, name, price})=> ({id, name, price})), // reduce campos
             total: totalPrice() // precio total de la compra
@@ -45,18 +58,22 @@ const CartContainer = () => {
 
     console.log(formData)
 
-    const handleOnChange = (event)=> {
-        console.log(event.target.name)
-        console.log(event.target.value)
-        setFormData({
-            ...formData,
-            [event.target.name]: event.target.value
-        })
-    }
+    // const handleOnChange = (event)=> {
+    //     console.log(event.target.name)
+    //     console.log(event.target.value)
+    //     setFormData({
+    //         ...formData,
+    //         [event.target.name]: event.target.value
+    //     })
+    // }
+
+
+
+
     
     return (
         <>
-        {id && <h2>Gracias por elegirnos! <br></br><br></br>
+        {id && <h2 className="gracias">Gracias por elegirnos! <br></br><br></br>
             El id de la orden de la compra es: {id}</h2>}
         {cartList.length === 0 ? 
             <center className="noproducts">
@@ -78,7 +95,7 @@ const CartContainer = () => {
                     <h3 className="totalprice">Precio Total: {totalPrice()}</h3>
 
 
-                    <form className="formcss" onSubmit={handleSubmit}>
+              {/* <form className="formcss" onSubmit={handleSubmit}>
                 <div className="form-row">
 
                     <div className="col-sm-3 my-1">
@@ -93,6 +110,7 @@ const CartContainer = () => {
                             onChange={handleOnChange}
                             value={formData.name}
                         />
+                        
 
                     </div>
                     <div className="col-sm-3 my-1">
@@ -100,7 +118,7 @@ const CartContainer = () => {
                             className="form-control"                
                             type="text"
                             name="phone"
-                            placeholder="ingrese el teléfono"
+                            placeholder="Ingrese el teléfono"
                             onChange={handleOnChange}
                             value={formData.phone}
                         />
@@ -122,11 +140,11 @@ const CartContainer = () => {
                             className="form-control"                      
                             type="text"
                             name="repetirMail"
-                            placeholder="repetir el mail "
+                            placeholder="repetir el mail"
                             onChange={()=>{}}
-                            // value={''}
                             />
                             </div>
+                            
                             <div className="form-row align-items-center">
                             <div className="col-sm-3 my-1">
 
@@ -137,51 +155,75 @@ const CartContainer = () => {
                     </div>
                     </form>
 
-            </div>
-        }
+            </div>  */}
+
+
+
+
+         <center>
+            <form onSubmit={handleSubmit(onSubmit)}> 
+                <div>
+                    <p>
+                        <label>Nombre:</label><br></br>
+                    </p>
+                <input 
+                    type='text' 
+                    name='name' 
+                    placeholder="ingrese el nombre" 
+                    {...register('name', {required: true })}
+                />
+                {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}                   
+                </div>
+
+                <br/>
+                <br/>
+                <label>Email:</label><br></br>
+                <input 
+                    type='text' 
+                    name='email' 
+                    placeholder="ejemplo@gmail.com"   
+                    {...register('email', {
+                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i})}
+                />
+                <br />
+                {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
+                <br/>
+                <div>
+                <label>Dirección:</label><br></br>
+                 <input type="text" {...register('direccion', {
+                     required: true
+                 })} />
+             </div>
+                 <div>
+                 <label>Telefono:</label><br></br>
+                     <input type="text" {...register('telefono')} />
+                 </div>
+                 <div>
+                 <button className="btn btn-primary btnorder" type="submit" onClick={onHandleSubmit}>Generar Orden</button>
+                 </div>
+            </form>
+        </center>
+                
+
+
+ 
+
+
+
+
+     </div>       } 
+                    
         </>
     )
+
+    
 }
 
 
 
-
-// DE ACA PARA ABAJO ES LO MIO
-
-// const FinishBuying = () => {
-//   const order = { 
-//     buyer: {name: 'franco', phone: '349845849', email: 'ff@gmail.com'},
-//     items: [{id:'asdasdas', title: 'perfume YSL', price: '17.500'}],
-//     total: '17.500'
-
-//   }
-//   console.log('enviando orden: ', order )
-
-// }
-// const CartContainer = () => {
-//     const { cartList, emptyCart, deletItem } = useCartContext()
-//     console.log(cartList)
-//     console.log(deletItem)
-//     return (
-//     <>
-//         { cartList.map ((product) => (
-
-//           <div key={product.id} > 
-//             <img src={product.img} alt="imagen" />
-//             <label>{product.name}</label>
-//             <label>{product.brand}</label>
-//             <label>Cantidad:{product.quantity}</label>
-//             <label>Precio:{product.price}</label>
-//             <label>{product.stock}</label>
-//           </div>
-//         ))}
-//         <button onClick={()=> deletItem(product.id)}>x</button>
-//         <button onClick={() => emptyCart()}>Vaciar Carrito</button>
-//         <button onClick={() => FinishBuying()}>Terminar Compra</button>
-//     </>
-//   )
  
 
+}
 
-export default CartContainer 
-
+ 
+export default CartContainer

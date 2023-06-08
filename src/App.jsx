@@ -5,7 +5,7 @@ import { Navbar } from './components/navbar/navbar';
 import  ItemListContainer  from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartContextProvider } from './context/CartContext';
-import CartContainer from './components/CartContainer/CartContainer';
+import CartContainer  from './components/CartContainer/CartContainer';
 import Swiperjsx from './components/Swiper/Swiper';
 import Banner from './components/Banner/Banner';
 
@@ -24,8 +24,6 @@ function App() {
 
     <div className="App">
 	  <Navbar />
-
-
 
       <Routes>
           <Route path='/' element={<ItemListContainer />}></Route>

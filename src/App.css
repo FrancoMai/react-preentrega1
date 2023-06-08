@@ -270,7 +270,7 @@ text-align:center;
 .noproducts{
   text-align: center;
   justify-content: center;
-  padding: 200px;
+  padding: 100px;
 }
 
 .counternumber{
@@ -280,4 +280,9 @@ text-align:center;
 .btnorder{
   margin-left: 240px;
   margin-top: 10px;
+}
+
+.gracias {
+  text-align: center;
+  margin-top: 100px;
 }

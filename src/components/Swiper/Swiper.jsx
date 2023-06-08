@@ -41,7 +41,7 @@ const Swiperjsx = ({ slides }) => {
           <img className='swiper-img-class' src={slide.img} alt="imagen" />
           <label className='name'>{slide.name}</label>
           <label className='brand'>{slide.brand}</label>
-          <label className='price'>{slide.price}</label>
+          <label className='price'>${slide.price}</label>
 
           <div>
           <Link className= 'button1' to= {`/detail/${slide.id}`}>
@@ -81,7 +81,7 @@ const Swiperjsx = ({ slides }) => {
           <img className='swiper-img-class' src={slide.img} alt="imagen" />
           <label className='name'>{slide.name}</label>
           <label className='brand'>{slide.brand}</label>
-          <label className='price'>{slide.price}</label>
+          <label className='price'>${slide.price}</label>
 
           <div>
           <Link className= 'button1' to= {`/detail/${slide.id}`}>

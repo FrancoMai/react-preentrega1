@@ -184,6 +184,7 @@ import { Alert } from "../Alert";
 import { Logout1 } from "../Logout";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./Login.css"
 
 
 export function Login() {
@@ -195,7 +196,6 @@ export function Login() {
   const { login, logout, loginWithGoogle, resetPassword } = useAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
 
 
   const handleSubmit = async (e) => {
@@ -236,96 +236,93 @@ export function Login() {
   return (
     <div className="alert-class">
       {error && <Alert message={error} />}
-
       <div className="bg-img" style={{ backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px' }}></div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="form-login-css"
-      >
+      <div className="form-div">
+        <form
+          onSubmit={handleSubmit}
+          className="form-login-css"
+        >
+          <div className="signin-now">
+            SIGN IN NOW
+          </div>
+          <div className="email-div">
+            <label
+              htmlFor="email"
+              className="label-email"
+            >
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              onChange={handleChange}
+              className="input-email"
+              placeholder="Email"
+            />
+          </div>
+          <div className="password-div">
+            <label
+              htmlFor="password"
+              className="label-password"
+            >
+            </label>
+            <input
+              type='password'
+              name="password"
+              id="password"
+              onChange={handleChange}
+              className="input-password"
+              placeholder="Password"
+            />
+          </div>
+          <div className="signin-div">
+            <button
+              id="loginButton"
+              className="signin-button"
+              type="submit"
+            >
+              Sign In
+            </button>
 
+          </div>
+          <div className="forgot-password-div">
+            <a
+              className="forgot-password"
+              href="#!"
+              onClick={handleResetPassword}
+            >
+              Forgot Password?
+            </a>
+          </div>
+        </form>
 
-        <div className="email-div">
-          <label
-            htmlFor="email"
-            className="label-email"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            onChange={handleChange}
-            className="input-email"
-            placeholder="youremail@company.tld"
-          />
-        </div>
-        <div className="password-div">
-          <label
-            htmlFor="password"
-            className="label-password"
-          >
-            Password
-          </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            onChange={handleChange}
-            className="input-password"
-            placeholder="*************"
-          />
-        </div>
-
-        <div className="signin-div">
+        <div className="button-google">
+          or sign in with
           <button
-            className="signin-button"
-            type="submit"
-          >
-            Sign In
-          </button>
-          <a
-            className="forgot-password"
-            href="#!"
-            onClick={handleResetPassword}
-          >
-            Forgot Password?
-          </a>
+            className='cap-button fa-brands fa-google migoogleclass' style={{ color: '#1266f8' }}
+            fab icon='google' size="sm"
+            onClick={handleGoogleSignin}
+          ></button>
         </div>
-      </form>
-      <button
-        className='fa-brands fa-google migoogleclass' style={{ color: '#1266f8' }}
-        fab icon='google' size="sm"
-        onClick={handleGoogleSignin}
-      >
-      </button>
-      <p className="register-p">
-        Don't have an account?
-        <Link to="/register" className="text-blue-700 hover:text-blue-900">
-          Register
-        </Link>
-      </p>
 
-      <div className="div-class1">
-        <div className="div-class2">
-          <p className="welcome-p">welcome {user.displayName || user.email}</p>
-          <Link to='/register'>
-
-            <Logout1 />
+        <p className="register-p">
+          Don't have an account?
+          <Link to="/register" className="text-blue-700 hover:text-blue-900">
+            Register
           </Link>
+        </p>
 
+        <div className="div-class1">
+          <p className="welcome-p">Welcome {user.displayName || user.email}</p>
+          <div className="logout-div">
+            <Link to='/register'>
+              <Logout1 />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
 
   );
-}
-
-
-const tuabuelitaentanga = () => {
-  if(tuabuelitaentanga === 1 + 1){
-    i++
-  }
-  
 }

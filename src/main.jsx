@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import { initFireBase } from './firebase/config'
 
+
 initFireBase ()
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { redirect } from "react-router-dom";
 
 export const CartContext = createContext([])
 
@@ -27,12 +28,13 @@ export const CartContextProvider = ({children}) => {
     // localStorage.setItem('nombre', 'valor')
 
     // cantidad total de productos
-    const totalQuantity = () => cartList.reduce( (totalQuantity, objProduct) => totalQuantity += objProduct.quantity ,0 ) // retorna un valor
+    const totalQuantity = () => cartList.reduce( (totalQuantity, objProduct) => totalQuantity += objProduct.quantity, 0) 
+   
+    // retorna un valor
 
     // precio total de productos
-    const totalPrice = () => {
-        return cartList.reduce((totalPrice, objProduct) => totalPrice += (objProduct.price * objProduct.quantity), 0)
-    }
+    const totalPrice = () => cartList.reduce((totalPrice, objProduct) => totalPrice += (objProduct.price * objProduct.quantity), 0)
+    
     // eliminar por item
     const deleteProduct = (pid) =>{
 

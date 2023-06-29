@@ -7,6 +7,7 @@ import Banner from "../Banner/Banner.jsx"
 import Swiperjsx from "../Swiper/Swiper.jsx"
 import { Filter } from "../RenderProps/Filter.jsx"
 
+
 const ItemListContainer = () => {
     const [products, setproducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -51,6 +52,7 @@ const ItemListContainer = () => {
 
         <Banner />
         <Swiperjsx slides={products}/>
+        
         
         
             { isLoading 

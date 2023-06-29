@@ -95,6 +95,9 @@ const Swiperjsx = ({ slides }) => {
 </Swiper>
 </div>
 
+        <div>
+        
+        </div>
 		
 		<div className="more-recomend">
 			  <h4>Nuestros Más Recomendados</h4>

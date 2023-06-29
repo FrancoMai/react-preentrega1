@@ -6,11 +6,11 @@ import  ItemListContainer  from './components/ItemListContainer/ItemListContaine
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartContextProvider } from './context/CartContext';
 import CartContainer  from './components/CartContainer/CartContainer';
-import Swiperjsx from './components/Swiper/Swiper';
-import Banner from './components/Banner/Banner';
-
-
-
+import { Login } from './components/Login/Login';
+import { Register } from "./components/Register/Register";
+import { AuthProvider } from './context/AuthContext';
+import { ProtectedRoute } from './components/ProtectedRoutes';
+import { Logout1 } from './components/Logout';
 
 
 
@@ -20,21 +20,38 @@ function App() {
   return (
 
   <BrowserRouter>
-    <CartContextProvider>
+    <AuthProvider>
+      <CartContextProvider>
 
     <div className="App">
+
 	  <Navbar />
 
       <Routes>
-          <Route path='/' element={<ItemListContainer />}></Route>
+          <Route path='/' element={
+            
+              <ItemListContainer />
+
+      }>  </Route>
           <Route path='/category/:cid' element={<ItemListContainer />}></Route>
           <Route path='/detail/:pid' element={<ItemDetailContainer />}></Route>
           <Route path='/cart' element={<CartContainer />}></Route> 
+          <Route path='/login' element={<Login />}></Route> 
           <Route path='*' element={<Navigate to='/' />}></Route>
+          <Route path='/register' element={<Register />}></Route>
+          <Route path='/logout' element={
+          <ProtectedRoute>
+
+            <Logout1 />
+          </ProtectedRoute>
+          }></Route>
+          
       </Routes> 
 
     </div>
-    </CartContextProvider>
+
+      </CartContextProvider>
+    </AuthProvider>
   </BrowserRouter>
   )
 }

@@ -2,6 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css"
 import { useCartContext } from "../../context/CartContext";
 import { CartWidget } from "../CartWidget/CartWidget";
+import LoginWidget from "../LoginWidget/LoginWidget";
+
 
 
 
@@ -164,14 +166,18 @@ export function Navbar(){
                 </ul>
             </li>
         </ul>
-        {/* <form className="d-flex" role="search">
-            <input className="form-control me-2 escribe-aqui" type="search" placeholder="Escribe Aquí"
-                aria-label="Search"></input>
-            <button className="btn btn-outline-ligth" type="submit">Buscar</button>
-        </form> */}
+        
+        <Link to='/login'>
+            <div className="loginuser"> 
+
+            <LoginWidget />
+            </div>
+        </Link>
 
         <Link to='/cart'>
+            
             {totalQuantity() > 0 && totalQuantity()}
+
             <CartWidget />
         </Link>
 

@@ -24,9 +24,8 @@ const CartContainer = (formData) => {
     console.log(cartList)
 
     
-    const onHandleSubmit = (onSubmit) => {
-        onSubmit.preventDefault()
-
+    const onHandleSubmit = (formData) => {
+        // formData.preventDefault()
         const order = {
             buyer: formData, // crear furmulario 
             items: cartList.map(({id, name, price})=> ({id, name, price})), // reduce campos
@@ -151,7 +150,7 @@ const CartContainer = (formData) => {
 
 
  
-            <Form />
+            <Form onHandleSubmit={onHandleSubmit}/>
 
 
 

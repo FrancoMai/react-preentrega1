@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 
 
- export const Form = (formData) => {
+ export const Form = ({onHandleSubmit}) => {
     const { register, handleSubmit, formState: { errors } } = useForm ({
         defaultValues: {
         name: '',
@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
     });
 
     const onSubmit = (formData) => {
-        console.log(formData);
+        onHandleSubmit(formData);
     }
 
     return (
@@ -36,10 +36,11 @@ import { useForm } from "react-hook-form";
                     type='text' 
                     name='email' 
                     placeholder="ejemplo@gmail.com"   
-                    {...register('email', {
-                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i})}
+                    {...register('email', {required: true },
+                    {pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i})}
                 />
                 <br />
+                {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
                 {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
                 <br/>
                 <div>
@@ -53,7 +54,7 @@ import { useForm } from "react-hook-form";
                      <input type="text" {...register('telefono')} />
                  </div>
                  <div>
-                 <button className="btn btn-primary btnorder" type="submit" onClick={onSubmit}>Generar Orden</button>
+                 <button className="btn btn-primary btnorder" type="submit">Generar Orden</button>
                  </div>
             </form>
         </center>

@@ -26,13 +26,13 @@
 //         email: "",
 //         password: "",   
 //       });
-    
+
 //       const { login, loginWithGoogle, resetPassword } = useAuth();
 //       const [error, setError] = useState("");
 //       const navigate = useNavigate();
-    
-      
-    
+
+
+
 //       const handleSubmit = async (e) => {
 //         e.preventDefault();
 //         setError("");
@@ -43,10 +43,10 @@
 //           setError(error.message);
 //         }
 //       };
-    
+
 //       const handleChange = ({ target: { value, name } }) =>
 //         setUser({ ...user, [name]: value });
-    
+
 //       const handleGoogleSignin = async () => {
 //         try {
 //           await loginWithGoogle();
@@ -55,7 +55,7 @@
 //           setError(error.message);
 //         }
 //       };
-    
+
 //       const handleResetPassword = async (e) => {
 //         e.preventDefault();
 //         if (!user.email) return setError("Write an email to reset password");
@@ -135,7 +135,7 @@
 //              onClick={handleResetPassword}>
 //              Forgot Password?
 //            </a>
-          
+
 //           <div className="text-center">
 
 //             <p>or sign up with:</p>
@@ -154,7 +154,7 @@
 //            Register
 //          </Link>
 //        </p>
-      
+
 //          <div className="w-full max-w-xs m-auto text-black">
 //          <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 //            <p className="text-xl mb-4">welcome {user.displayName || user.email}</p>
@@ -189,14 +189,14 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 export function Login() {
   const [user, setUser] = useState({
     email: "",
-    password: "",   
+    password: "",
   });
 
-  const { login, logout ,loginWithGoogle, resetPassword } = useAuth();
+  const { login, logout, loginWithGoogle, resetPassword } = useAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -231,24 +231,24 @@ export function Login() {
       setError(error.message);
     }
   };
-  
+
 
   return (
-    <div className="w-full max-w-xs m-auto">
+    <div className="alert-class">
       {error && <Alert message={error} />}
 
-    <div className="p-5 bg-image" style={{backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px'}}></div>
+      <div className="bg-img" style={{ backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px' }}></div>
 
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 p-5 text-center"
+        className="form-login-css"
       >
-        
-      
-        <div className="mb-4 ">
+
+
+        <div className="email-div">
           <label
             htmlFor="email"
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="label-email"
           >
             Email
           </label>
@@ -257,14 +257,14 @@ export function Login() {
             name="email"
             id="email"
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="input-email"
             placeholder="youremail@company.tld"
           />
         </div>
-        <div className="mb-4">
+        <div className="password-div">
           <label
             htmlFor="password"
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="label-password"
           >
             Password
           </label>
@@ -273,20 +273,20 @@ export function Login() {
             name="password"
             id="password"
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="input-password"
             placeholder="*************"
           />
         </div>
 
-        <div className="flex items-center justify-between">
+        <div className="signin-div">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="signin-button"
             type="submit"
           >
             Sign In
           </button>
           <a
-            className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+            className="forgot-password"
             href="#!"
             onClick={handleResetPassword}
           >
@@ -295,31 +295,37 @@ export function Login() {
         </div>
       </form>
       <button
-        className='fa-brands fa-google migoogleclass flex justify-center' style={{ color: '#1266f8' }}
+        className='fa-brands fa-google migoogleclass' style={{ color: '#1266f8' }}
         fab icon='google' size="sm"
-        onClick={handleGoogleSignin}         
+        onClick={handleGoogleSignin}
       >
       </button>
-      <p className="my-4 text-sm flex justify-between px-3">
+      <p className="register-p">
         Don't have an account?
         <Link to="/register" className="text-blue-700 hover:text-blue-900">
           Register
         </Link>
       </p>
-      
-        <div className="w-full max-w-xs m-auto text-black">
-        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <p className="text-xl mb-4">welcome {user.displayName || user.email}</p>
+
+      <div className="div-class1">
+        <div className="div-class2">
+          <p className="welcome-p">welcome {user.displayName || user.email}</p>
           <Link to='/register'>
-          
-          <Logout1 />
+
+            <Logout1 />
           </Link>
-          
+
         </div>
       </div>
     </div>
-    
+
   );
 }
 
 
+const tuabuelitaentanga = () => {
+  if(tuabuelitaentanga === 1 + 1){
+    i++
+  }
+  
+}

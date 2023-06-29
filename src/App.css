@@ -160,16 +160,13 @@ body {
   margin-top: 2px;
 }
 
-.latest-releases {
+.latest-releases h3 {
   display: inline-block;
   width: 100%;
-  margin-top: 50px;
-  
-}
-.latest-releases h3 {
-  font-size: 30px;
   text-align: center;
-  font-weight: 400;
+  justify-content: center;
+  margin-top: 50px;
+ 
 }
 
 .more-recomend{

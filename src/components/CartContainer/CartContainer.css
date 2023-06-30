@@ -1,0 +1,22 @@
+@media (min-width:768px) {
+    .itemcartcss {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        place-items: center;
+        place-content: center;
+        margin: 2rem;
+    }
+
+    .itemcartx {
+        grid-row: 1;
+    }
+
+    .priceandempty{
+        grid-row: 2;
+        grid-column: span 9999;
+    }
+    .formcart {
+        grid-row: 3;
+        grid-column: 1 /-1;
+    }
+}

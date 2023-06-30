@@ -39,12 +39,13 @@ function App() {
           <Route path='/login' element={<Login />}></Route> 
           <Route path='*' element={<Navigate to='/' />}></Route>
           <Route path='/register' element={<Register />}></Route>
-          <Route path='/logout' element={
+          <Route path='/logout' element={ 
           <ProtectedRoute>
 
             <Logout1 />
           </ProtectedRoute>
           }></Route>
+
           
       </Routes> 
 

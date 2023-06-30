@@ -78,7 +78,11 @@ export function Register() {
           </Link>
         </p>
       </div>
-
+      <div>
+        <div>Contact</div>
+        <div>Ubication</div>
+        <div>About</div>
+      </div>
     </div>
   );
 }

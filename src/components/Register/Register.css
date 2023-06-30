@@ -1,0 +1,84 @@
+:root {
+    --blanco: rgb(233, 233, 233);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+.register-div {
+    margin: -10rem auto 0 auto;
+    background-color: var(--blanco);
+    width: 65%;
+    /*Sombra de caja con responsive en diferentes navegadores*/
+    -webkit-box-shadow: 0px 6px 24px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 6px 24px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 6px 24px -1px rgba(0, 0, 0, 0.75);
+    padding: 2.5rem 1rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+}
+
+.form-register-css {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 1.5rem;
+}
+
+.register-now{
+    grid-row: 1;
+    grid-column: span 2;
+    place-self: center;
+    font-size: 2rem;
+    border-radius: 15px;
+    border: 2px solid;
+    padding: 0 1rem;
+    pointer-events: none;
+    user-select: none;
+}
+
+.email-div {
+    grid-column: 1;
+    place-self: center;
+    scale: 1.1;
+    grid-row: 2;
+}
+
+.password-div {
+    grid-column: 2;
+    place-self: center;
+    scale: 1.1;
+    grid-row: 2;
+}
+
+.register-button {
+    grid-row: 3;
+    grid-column: span 2;
+    place-self: center;
+    font-size: 1.4rem;
+}
+
+
+
+@media (max-width: 990px) {
+    .register-div {
+        width: 92%;
+        grid-column: 1;
+
+    }
+}
+
+@media (max-width: 760px) {
+    .form-register-css {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { Alert } from "../Alert";
+import './Register.css'
 
 export function Register() {
   const { signup } = useAuth();
@@ -18,7 +19,7 @@ export function Register() {
     e.preventDefault();
     setError("");
     try {
-      await signup (user.email, user.password);
+      await signup(user.email, user.password);
       navigate("/");
     } catch (error) {
       setError(error.message);
@@ -26,53 +27,58 @@ export function Register() {
   };
 
   return (
-    <div className="w-full max-w-xs m-auto text-black">
+    <div className="alert-class">
       {error && <Alert message={error} />}
+      <div className="bg-img" style={{ backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px' }}></div>
+      <div className="register-div">
+        <form
+          onSubmit={handleSubmit}
+          className="form-register-css"
+        >
+          <div className="register-now">
+            REGISTER NOW
+          </div>
+          <div className="email-div">
+            <label
+              htmlFor="email"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
+            </label>
+            <input
+              type="email"
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Email"
+            />
+          </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-6 mb-4"
-      >
-        <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            onChange={(e) => setUser ({ ...user, email: e.target.value })}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="youremail@company.tld"
-          />
-        </div>
+          <div className="password-div">
+            <label
+              htmlFor="password"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
 
-        <div className="mb-4">
-          <label
-            htmlFor="password"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Password
-          </label>
-          <input
-            type="password"
-            onChange={(e) => setUser ({ ...user, password: e.target.value })}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="*************"
-          />
-        </div>
+            </label>
+            <input
+              type="password"
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Password"
+            />
+          </div>
 
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-          Register
-        </button>
-      </form>
-      <p className="my-4 text-sm flex justify-between px-3">
-        Already have an Account?
-        <Link to="/login" className="text-blue-700 hover:text-blue-900">
-          Login
-        </Link>
-      </p>
+          <button className="register-button">
+            Register
+          </button>
+        </form>
+        <p className="my-4 text-sm flex justify-between px-3">
+          Already have an Account?
+          <Link to="/login" className="text-blue-700 hover:text-blue-900">
+            Login
+          </Link>
+        </p>
+      </div>
+
     </div>
   );
 }

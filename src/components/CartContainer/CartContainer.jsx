@@ -71,7 +71,12 @@ const CartContainer = (formData) => {
                     <Link to='/'> ⬅ Ir a ver productos</Link>
                 </center>
                 :
+                <div className="div-imgcarrito-cart">
+                    <img className="img-fondo-carrito" src="img/fondocarrito.jpg" alt="img"/>
                 <div className="itemcartcss">
+                    
+                    
+                    
                     {cartList.map((product) => (
                         <div className="itemcartx" key={product.id}>
                             <img src={product.img} alt='imagen' className="imgcartcss" />
@@ -84,80 +89,16 @@ const CartContainer = (formData) => {
                         <button className="btn btn-outline-dark btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
                         <h3 className="totalprice">Precio Total: {totalPrice()}</h3>
                     </div>
-
-
-                    {/* <form className="formcss" onSubmit={handleSubmit}>
-                <div className="form-row">
-
-                    <div className="col-sm-3 my-1">
-
-
-                        <input    
-                            className="form-control"
-                            id="inlineFormInputName"                     
-                            type="text"
-                            name="name"
-                            placeholder="ingrese el nombre"
-                            onChange={handleOnChange}
-                            value={formData.name}
-                        />
-                        
-
-                    </div>
-                    <div className="col-sm-3 my-1">
-                        <input         
-                            className="form-control"                
-                            type="text"
-                            name="phone"
-                            placeholder="Ingrese el teléfono"
-                            onChange={handleOnChange}
-                            value={formData.phone}
-                        />
-                        </div>
-
-                        <div className="col-sm-3 my-1">
-
-                        <input
-                            className="form-control"                         
-                            type="text"
-                            name="email"
-                            placeholder="ingrese el mail"
-                            onChange={handleOnChange}
-                            value={formData.email}
-                        />
-                        </div>
-                        <div className="col-sm-3 my-1">
-                        <input   
-                            className="form-control"                      
-                            type="text"
-                            name="repetirMail"
-                            placeholder="repetir el mail"
-                            onChange={()=>{}}
-                            />
-                            </div>
-                            
-                            <div className="form-row align-items-center">
-                            <div className="col-sm-3 my-1">
-
-                        <button className="btn btn-primary btnorder" type="submit">Generar Orden</button>
-                            </div>
-                            </div>
-
-                    </div>
-                    </form>
-
-            </div>  */}
-
-
-
+                    
 
                     <div className="formcart">
                         <Form onHandleSubmit={onHandleSubmit} />
                     </div>
 
-
-
+                </div>
                 </div>}
+    
+                
 
         </>
     )

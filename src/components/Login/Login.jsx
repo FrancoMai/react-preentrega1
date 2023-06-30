@@ -316,7 +316,7 @@ export function Login() {
         </p>
 
         <div className="div-class1">
-          <p className="welcome-p">Welcome {user.displayName || user.email}</p>
+          <p className="welcome-p">Welcome: {user.displayName || user.email}</p>
           <div className="logout-div">
             <Link to='/register' className="logout-button">
               <Logout1 />

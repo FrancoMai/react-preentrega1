@@ -29,7 +29,7 @@ export function Register() {
   return (
     <div className="alert-class">
       {error && <Alert message={error} />}
-      <div className="bg-img" style={{ backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px' }}></div>
+      <img className="bg-img" src="img/fondologin.jpg"></img>
       <div className="register-div">
         <form
           onSubmit={handleSubmit}
@@ -41,13 +41,13 @@ export function Register() {
           <div className="email-div">
             <label
               htmlFor="email"
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="email-register"
             >
             </label>
             <input
               type="email"
               onChange={(e) => setUser({ ...user, email: e.target.value })}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="email-register"
               placeholder="Email"
             />
           </div>
@@ -55,14 +55,14 @@ export function Register() {
           <div className="password-div">
             <label
               htmlFor="password"
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="password-register"
             >
 
             </label>
             <input
               type="password"
               onChange={(e) => setUser({ ...user, password: e.target.value })}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="password-register"
               placeholder="Password"
             />
           </div>
@@ -71,9 +71,9 @@ export function Register() {
             Register
           </button>
         </form>
-        <p className="my-4 text-sm flex justify-between px-3">
+        <p className="haveaccount-p">
           Already have an Account?
-          <Link to="/login" className="text-blue-700 hover:text-blue-900">
+          <Link to="/login" className="login-button-acces">
             Login
           </Link>
         </p>

@@ -193,7 +193,7 @@ export function Login() {
     password: "",
   });
 
-  const { login, logout, loginWithGoogle, resetPassword } = useAuth();
+  const { login, loginWithGoogle, resetPassword } = useAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -236,7 +236,7 @@ export function Login() {
   return (
     <div className="alert-class">
       {error && <Alert message={error} />}
-      <div className="bg-img" style={{ backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px' }}></div>
+      <img className="bg-img" src="img/fondologin.jpg"></img>
 
       <div className="form-div">
         <form
@@ -244,7 +244,7 @@ export function Login() {
           className="form-login-css"
         >
           <div className="signin-now">
-            SIGN IN NOW
+            SIGN UP NOW
           </div>
           <div className="email-div">
             <label
@@ -298,7 +298,7 @@ export function Login() {
         </form>
 
         <div className="button-google">
-          or sign in with
+          sign in with
           <button
             className='cap-button fa-brands fa-google migoogleclass' style={{ color: '#1266f8' }}
             fab icon='google' size="sm"
@@ -308,7 +308,7 @@ export function Login() {
 
         <p className="register-p">
           Don't have an account?
-          <Link to="/register" className="text-blue-700 hover:text-blue-900">
+          <Link to="/register" className="register-button-acces">
             Register
           </Link>
         </p>
@@ -316,7 +316,7 @@ export function Login() {
         <div className="div-class1">
           <p className="welcome-p">Welcome {user.displayName || user.email}</p>
           <div className="logout-div">
-            <Link to='/register'>
+            <Link to='/register' className="logout-button">
               <Logout1 />
             </Link>
           </div>

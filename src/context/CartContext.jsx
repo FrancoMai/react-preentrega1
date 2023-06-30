@@ -8,23 +8,23 @@ export const useCartContext = () => useContext(CartContext)
 
 
 export const CartContextProvider = ({children}) => {
-       const [cartList, setCartList] = useState ([])
+        const [cartList, setCartList] = useState ([])
 
-       const addToCart = (newProduct) =>{
+        const addToCart = (newProduct) =>{
 
         const indexProduct = cartList.findIndex(product => product.id === newProduct.id)  //  -1
         
-        if (indexProduct === -1 ) {
-            setCartList([
-                ...cartList,
-                newProduct
-            ])              
-        } else {
-            cartList[indexProduct].quantity += newProduct.quantity
-            setCartList( [ ...cartList ] )
-        }
+            if (indexProduct === -1 ) {
+                setCartList([
+                    ...cartList,
+                    newProduct
+                ])              
+            } else {
+                cartList[indexProduct].quantity += newProduct.quantity
+                setCartList( [ ...cartList ] )
+            }
 
-    }
+        }
     // localStorage.setItem('nombre', 'valor')
 
     // cantidad total de productos

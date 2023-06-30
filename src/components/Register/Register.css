@@ -16,7 +16,7 @@ html {
 .register-div {
     margin: -10rem auto 0 auto;
     background-color: var(--blanco);
-    width: 65%;
+    width: 45%;
     /*Sombra de caja con responsive en diferentes navegadores*/
     -webkit-box-shadow: 0px 6px 24px -1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 6px 24px -1px rgba(0, 0, 0, 0.75);
@@ -34,7 +34,7 @@ html {
     row-gap: 1.5rem;
 }
 
-.register-now{
+.register-now {
     grid-row: 1;
     grid-column: span 2;
     place-self: center;
@@ -75,7 +75,7 @@ html {
     user-select: none;
 }
 
-.email-register{
+.email-register {
     color: white;
     background-color: white;
     border-radius: 10px;
@@ -83,35 +83,51 @@ html {
     color: rgb(50, 50, 50);
 }
 
-.password-register{
+.password-register {
     background-color: white;
     border-radius: 10px;
     height: 90%;
     color: rgb(50, 50, 50);
 }
 
-.login-button-acces{
+.login-button-acces {
     margin-left: 3px;
 }
 
-.haveaccount-p{
+.haveaccount-p {
     text-align: center;
     margin-top: 15px;
 }
 
+.bg-img {
+    position: relative;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 400px;
+    z-index: -1;
+    user-select: none;
+}
 
-
+@media (max-width: 1280px) {
+    .register-div {
+        width: 70%;
+    }
+}
 @media (max-width: 990px) {
     .register-div {
-        width: 92%;
+        width: 80%;
         grid-column: 1;
-
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 700px) {
     .form-register-css {
         display: flex;
         flex-direction: column;
+    }
+    .register-div {
+        width: 85%;
     }
 }

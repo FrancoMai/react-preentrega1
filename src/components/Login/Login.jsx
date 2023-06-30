@@ -321,11 +321,3 @@ export function Login() {
 
   );
 }
-
-
-const tuabuelitaentanga = () => {
-  if(tuabuelitaentanga === 1 + 1){
-    i++
-  }
-  
-}

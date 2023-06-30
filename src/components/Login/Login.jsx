@@ -275,15 +275,6 @@ export function Login() {
               className="input-password"
               placeholder="Password"
             />
-          </div>
-          <div className="signin-div">
-            <button
-              id="loginButton"
-              className="signin-button"
-              type="submit"
-            >
-              Sign In
-            </button>
 
           </div>
           <div className="forgot-password-div">
@@ -295,6 +286,17 @@ export function Login() {
               Forgot Password?
             </a>
           </div>
+          <div className="signin-div">
+            <button
+              id="loginButton"
+              className="signin-button"
+              type="submit"
+            >
+              Sign In
+            </button>
+
+          </div>
+
         </form>
 
         <div className="button-google">

@@ -220,71 +220,7 @@ body {
   padding: 100px;
 }
 
-.itemcartcss {
-  margin-left: 20px;
-  display: block;
-}
 
-.imgcartcss {
-  background-size: cover;
-  max-height: 250px;
-  max-width: 250px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.deletecartbutton {
-  display: inline-block;
-  background-size: cover;
-  object-fit: cover;
-  justify-content: center;
-  text-align:inherit;
-  max-width: 35px;
-  max-height: 35px;
-  margin-left: 20px;
-
-}
-.totalprice {
-  margin-top: 50px;
-}
-.btnemptycart{
-  margin-top: 30px;
-  margin-left: 20px;
-}
-
-.brandcart{
-display: block;
-
-}
-.namecart{
-  display: inline-block;
-text-align:center;
-}
-.cantidadcart{
-  font-size: 20px;
-}
-
-.noproducts{
-  text-align: center;
-  justify-content: center;
-  padding: 100px;
-}
-
-.counternumber{
-  margin-left: 20px;
-}
-
-.btnorder{
-  margin-left: 240px;
-  margin-top: 10px;
-}
-
-.gracias {
-  text-align: center;
-  margin-top: 100px;
-}
 
 .loginuser {
   display: block;
@@ -293,9 +229,4 @@ text-align:center;
 }
 
 
-.totalQuantity{
-  display: flex;
-  padding: 0px;
-  
-}
 

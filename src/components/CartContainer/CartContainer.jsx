@@ -73,6 +73,7 @@ const CartContainer = (formData) => {
                 :
                 <div className="div-imgcarrito-cart">
                     <img className="img-fondo-carrito" src="img/fondocarrito.jpg" alt="img"/>
+            
                 <div className="itemcartcss">
                     
                     

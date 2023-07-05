@@ -104,23 +104,25 @@
   }
 
   .formcart {
-    margin: -23rem ;
+    margin: -23rem;
     grid-row: 3;
     grid-column: span 9999;
   }
 }
 
-@media (max-width:767px){
+@media (max-width:767px) {
   .itemcartcss {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+
   .itemcartx {
     border-radius: 15px;
   }
-  .btnemptycart{
+
+  .btnemptycart {
     display: flex;
     align-items: center;
   }

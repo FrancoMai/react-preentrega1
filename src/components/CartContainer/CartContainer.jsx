@@ -71,34 +71,33 @@ const CartContainer = (formData) => {
                     <Link to='/'> ⬅ Ir a ver productos</Link>
                 </center>
                 :
-                <div className="div-imgcarrito-cart">
-                    <img className="img-fondo-carrito" src="img/fondocarrito.jpg" alt="img"/>
-                <div className="itemcartcss">
-                    
-                    
-                    
-                    {cartList.map((product) => (
-                        <div className="itemcartx" key={product.id}>
-                            <img src={product.img} alt='imagen' className="imgcartcss" />
-                            <h4 className="namecart">{product.name}</h4>
-                            <h4 className="brandcart">{product.brand}</h4>
-                            <h4 className="cantidadcart">Cantidad: {product.quantity}<button className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>X</button></h4>
+                <div >
+                    <img className="img-fondo-carrito div-imgcarrito-cart" src="img/fondocarrito.jpg" alt="img" />
+
+
+                    <div className="itemcartcss">
+                        {cartList.map((product) => (
+                            <div className="itemcartx" key={product.id}>
+                                <img src={product.img} alt='imagen' className="imgcartcss" />
+                                <h4 className="namecart">{product.name}</h4>
+                                <h4 className="brandcart">{product.brand}</h4>
+                                <h4 className="cantidadcart">Cantidad: {product.quantity}<button className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>X</button></h4>
+                            </div>
+                        ))}
+                        <div className="priceandempty">
+                            <button className="btn btn-outline-dark btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
+                            <h3 className="totalprice">Precio Total: {totalPrice()}</h3>
                         </div>
-                    ))}
-                    <div className="priceandempty">
-                        <button className="btn btn-outline-dark btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
-                        <h3 className="totalprice">Precio Total: {totalPrice()}</h3>
-                    </div>
-                    
 
-                    <div className="formcart">
-                        <Form onHandleSubmit={onHandleSubmit} />
-                    </div>
 
-                </div>
+                        <div className="formcart">
+                            <Form onHandleSubmit={onHandleSubmit} />
+                        </div>
+
+                    </div>
                 </div>}
-    
-                
+
+
 
         </>
     )

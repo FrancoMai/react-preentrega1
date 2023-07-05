@@ -2,7 +2,6 @@ import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
 import { ItemCount } from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
-import './ItemDetail.css'
 
 export const ItemDetail = ({product}) => {
   const [quantity, updateQuantity] = useState(false)

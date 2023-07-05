@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
 
 
- export const Form = ({onHandleSubmit}) => {
-    const { register, handleSubmit, formState: { errors } } = useForm ({
+export const Form = ({ onHandleSubmit }) => {
+    const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
-        name: '',
-        direccion: ''
+            name: '',
+            direccion: ''
         }
     });
 
@@ -15,47 +15,47 @@ import { useForm } from "react-hook-form";
 
     return (
         <center>
-            <form onSubmit={handleSubmit(onSubmit)}> 
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <p>
                         <label>Nombre:</label><br></br>
                     </p>
-                <input 
-                    type='text' 
-                    name='name' 
-                    placeholder="ingrese el nombre" 
-                    {...register('name', {required: true })}
-                />
-                {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}                   
+                    <input
+                        type='text'
+                        name='name'
+                        placeholder="ingrese el nombre"
+                        {...register('name', { required: true })}
+                    />
+                    {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}
                 </div>
 
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <label>Email:</label><br></br>
-                <input 
-                    type='text' 
-                    name='email' 
-                    placeholder="ejemplo@gmail.com"   
-                    {...register('email', {required: true },
-                    {pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i})}
+                <input
+                    type='text'
+                    name='email'
+                    placeholder="ejemplo@gmail.com"
+                    {...register('email', { required: true },
+                        { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })}
                 />
                 <br />
                 {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
                 {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
-                <br/>
+                <br />
                 <div>
-                <label>Dirección:</label><br></br>
-                 <input type="text" {...register('direccion', {
-                     required: true
-                 })} />
-             </div>
-                 <div>
-                 <label>Telefono:</label><br></br>
-                     <input type="text" {...register('telefono')} />
-                 </div>
-                 <div>
-                 <button className="btn btn-primary btnorder" type="submit">Generar Orden</button>
-                 </div>
+                    <label>Dirección:</label><br></br>
+                    <input type="text" {...register('direccion', {
+                        required: true
+                    })} />
+                </div>
+                <div>
+                    <label>Telefono:</label><br></br>
+                    <input type="text" {...register('telefono')} />
+                </div>
+                <div>
+                    <button className="btn btn-primary my-4" type="submit">Generar Orden</button>
+                </div>
             </form>
         </center>
     )

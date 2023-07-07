@@ -9,15 +9,36 @@
   user-select: none;
 }
 
-.itemcartcss {
+.topicscart{
   display: flex;
   position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgb(87, 90, 94, 0.7);
+  
+}
+
+.h5cart{
+  padding: 10px;
+  color: white;
+}
+
+.price-div-cart{
+  margin-right:20px ;
+  margin-left: 800px;
+}
+
+.itemcartcss {
+  display: block;
+  position: relative;
   box-sizing: inherit;
+  margin: 10px;
 }
 
 .imgcartcss {
-  display: grid;
+  display: inline;
   place-self: center;
+  width: 10%;
 }
 
 .deletecartbutton {
@@ -26,26 +47,80 @@
   object-fit: cover;
   justify-content: center;
   text-align: inherit;
-  max-width: 35px;
-  max-height: 35px;
+  max-width: 20px;
+  max-height: 20px;
+  width: 20%;
   margin-left: 20px;
   animation: ease-in-out;
 }
 
 .itemcartx {
-  padding: 1rem;
-  background-color: white;
+  padding: 0px;
+  background-color: rgba(255, 255, 255, 0.945);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+
+.info-content-cart{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
 }
 
 .totalprice {
-  margin-top: 50px;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.945);
+  border-radius: 3px;
+  padding: 0;
 }
 
-.noproducts ,.gracias{
+.noproducts , .gracias{
   display: grid;
   text-align: center;
   margin: 3rem;
 }
+
+.namecart{
+  display: inline-block;
+  text-align: center;
+  margin-right: 800px;
+}
+
+.brandcart{
+  display: inline-block;
+  text-align: center;
+  margin-right: 00px;
+}
+
+.cantidadcart{
+  display: inline-block;
+  margin-left: 0px;
+}
+
+.pricecart{
+  margin-left: 0px;
+}
+
+.btnemptycart{
+  display: inline-block;
+  margin-right: 20px;
+  padding: 10px;
+  
+}
+
+.priceandempty{
+  display: flex;
+  margin-top: 20px;
+  justify-content: end;
+  align-items: end;
+  padding: 0;
+}
+
 
 
 @media (min-width: 1400px) {

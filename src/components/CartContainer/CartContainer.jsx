@@ -2,10 +2,7 @@ import { addDoc, collection, doc, getFirestore, updateDoc, writeBatch } from "fi
 import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import { useState } from "react"
-import { Form } from "../FormContainer/Form"
 import './CartContainer.css'
-
-
 
 
 const CartContainer = (formData) => {
@@ -74,26 +71,37 @@ const CartContainer = (formData) => {
                 <div >
                     <img className="img-fondo-carrito div-imgcarrito-cart" src="img/fondocarrito.jpg" alt="img" />
 
+                    <div className="topicscart">
+                        <h5 className="h5cart">Producto</h5>
+                        <h5 className="h5cart price-div-cart">Precio</h5>
+                        <h5 className="h5cart quantity-div-cart">Cantidad</h5>
+                        <h5 className="h5cart total-div-cart">Total</h5>
+                    </div>
 
                     <div className="itemcartcss">
                         {cartList.map((product) => (
                             <div className="itemcartx" key={product.id}>
                                 <img src={product.img} alt='imagen' className="imgcartcss" />
+                                <div className="info-content-cart">
                                 <h4 className="namecart">{product.name}</h4>
                                 <h4 className="brandcart">{product.brand}</h4>
-                                <h4 className="cantidadcart">Cantidad: {product.quantity}<button className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>X</button></h4>
+                                <h4 className="pricecart">{product.price}</h4>
+                                <h4 className="cantidadcart">{product.quantity}<div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>X</div></h4>
+                                </div>
                             </div>
                         ))}
                     </div>
                     <div className="priceandempty">
-                        <button className="btn btn-outline-dark btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
-                        <h3 className="totalprice">Precio Total: {totalPrice()}</h3>
+                        <button className="btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
+                        <h3 className="totalprice">Precio Total: ${totalPrice()}</h3>
                     </div>
 
-
-                    <div className="formcart">
-                        <Form onHandleSubmit={onHandleSubmit} />
+                    <div>
+                        <Link to={'/shipping'}>
+                        <button>Finalizar Compra</button>
+                        </Link>
                     </div>
+                    
                 </div>}
 
 

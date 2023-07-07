@@ -84,16 +84,15 @@ const CartContainer = (formData) => {
                                 <h4 className="cantidadcart">Cantidad: {product.quantity}<button className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>X</button></h4>
                             </div>
                         ))}
-                        <div className="priceandempty">
-                            <button className="btn btn-outline-dark btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
-                            <h3 className="totalprice">Precio Total: {totalPrice()}</h3>
-                        </div>
+                    </div>
+                    <div className="priceandempty">
+                        <button className="btn btn-outline-dark btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
+                        <h3 className="totalprice">Precio Total: {totalPrice()}</h3>
+                    </div>
 
 
-                        <div className="formcart">
-                            <Form onHandleSubmit={onHandleSubmit} />
-                        </div>
-
+                    <div className="formcart">
+                        <Form onHandleSubmit={onHandleSubmit} />
                     </div>
                 </div>}
 

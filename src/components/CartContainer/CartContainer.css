@@ -26,6 +26,13 @@
   gap: 1.5rem;
 }
 
+.noproducts ,.gracias{
+  display: grid;
+  text-align: center;
+  margin: 3rem;
+}
+
+
 @media (min-width: 1400px) {
   .itemcartcss {
     grid-template-columns: repeat(4, 1fr);

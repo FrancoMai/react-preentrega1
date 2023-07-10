@@ -65,7 +65,8 @@ const CartContainer = (formData) => {
             {cartList.length === 0 ?
                 <center className="noproducts">
                     <h2>No hay productos</h2>
-                    <Link to='/'> ⬅ Ir a ver productos</Link>
+                    <img src='img/fondocarrito.jpg' alt='imagen' className="img-fondo-carrito" />
+                    <Link to='/' className="link-products"> ⬅ Ir a ver productos</Link>
                 </center>
                 :
                 <div >
@@ -82,7 +83,7 @@ const CartContainer = (formData) => {
                         {cartList.map((product) => (
                             <div className="itemcartx" key={product.id}>
                                 <img src={product.img} alt='imagen' className="imgcartcss" />
-                                <div className="info-content-cart">
+                            <div className="info-content-cart">
                                 <h4 className="namecart">{product.name}</h4>
                                 <h4 className="brandcart">{product.brand}</h4>
                                 <h4 className="pricecart">{product.price}</h4>
@@ -98,7 +99,7 @@ const CartContainer = (formData) => {
 
                     <div>
                         <Link to={'/shipping'}>
-                        <button>Finalizar Compra</button>
+                        <button className="finallybuy">Finalizar Compra</button>
                         </Link>
                     </div>
                     

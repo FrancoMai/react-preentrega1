@@ -79,10 +79,24 @@
   padding: 0;
 }
 
-.noproducts , .gracias{
+.gracias{
   display: grid;
   text-align: center;
   margin: 3rem;
+}
+
+.noproducts h2{
+  display: inline-block;
+}
+
+.link-products{
+  display: inline-block;
+  font-size: 20px;
+}
+
+.noproducts{
+  display: inline-block;
+  height: 100px;
 }
 
 .namecart{
@@ -119,6 +133,10 @@
   justify-content: end;
   align-items: end;
   padding: 0;
+}
+
+.finallybuy{
+  margin-left: 10px;
 }
 
 

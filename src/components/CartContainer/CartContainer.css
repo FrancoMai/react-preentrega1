@@ -67,11 +67,38 @@
   border-radius: 3px;
 }
 
-.noproducts,
 .gracias {
   display: grid;
   text-align: center;
   margin: 3rem;
+}
+
+.noproducts h2{
+  display: inline-block;
+}
+
+.link-products{
+  display: inline-block;
+  font-size: 20px;
+}
+
+.noproducts{
+  display: inline-block;
+  height: 100px;
+}
+
+.noproducts h2{
+  display: inline-block;
+}
+
+.link-products{
+  display: inline-block;
+  font-size: 20px;
+}
+
+.noproducts{
+  display: inline-block;
+  height: 100px;
 }
 
 .infoproduct {
@@ -117,12 +144,6 @@
   justify-content: end;
   align-items: center;
   padding: 0;
-}
-
-.btnfinbuy {
-  display: flex;
-  justify-content: center;
-  margin: 1.3rem;
 }
 
 

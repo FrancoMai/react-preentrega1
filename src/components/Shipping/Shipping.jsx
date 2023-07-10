@@ -2,10 +2,12 @@ import { Form } from "../FormContainer/Form"
 
 const Shipping = () => {
   return (
-    <></>
-    //  <div className="formcart">
-    //     <Form onHandleSubmit= {onHandleSubmit} />
-    // </div>
+    <>
+    {/* <h4>Pago</h4>
+     <div className="formcart">
+        <Form onHandleSubmit={onHandleSubmit} />
+    </div> */}
+    </>
   )
 }
 

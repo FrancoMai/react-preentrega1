@@ -65,7 +65,8 @@ const CartContainer = (formData) => {
             {cartList.length === 0 ?
                 <center className="noproducts">
                     <h2>No hay productos</h2>
-                    <Link to='/'> ⬅ Ir a ver productos</Link>
+                    <img src='img/fondocarrito.jpg' alt='imagen' className="img-fondo-carrito" />
+                    <Link to='/' className="link-products"> ⬅ Ir a ver productos</Link>
                 </center>
                 :
                 <div >
@@ -111,7 +112,7 @@ const CartContainer = (formData) => {
 
                     <div className="btnfinbuy">
                         <Link to={'/shipping'}>
-                            <button>Finalizar Compra</button>
+                        <button className="finallybuy">Finalizar Compra</button>
                         </Link>
                     </div>
 

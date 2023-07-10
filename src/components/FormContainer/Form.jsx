@@ -2,36 +2,20 @@ import { useForm } from "react-hook-form";
 
 
 export const Form = ({ onHandleSubmit }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm ({
         defaultValues: {
             name: '',
             direccion: ''
         }
     });
 
-    const onSubmit = (formData) => {
-        onHandleSubmit(formData);
-    }
+const onSubmit = onHandleSubmit(formData);  
 
     return (
         <center>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div>
-                    <p>
-                        <label>Nombre:</label><br></br>
-                    </p>
-                    <input
-                        type='text'
-                        name='name'
-                        placeholder="ingrese el nombre"
-                        {...register('name', { required: true })}
-                    />
-                    {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}
-                </div>
 
-                <br />
-                <br />
-                <label>Email:</label><br></br>
+            <label>Email:</label><br></br>
                 <input
                     type='text'
                     name='email'
@@ -43,6 +27,18 @@ export const Form = ({ onHandleSubmit }) => {
                 {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
                 {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
                 <br />
+
+                <div>
+                    <label>Nombre:</label> <br />
+                    <input
+                        type='text'
+                        name='name'
+                        placeholder="ingrese el nombre"
+                        {...register('name', { required: true })}
+                    />
+                    {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}
+                </div>
+                <br />                
                 <div>
                     <label>Dirección:</label><br></br>
                     <input type="text" {...register('direccion', {
@@ -60,6 +56,7 @@ export const Form = ({ onHandleSubmit }) => {
         </center>
     )
 }
+
 
 
 

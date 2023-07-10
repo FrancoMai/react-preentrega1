@@ -73,9 +73,9 @@ const CartContainer = (formData) => {
 
                     <div className="topicscart">
                         <h5 className="h5cart">Producto</h5>
+                        <h5 className="h5cart">Marca</h5>
                         <h5 className="h5cart price-div-cart">Precio</h5>
                         <h5 className="h5cart quantity-div-cart">Cantidad</h5>
-                        <h5 className="h5cart total-div-cart">Total</h5>
                     </div>
 
                     <div className="itemcartcss">
@@ -83,10 +83,23 @@ const CartContainer = (formData) => {
                             <div className="itemcartx" key={product.id}>
                                 <img src={product.img} alt='imagen' className="imgcartcss" />
                                 <div className="info-content-cart">
-                                <h4 className="namecart">{product.name}</h4>
-                                <h4 className="brandcart">{product.brand}</h4>
-                                <h4 className="pricecart">{product.price}</h4>
-                                <h4 className="cantidadcart">{product.quantity}<div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>X</div></h4>
+                                    <div className="infoproduct">
+                                        <h4 className="namecart">{product.name}</h4>
+                                        <h4 className="brandcart">{product.brand}</h4>
+                                        <h4 className="pricecart">{product.price}</h4>
+                                        <h4 className="cantidadcart">{product.quantity}</h4>
+                                        <h4 className="deletebtn">
+                                            <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>
+                                                {/* SVG de boton X */}
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M18 6l-12 12" />
+                                                    <path d="M6 6l12 12" />
+                                                </svg>
+                                            </div>
+                                        </h4>
+
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -96,12 +109,12 @@ const CartContainer = (formData) => {
                         <h3 className="totalprice">Precio Total: ${totalPrice()}</h3>
                     </div>
 
-                    <div>
+                    <div className="btnfinbuy">
                         <Link to={'/shipping'}>
-                        <button>Finalizar Compra</button>
+                            <button>Finalizar Compra</button>
                         </Link>
                     </div>
-                    
+
                 </div>}
 
 

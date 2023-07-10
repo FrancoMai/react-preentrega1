@@ -9,23 +9,25 @@
   user-select: none;
 }
 
-.topicscart{
-  display: flex;
-  position: relative;
+
+
+.topicscart {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
   margin-left: 10px;
   margin-right: 10px;
   background-color: rgb(87, 90, 94, 0.7);
-  
+
 }
 
-.h5cart{
+.h5cart {
   padding: 10px;
   color: white;
 }
 
-.price-div-cart{
-  margin-right:20px ;
-  margin-left: 800px;
+.price-div-cart {
+  margin-right: px;
+  margin-left: px;
 }
 
 .itemcartcss {
@@ -38,37 +40,24 @@
 .imgcartcss {
   display: inline;
   place-self: center;
-  width: 10%;
+  width: 12%;
 }
 
 .deletecartbutton {
-  display: inline-block;
-  background-size: cover;
-  object-fit: cover;
-  justify-content: center;
-  text-align: inherit;
-  max-width: 20px;
-  max-height: 20px;
-  width: 20%;
-  margin-left: 20px;
-  animation: ease-in-out;
+  scale: 0.7;
 }
 
 .itemcartx {
-  padding: 0px;
   background-color: rgba(255, 255, 255, 0.945);
   display: flex;
   align-items: center;
   text-align: center;
   margin-bottom: 10px;
-  justify-content: space-between;
 }
 
 
-.info-content-cart{
+.info-content-cart {
   display: flex;
-  justify-content: space-between;
-  margin-right: 20px;
 }
 
 .totalprice {
@@ -76,49 +65,64 @@
   margin-right: 10px;
   background-color: rgba(255, 255, 255, 0.945);
   border-radius: 3px;
-  padding: 0;
 }
 
-.noproducts , .gracias{
+.noproducts,
+.gracias {
   display: grid;
   text-align: center;
   margin: 3rem;
 }
 
-.namecart{
-  display: inline-block;
-  text-align: center;
-  margin-right: 800px;
+.infoproduct {
+  display: grid;
+  grid-template-columns: 3fr 1.5fr 1fr 1fr 1fr;
+  place-items: center;
+  gap: 10px;
+
 }
 
-.brandcart{
-  display: inline-block;
-  text-align: center;
-  margin-right: 00px;
+.namecart {
+  grid-column: 1;
 }
 
-.cantidadcart{
-  display: inline-block;
-  margin-left: 0px;
+.brandcart {
+  grid-column: 2;
 }
 
-.pricecart{
-  margin-left: 0px;
+.pricecart {
+  grid-column: 3;
 }
 
-.btnemptycart{
+.cantidadcart {
+  grid-column: 4;
+}
+
+.deletebtn {
+  grid-column: 5;
+  scale: 90%;
+}
+
+
+.btnemptycart {
   display: inline-block;
   margin-right: 20px;
   padding: 10px;
-  
+
 }
 
-.priceandempty{
+.priceandempty {
   display: flex;
   margin-top: 20px;
   justify-content: end;
-  align-items: end;
+  align-items: center;
   padding: 0;
+}
+
+.btnfinbuy {
+  display: flex;
+  justify-content: center;
+  margin: 1.3rem;
 }
 
 

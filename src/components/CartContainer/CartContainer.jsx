@@ -94,7 +94,7 @@ const CartContainer = (formData) => {
                                         <h4 className="namecart">{product.name}</h4>
                                         <h4 className="brandcart">{product.brand}</h4>
                                         <h4 className="pricecart">{product.price}</h4>
-                                        <ItemCount initial={1} quantity={product.quantity} onAdd={onAdd}/>
+                                        <ItemCount initial={1} quantity={product.quantity} onAdd={onAdd} />
                                         <h4 className="deletebtn">
                                             <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>
                                                 {/* SVG de boton X */}

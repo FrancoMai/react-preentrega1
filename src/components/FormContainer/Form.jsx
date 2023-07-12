@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-
+import { useCartContext } from "../../context/CartContext"
 
 export const Form = ({ onHandleSubmit }) => {
     const { register, handleSubmit, formState: { errors } } = useForm ({
@@ -9,7 +9,12 @@ export const Form = ({ onHandleSubmit }) => {
         }
     });
 
-const onSubmit = onHandleSubmit(formData);  
+function onSubmit(formData) {
+ onHandleSubmit(formData); } 
+ const {
+    cartList,
+    totalPrice,
+} = useCartContext()
 
     return (
         <center>

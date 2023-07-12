@@ -3,6 +3,9 @@ import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import { useState } from "react"
 import './CartContainer.css'
+import { ItemCount } from "../ItemCount/ItemCount"
+import { Form } from "../FormContainer/Form"
+
 
 
 const CartContainer = (formData) => {
@@ -22,7 +25,7 @@ const CartContainer = (formData) => {
     console.log(cartList)
 
 
-    const onHandleSubmit = (formData) => {
+   const onHandleSubmit = (formData) => {
         // formData.preventDefault()
         const order = {
             buyer: formData, // crear furmulario 
@@ -55,7 +58,10 @@ const CartContainer = (formData) => {
     // }
 
 
-
+    const onAdd = (quantity) => {
+        addToCart({ ...product, quantity })
+        updateQuantity(true)
+      }
 
 
     return (
@@ -88,7 +94,7 @@ const CartContainer = (formData) => {
                                         <h4 className="namecart">{product.name}</h4>
                                         <h4 className="brandcart">{product.brand}</h4>
                                         <h4 className="pricecart">{product.price}</h4>
-                                        <h4 className="cantidadcart">{product.quantity}</h4>
+                                        <ItemCount initial={1} quantity={product.quantity} onAdd={onAdd}/>
                                         <h4 className="deletebtn">
                                             <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>
                                                 {/* SVG de boton X */}
@@ -115,6 +121,7 @@ const CartContainer = (formData) => {
                         <button className="finallybuy">Finalizar Compra</button>
                         </Link>
                     </div>
+                        <Form onHandleSubmit={onHandleSubmit} />
 
                 </div>}
 

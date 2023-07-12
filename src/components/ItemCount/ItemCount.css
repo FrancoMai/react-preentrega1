@@ -1,0 +1,25 @@
+.btn-decrement{
+    padding: 0;
+    background-color: white;
+    color: black;
+    margin-right: 10px;
+}
+
+.btn-increment{
+    padding: 0;
+    background-color: white;
+    color: black;
+    margin-left: 10px;
+}
+
+.div-counter{
+    display: block;
+    padding: 0px;
+    border-radius: 15px;
+    border: 1px solid black;
+    color: black;
+    /* margin-left: 620px;
+    margin-right: 620px; */
+    margin-bottom: 20px;
+   
+}

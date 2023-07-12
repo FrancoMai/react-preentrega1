@@ -11,59 +11,53 @@ import { Filter } from "../RenderProps/Filter.jsx"
 const ItemListContainer = () => {
     const [products, setproducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    
-    const {cid} = useParams()
-   
 
-    useEffect(()=>{
-    const db = getFirestore()        
-    const queryCollection = collection(db, 'products') // 2 argumento
-    const queryFilter = cid ? query(queryCollection,where('category', '==', cid)) : queryCollection
-
-    getDocs(queryFilter)
-    .then(resp => setproducts( resp.docs.map(products => ({ id: products.id, ...products.data() }) ) ))
-    .catch(err => console.log(err))
-    .finally(()=> setIsLoading(false))        
-       
-    }, [cid])   
+    const { cid } = useParams()
 
 
-    const handleProductsFiltered = ({filterState, handleFilterChange}) => (
+    useEffect(() => {
+        const db = getFirestore()
+        const queryCollection = collection(db, 'products') // 2 argumento
+        const queryFilter = cid ? query(queryCollection, where('category', '==', cid)) : queryCollection
+
+        getDocs(queryFilter)
+            .then(resp => setproducts(resp.docs.map(products => ({ id: products.id, ...products.data() }))))
+            .catch(err => console.log(err))
+            .finally(() => setIsLoading(false))
+
+    }, [cid])
+
+
+    const handleProductsFiltered = ({ filterState, handleFilterChange }) => (
 
         <div>
             <h2 className="h2input">{filterState}</h2>
             <input className="form-control me-2" value={filterState} onChange={handleFilterChange} type="search" placeholder="Busca Aquí"
                 aria-label="Search"></input>
-    
-            <ItemList 
-                products = {
+
+            <ItemList
+                products={
                     filterState == '' ?
-                    products
-                    :
-                    products.filter(product => product.name.toLowerCase().includes(filterState.toLocaleLowerCase()))
-                }   
-                />
+                        products
+                        :
+                        products.filter(product => product.name.toLowerCase().includes(filterState.toLocaleLowerCase()))
+                }
+            />
         </div>
-    )    
+    )
 
     return (
-        
         <>
-
-        <Banner />
-        <Swiperjsx slides={products}/>
-        
-        
-        
-            { isLoading 
+            <Banner />
+            <Swiperjsx slides={products} />
+            {isLoading
                 ?
-                    <Loading />  
+                <Loading />
                 :
                 <Filter>
                     {handleProductsFiltered}
-                </Filter>                   
-            }       
-              
+                </Filter>
+            }
         </>
     )
 }

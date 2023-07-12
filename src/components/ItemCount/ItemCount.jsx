@@ -26,12 +26,15 @@ export const ItemCount = ({ initial = 1, quantity, onAdd }) => {
     return (
 
         <>
-        <div className="div-counter">
-            <button className="btn-decrement" onClick={decrement}>-</button>
-            <label className="counternumber"> {counter}</label>
-            <button className="btn-increment" onClick={increment}>+</button>
-        </div>
-            <button className="btn-add-to-cart " onClick={handleOnAdd}>Agregar al carrito</button> <br />
+            <img src="" alt="" />
+            <div className="div-counter">
+                <button className="btn-decrement" onClick={decrement}>-</button>
+                <label className="counternumber"> {counter}</label>
+                <button className="btn-increment" onClick={increment}>+</button>
+            </div>
+            <div className="btn-add">
+                <button className="btn-add-to-cart " onClick={handleOnAdd}>Agregar al carrito</button> <br />
+            </div>
         </>
     )
 }

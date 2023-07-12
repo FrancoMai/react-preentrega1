@@ -9,94 +9,94 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import { Link } from 'react-router-dom';
 
-  
+
 const Swiperjsx = ({ slides }) => {
-	return (
+  return (
 
-    <>	
+    <>
 
-	<div className="latest-releases">
-			<h3>Últimos Lanzamientos</h3>
-		</div> 
+      <div className="latest-releases">
+        <h3>Últimos Lanzamientos</h3>
+      </div>
 
-		<div className='container-swiper'>
-<Swiper
-        slidesPerView={5}
-        spaceBetween={0}
-        
-		autoplay= {{
-			delay: 1500,
-			disableOnInteraction: false,
-      waitForTransition: false,
-		  }}
+      <div className='container-swiper'>
+        <Swiper
+          slidesPerView={5}
+          spaceBetween={0}
 
-        modules={[Pagination, Autoplay]}
-        loop={true}    
-        className="mySwiper swiper">
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+            waitForTransition: false,
+          }}
 
-			{slides.map (( slide ) => (
-				
-        <SwiperSlide key= {slide.img} >
-          <img className='swiper-img-class' src={slide.img} alt="imagen" />
-          <label className='name'>{slide.name}</label>
-          <label className='brand'>{slide.brand}</label>
-          <label className='price'>${slide.price}</label>
+          modules={[Pagination, Autoplay]}
+          loop={true}
+          className="mySwiper swiper">
 
-          <div>
-          <Link className= 'button1' to= {`/detail/${slide.id}`}>
-            <button className='btn btn-outline-dark'>Detalle</button>    
-          </Link>
-          </div>
-        </SwiperSlide>
+          {slides.map((slide) => (
 
-			))}
+            <SwiperSlide key={slide.img} >
+              <img className='swiper-img-class' src={slide.img} alt="imagen" />
+              <label className='name'>{slide.name}</label>
+              <label className='brand'>{slide.brand}</label>
+              <label className='price'>${slide.price}</label>
 
-</Swiper>
+              <div>
+                <Link className='button1' to={`/detail/${slide.id}`}>
+                  <button className='btn btn-outline-dark'>Detalle</button>
+                </Link>
+              </div>
+            </SwiperSlide>
 
-		</div>
+          ))}
 
-		<div className='banner-gif'>
-			<img src="img/bannergif.gif" alt="imagen" />
-		</div>
+        </Swiper>
 
-    <div className='container-swiper'>
-<Swiper
-        slidesPerView={5}
-        spaceBetween={0}
-        
-		autoplay= {{
-			delay: 1500,
-			disableOnInteraction: false,
-      waitForTransition: false,
-		  }}
+      </div>
 
-        modules={[Pagination, Autoplay]}
-        loop={true}    
-        className="mySwiper swiper">
+      <div className='banner-gif'>
+        <img src="img/bannergif.gif" alt="imagen" />
+      </div>
 
-			{slides.map (( slide ) => (
-				
-        <SwiperSlide key= {slide.img} >
-          <img className='swiper-img-class' src={slide.img} alt="imagen" />
-          <label className='name'>{slide.name}</label>
-          <label className='brand'>{slide.brand}</label>
-          <label className='price'>${slide.price}</label>
+      <div className='container-swiper'>
+        <Swiper
+          slidesPerView={5}
+          spaceBetween={0}
 
-          <div>
-          <Link className= 'button1' to= {`/detail/${slide.id}`}>
-            <button className='btn btn-outline-dark'>Detalle</button>    
-          </Link>
-          </div>
-        </SwiperSlide>
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+            waitForTransition: false,
+          }}
 
-			))}
+          modules={[Pagination, Autoplay]}
+          loop={true}
+          className="mySwiper swiper">
 
-</Swiper>
-   </div>
-		
-		<div className="more-recomend">
-			  <h4>Nuestros Más Recomendados</h4>
-		</div>
+          {slides.map((slide) => (
+
+            <SwiperSlide key={slide.img} >
+              <img className='swiper-img-class' src={slide.img} alt="imagen" />
+              <label className='name'>{slide.name}</label>
+              <label className='brand'>{slide.brand}</label>
+              <label className='price'>${slide.price}</label>
+
+              <div>
+                <Link className='button1' to={`/detail/${slide.id}`}>
+                  <button className='btn btn-outline-dark'>Detalle</button>
+                </Link>
+              </div>
+            </SwiperSlide>
+
+          ))}
+
+        </Swiper>
+      </div>
+
+      <div className="more-recomend">
+        <h4>Nuestros Más Recomendados</h4>
+      </div>
     </>
   )
 }

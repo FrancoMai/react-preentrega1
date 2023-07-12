@@ -1,4 +1,3 @@
-
 export const CartWidget = () => {
   return (
     <div className="cartwidget">
@@ -6,4 +5,3 @@ export const CartWidget = () => {
     </div>
   )
 }
-

@@ -5,7 +5,7 @@ import { useState } from "react"
 
 
 
-  
+
 const Shipping = (formData) => {
   const [id, setId] = useState(null)
   // const [inFormData, setinFormData] = useState({})
@@ -14,38 +14,32 @@ const Shipping = (formData) => {
   //     email: ''
 
   const {
-      cartList,
-      emptyCart,
-      totalPrice,
+    cartList,
+    emptyCart,
+    totalPrice,
   } = useCartContext()
 
   console.log(cartList)
-  
-  const onHandleSubmit = (formData) => {
+
+  const onHandleSubmit = () => {
     // formData.preventDefault()
     const order = {
-        buyer: formData, // crear furmulario 
-        items: cartList.map(({ id, name, price }) => ({ id, name, price })), // reduce campos
-        total: totalPrice() // precio total de la compra
+      buyer: formData, // crear furmulario 
+      items: cartList.map(({ id, name, price }) => ({ id, name, price })), // reduce campos
+      total: totalPrice() // precio total de la compra
     }
-
     const db = getFirestore()
-
     const queryCollection = collection(db, 'orders')
     // agregar
     addDoc(queryCollection, order)
-        .then(resp => setId(resp.id))
-        .catch(err => console.log(err))
-        .finally(() => {
-            console.log('termino la promesa')
-            emptyCart()
-        })
-}
-
-console.log(formData)
-
-
-
+      .then(resp => setId(resp.id))
+      .catch(err => console.log(err))
+      .finally(() => {
+        console.log('termino la promesa')
+        emptyCart()
+      })
+  }
+  console.log(formData)
 
   return (
     <>

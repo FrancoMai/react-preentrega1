@@ -4,42 +4,42 @@ import { ItemCount } from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
 import './ItemDetail.css'
 
-export const ItemDetail = ({product}) => {
+export const ItemDetail = ({ product }) => {
   const [quantity, updateQuantity] = useState(false)
   const { addToCart } = useCartContext()
-  
-const onAdd = (quantity) => {
-  addToCart({ ...product, quantity })
-  updateQuantity(true)
-}
 
-// const updateQuantity = (newQuantity) => {
-//   setquantity(newQuantity)
-// }
+  const onAdd = (quantity) => {
+    addToCart({ ...product, quantity })
+    updateQuantity(true)
+  }
+
+  // const updateQuantity = (newQuantity) => {
+  //   setquantity(newQuantity)
+  // }
 
   return (
     <div className="row itemdetailcss">
 
-        <div className="detail">
-            <div key={product.id}>
+      <div className="detail">
+        <div key={product.id}>
 
-            <img src={product.img} alt="imagen" className="w-20 imgdetail" />
-            <h3>{product.name}</h3>
-            <h4>{product.brand}</h4>
-            <h4>Precio: ${product.price}</h4>
-            <h4>Disponible: {product.quantity}</h4>
-            </div>
+          <img src={product.img} alt="imagen" className="w-20 imgdetail" />
+          <h3>{product.name}</h3>
+          <h4>{product.brand}</h4>
+          <h4>Precio: ${product.price}</h4>
+          <h4>Disponible: {product.quantity}</h4>
         </div>
-        <div className="col">
-          {quantity ?
+      </div>
+      <div className="col">
+        {quantity ?
           <div className="end-continue-buy">
-          <Link className="btn btn-outline-dark" to='/cart'>Terminar Compra</Link>
-          <Link className="btn btn-outline-dark" to='/'>Seguir Comprando</Link>
+            <Link className="btn btn-outline-dark" to='/cart'>Terminar Compra</Link>
+            <Link className="btn btn-outline-dark" to='/'>Seguir Comprando</Link>
           </div>
           :
           <ItemCount initial={1} updateQuantity={updateQuantity} quantity={product.quantity} addToCart={addToCart} onAdd={onAdd} />
-          }
-        </div>
+        }
+      </div>
 
     </div>
   )

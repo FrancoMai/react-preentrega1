@@ -11,10 +11,11 @@
 }
 
 .div-counter{
-    display: inline-block;
+    display: block;
     padding: 0px;
     border-radius: 10px;
     border: 1px solid black;
     color: black;
     margin-bottom: 20px;
+   
 }

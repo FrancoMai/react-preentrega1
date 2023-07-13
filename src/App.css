@@ -1,5 +1,3 @@
-
-
 * {
   box-sizing: border-box;
 }
@@ -22,7 +20,6 @@ body {
   display: flex;
   padding: 100px;
   margin: 30px;
-
   /* display: grid;
   grid-template-columns: repeat(250px, 3fr);
   grid-auto-rows: repeat(3, auto);
@@ -30,27 +27,26 @@ body {
   padding: 100px;
   grid-auto-flow: dense;
   row-gap: 100px; */
- 
-  
 }
+
 .itemcss {
   display: inline-block;
-  max-width: 250px;  
+  max-width: 250px;
   margin-top: 20px;
-  margin-bottom: 60px ;
+  margin-bottom: 60px;
   margin-left: 40px;
   margin-right: 20px;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   border-radius: 4px;
   transition: transform 0.3s ease-in-out;
   background-size: cover;
-  background-position: center; 
+  background-position: center;
   background-repeat: no-repeat;
 }
 
 .style-productos {
-  display: inline-block;  
+  display: inline-block;
 
 }
 
@@ -67,49 +63,50 @@ body {
   max-width: 250px;
 }
 
-.name{
-    display:flex; 
-    font-size: 20px;
-    margin-top: 20px ;
-    text-align: center; 
-    align-items: center;
-    justify-content: center; 
-    width: 100%;
-    text-decoration: none;
-   
-}
-.price{
-    display:flex; 
-    font-size: 20px;
-    margin-top: 10px ;
-    text-align: center;
-    align-items: center;
-    justify-content: center; 
-    width: 100%;
-    text-decoration: none;
+.name {
+  display: flex;
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+
 }
 
-.brand{
-    display:flex;
-    font-size: 20px;
-    margin-top: 10px ;
-    text-align: center;
-    align-items: center;
-    justify-content: center; 
-    width: 100%;
-    text-decoration: none;
+.price {
+  display: flex;
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+}
+
+.brand {
+  display: flex;
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
 }
 
 .button1 {
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   text-align: center;
   margin-top: 5px;
 
 }
 
-.counter{
+.counter {
   display: flex;
   margin-top: 30px;
   text-align: center;
@@ -135,7 +132,7 @@ body {
   object-fit: cover;
 }
 
-.container-swiper{
+.container-swiper {
   background-size: cover;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -166,10 +163,10 @@ body {
   text-align: center;
   justify-content: center;
   margin-top: 50px;
- 
+
 }
 
-.more-recomend{
+.more-recomend {
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -177,36 +174,36 @@ body {
   margin-top: 60px;
 }
 
-.banner-gif{
-  display: inline-block;
+.banner-gif {
+  display: flex;
   width: 100%;
-
+  align-items: center;
+  justify-content: center;
 }
 
 .banner-gif img {
-  object-fit:contain;
+  object-fit: contain;
   align-items: center;
-  padding-left: 100px;
-  padding-right: 100px;
   box-sizing: border-box;
   max-width: 100%;
   max-height: 100%;
-
 }
-.form-control{
+
+.form-control {
   text-align: center;
-  max-width:70% ;
+  max-width: 70%;
   justify-content: center;
   align-items: center;
   margin-left: 190px;
 }
-.h2input{
+
+.h2input {
 
   margin-left: 190px;
 
 }
 
-.itemdetailcss{
+.itemdetailcss {
   display: inline-block;
   justify-content: center;
   text-align: center;
@@ -214,9 +211,6 @@ body {
 }
 
 .formcss {
-  
-
-
   padding: 100px;
 }
 
@@ -227,6 +221,3 @@ body {
   width: 100%;
   margin-right: 10px;
 }
-
-
-

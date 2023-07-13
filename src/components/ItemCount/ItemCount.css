@@ -13,13 +13,19 @@
 }
 
 .div-counter{
-    display: block;
+    display: flex;
     padding: 0px;
     border-radius: 15px;
     border: 1px solid black;
     color: black;
-    /* margin-left: 620px;
-    margin-right: 620px; */
     margin-bottom: 20px;
-   
+    width: 10%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    place-self: center;   
+}
+
+.div-counter-flex{
+    display: block;
 }

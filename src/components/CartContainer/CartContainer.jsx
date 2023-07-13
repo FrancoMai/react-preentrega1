@@ -6,15 +6,12 @@ import './CartContainer.css'
 import { ItemCount } from "../ItemCount/ItemCount"
 import { Form } from "../FormContainer/Form"
 
-
-
 const CartContainer = (formData) => {
     const [id, setId] = useState(null)
     // const [inFormData, setinFormData] = useState({})
     //     name: '',
     //     phone: '',
     //     email: ''
-
     const {
         cartList,
         emptyCart,
@@ -24,17 +21,14 @@ const CartContainer = (formData) => {
 
     console.log(cartList)
 
-
-   const onHandleSubmit = (formData) => {
+    const onHandleSubmit = (formData) => {
         // formData.preventDefault()
         const order = {
             buyer: formData, // crear furmulario 
             items: cartList.map(({ id, name, price }) => ({ id, name, price })), // reduce campos
             total: totalPrice() // precio total de la compra
         }
-
         const db = getFirestore()
-
         const queryCollection = collection(db, 'orders')
         // agregar
         addDoc(queryCollection, order)
@@ -45,9 +39,7 @@ const CartContainer = (formData) => {
                 emptyCart()
             })
     }
-
     console.log(formData)
-
     // const handleOnChange = (event)=> {
     //     console.log(event.target.name)
     //     console.log(event.target.value)
@@ -56,28 +48,23 @@ const CartContainer = (formData) => {
     //         [event.target.name]: event.target.value
     //     })
     // }
-
-
     const onAdd = (quantity) => {
         addToCart({ ...product, quantity })
         updateQuantity(true)
-      }
-
-
+    }
     return (
         <>
             {id && <h2 className="gracias">Gracias por elegirnos! <br></br><br></br>
                 El id de la orden de la compra es: {id}</h2>}
             {cartList.length === 0 ?
-                <center className="noproducts">
-                    <h2>No hay productos</h2>
+                <div className="noproducts">
                     <img src='img/fondocarrito.jpg' alt='imagen' className="img-fondo-carrito" />
+                    <h2 className="noproducts-title">No hay productos seleccionados</h2>
                     <Link to='/' className="link-products"> ⬅ Ir a ver productos</Link>
-                </center>
+                </div>
                 :
                 <div >
                     <img className="img-fondo-carrito div-imgcarrito-cart" src="img/fondocarrito.jpg" alt="img" />
-
                     <div className="topicscart">
                         <h5 className="h5cart">Producto</h5>
                         <h5 className="h5cart">Nombre</h5>
@@ -85,7 +72,6 @@ const CartContainer = (formData) => {
                         <h5 className="h5cart price-div-cart">Precio</h5>
                         <h5 className="h5cart quantity-div-cart">Cantidad</h5>
                     </div>
-
                     <div className="itemcartcss">
                         {cartList.map((product) => (
                             <div className="itemcartx" key={product.id}>
@@ -104,9 +90,9 @@ const CartContainer = (formData) => {
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <path d="M18 6l-12 12" />
                                                     <path d="M6 6l12 12" />
-                                                </svg> */}
-                                            {/* </div> */}
-                                        {/* </h4> */}
+                                                </svg>
+                                            </div>
+                                        </h4>
 
                                     </div>
                                 
@@ -117,29 +103,15 @@ const CartContainer = (formData) => {
                         <button className="btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
                         <h3 className="totalprice">Precio Total: ${totalPrice()}</h3>
                     </div>
-
                     <div className="btnfinbuy">
                         <Link to={'/shipping'}>
-                        <button className="finallybuy">Finalizar Compra</button>
+                            <button className="finallybuy">Finalizar Compra</button>
                         </Link>
                     </div>
-                        <Form onHandleSubmit={onHandleSubmit} />
-
+                    <Form onHandleSubmit={onHandleSubmit} />
                 </div>}
-
-
-
         </>
     )
-
-
 }
-
-
-
-
-
-
-
 
 export default CartContainer

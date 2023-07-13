@@ -24,6 +24,7 @@ const Shipping = (formData) => {
   const onHandleSubmit = (formData) => {
     // formData.preventDefault()
     const order = {
+
         buyer: formData, // crear furmulario 
         items: cartList.map(({ id, name, price }) => ({ id, name, price })), // reduce campos
         total: totalPrice() // precio total de la compra
@@ -45,6 +46,16 @@ const Shipping = (formData) => {
 console.log(formData)
 
 
+      buyer: formData, // crear furmulario 
+      items: cartList.map(({ id, name, price }) => ({ id, name, price })), // reduce campos
+      total: totalPrice() // precio total de la compra
+    }
+  }
+
+  const {
+    cartList,
+    totalPrice,
+  } = useCartContext()
 
 
   return (

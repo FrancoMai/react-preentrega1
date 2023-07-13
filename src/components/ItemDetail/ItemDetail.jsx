@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
 import { ItemCount } from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
+import './ItemDetail.css'
 
 export const ItemDetail = ({product}) => {
   const [quantity, updateQuantity] = useState(false)
@@ -31,10 +32,10 @@ const onAdd = (quantity) => {
         </div>
         <div className="col">
           {quantity ?
-          <>
+          <div className="end-continue-buy">
           <Link className="btn btn-outline-dark" to='/cart'>Terminar Compra</Link>
           <Link className="btn btn-outline-dark" to='/'>Seguir Comprando</Link>
-          </>
+          </div>
           :
           <ItemCount initial={1} updateQuantity={updateQuantity} quantity={product.quantity} addToCart={addToCart} onAdd={onAdd} />
           }

@@ -2,25 +2,26 @@ import { useForm } from "react-hook-form";
 import { useCartContext } from "../../context/CartContext"
 
 export const Form = ({ onHandleSubmit }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm ({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             name: '',
             direccion: ''
         }
     });
 
-function onSubmit(formData) {
- onHandleSubmit(formData); } 
- const {
-    cartList,
-    totalPrice,
-} = useCartContext()
+    function onSubmit(formData) {
+        onHandleSubmit(formData);
+    }
+    const {
+        cartList,
+        totalPrice,
+    } = useCartContext()
 
     return (
         <center>
             <form onSubmit={handleSubmit(onSubmit)}>
 
-            <label>Email:</label><br></br>
+                <label>Email:</label><br></br>
                 <input
                     type='text'
                     name='email'
@@ -43,7 +44,7 @@ function onSubmit(formData) {
                     />
                     {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}
                 </div>
-                <br />                
+                <br />
                 <div>
                     <label>Dirección:</label><br></br>
                     <input type="text" {...register('direccion', {

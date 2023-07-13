@@ -12,11 +12,9 @@ const Item = ({ product }) => {
           <Link className='button1' to={`/detail/${product.id}`}>
             <button className='btn btn-outline-dark'>Detalle</button>
           </Link>
-
         </div>
       </div>
     </>
-
   )
 }
 

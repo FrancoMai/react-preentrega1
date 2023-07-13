@@ -92,7 +92,7 @@ const CartContainer = (formData) => {
                                                     <path d="M6 6l12 12" />
                                                 </svg>
                                             </div>
-                                        </h4>
+                        </h4>*/}
 
                                     </div>
                                 

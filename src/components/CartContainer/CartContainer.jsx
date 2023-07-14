@@ -103,7 +103,10 @@ const CartContainer = (formData) => {
                             <button className="finallybuy">Finalizar Compra</button>
                         </Link>
                     </div>
+                    <div className="form-cart">
+
                     <Form onHandleSubmit={onHandleSubmit} />
+                    </div>
                 </div>}
         </>
     )

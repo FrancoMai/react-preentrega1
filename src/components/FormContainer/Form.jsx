@@ -19,12 +19,13 @@ export const Form = ({ onHandleSubmit }) => {
 
     return (
         <center>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form className="form-form" onSubmit={handleSubmit(onSubmit)}>
 
                 <label>Email:</label><br></br>
                 <input
                     type='text'
                     name='email'
+                    className="email-input"
                     placeholder="ejemplo@gmail.com"
                     {...register('email', { required: true },
                         { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })}
@@ -39,7 +40,8 @@ export const Form = ({ onHandleSubmit }) => {
                     <input
                         type='text'
                         name='name'
-                        placeholder="ingrese el nombre"
+                        className="email-input"
+                        placeholder="Ingrese el nombre"
                         {...register('name', { required: true })}
                     />
                     {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}
@@ -47,13 +49,16 @@ export const Form = ({ onHandleSubmit }) => {
                 <br />
                 <div>
                     <label>Dirección:</label><br></br>
-                    <input type="text" {...register('direccion', {
-                        required: true
-                    })} />
+                    <input 
+                    className="email-input"
+                    placeholder="Ingrese la dirección"
+                    type="text" {...register('direccion', {required: true })} />
                 </div>
                 <div>
                     <label>Telefono:</label><br></br>
-                    <input type="text" {...register('telefono')} />
+                    <input className="email-input" 
+                    placeholder="Ingrese el telofono"
+                    type="text" {...register('telefono')} />
                 </div>
                 <div>
                     <button className="btn btn-primary my-4" type="submit">Generar Orden</button>

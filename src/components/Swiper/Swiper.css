@@ -1,0 +1,11 @@
+@media (max-width: 480px) {
+    .banner-gif {
+        scale: 2;
+    }
+}
+
+@media (max-width: 870px) {
+    .container-swiper {
+        margin: 30px 0px;
+    }
+}

@@ -1,6 +1,7 @@
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import './Swiper.css'
+import { useMediaQuery } from 'react-responsive'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,8 +12,9 @@ import { Link } from 'react-router-dom';
 
 
 const Swiperjsx = ({ slides }) => {
+  const isLower = useMediaQuery({ maxWidth: 719 });
+  const slidesPerResol = isLower ? 3 : 5;
   return (
-
     <>
 
       <div className="latest-releases">
@@ -21,7 +23,7 @@ const Swiperjsx = ({ slides }) => {
 
       <div className='container-swiper'>
         <Swiper
-          slidesPerView={5}
+          slidesPerView={slidesPerResol}
           spaceBetween={0}
 
           autoplay={{
@@ -61,7 +63,7 @@ const Swiperjsx = ({ slides }) => {
 
       <div className='container-swiper'>
         <Swiper
-          slidesPerView={5}
+          slidesPerView={slidesPerResol}
           spaceBetween={0}
 
           autoplay={{

@@ -6,7 +6,7 @@ import { Loading } from "../Loading/Loading.jsx"
 import Banner from "../Banner/Banner.jsx"
 import Swiperjsx from "../Swiper/Swiper.jsx"
 import { Filter } from "../RenderProps/Filter.jsx"
-
+import './ItemListContainer.css'
 
 const ItemListContainer = () => {
     const [products, setproducts] = useState([])

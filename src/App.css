@@ -214,20 +214,8 @@ body {
   padding: 100px;
 }
 
-
-
 .loginuser {
   display: block;
   width: 100%;
   margin-right: 10px;
-}
-
-.form-form{
-  background-color: #fff;
-  padding: 25px;
-  color: black;
-}
-
-.email-input{
-  background-color: #fff;
 }

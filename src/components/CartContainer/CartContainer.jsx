@@ -8,6 +8,9 @@ import { Form } from "../FormContainer/Form"
 
 const CartContainer = (formData) => {
     const [id, setId] = useState(null)
+    const [showCart, setShowCart] = useState(true); /*Mostramos el cart inicialmente*/
+    const [showForm, setShowForm] = useState(false); /*Ocultamos el cart y mostramos el form*/
+    const [showHideButton, setShowHideButton] = useState(true); /* Nos permite ocultar/mostrar un componente y volver */
     // const [inFormData, setinFormData] = useState({})
     //     name: '',
     //     phone: '',
@@ -52,6 +55,7 @@ const CartContainer = (formData) => {
         addToCart({ ...product, quantity })
         updateQuantity(true)
     }
+
     return (
         <>
             {id && <h2 className="gracias">Gracias por elegirnos! <br></br><br></br>
@@ -65,48 +69,69 @@ const CartContainer = (formData) => {
                 :
                 <div >
                     <img className="img-fondo-carrito div-imgcarrito-cart" src="img/fondocarrito.jpg" alt="img" />
-                    <div className="topicscart">
-                        <h5 className="h5cart">Producto</h5>
-                        <h5 className="h5cart">Nombre</h5>
-                        <h5 className="h5cart">Marca</h5>
-                        <h5 className="h5cart price-div-cart">Precio</h5>
-                        <h5 className="h5cart quantity-div-cart">Cantidad</h5>
-                    </div>
-                    <div className="itemcartcss">
-                        {cartList.map((product) => (
-                            <div className="itemcartx" key={product.id}>
-                                <img src={product.img} alt='imagen' className="imgcartcss" />
-                                <h4 className="namecart">{product.name}</h4>
-                                <h4 className="brandcart">{product.brand}</h4>
-                                <h4 className="pricecart">${product.price}</h4>
-                                <h4 className="qcart">{product.quantity}</h4>
-                                {/* <ItemCount initial={1} quantity={product.quantity} /> */}
-                                <h4 className="deletebtn">
-                                    <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>
-                                        {/* SVG de boton X */}
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M18 6l-12 12" />
-                                            <path d="M6 6l12 12" />
-                                        </svg>
-                                    </div>
-                                </h4>
+                    {showCart && (
+                        <div id="cart" className="cart">
+                            <div className="topicscart">
+                                <h5 className="h5cart">Producto</h5>
+                                <h5 className="h5cart">Nombre</h5>
+                                <h5 className="h5cart">Marca</h5>
+                                <h5 className="h5cart price-div-cart">Precio</h5>
+                                <h5 className="h5cart quantity-div-cart">Cantidad</h5>
                             </div>
-                        ))}
-                    </div>
-                    <div className="priceandempty">
-                        <button className="btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
-                        <h3 className="totalprice">Precio Total: ${totalPrice()}</h3>
-                    </div>
-                    <div className="btnfinbuy">
-                        <Link to={'/shipping'}>
-                            <button className="finallybuy">Finalizar Compra</button>
-                        </Link>
-                    </div>
-                    <div className="form-cart">
-
-                    <Form onHandleSubmit={onHandleSubmit} />
-                    </div>
+                            <div className="itemcartcss">
+                                {cartList.map((product) => (
+                                    <div className="itemcartx" key={product.id}>
+                                        <img src={product.img} alt='imagen' className="imgcartcss" />
+                                        <h4 className="namecart">{product.name}</h4>
+                                        <h4 className="brandcart">{product.brand}</h4>
+                                        <h4 className="pricecart">${product.price}</h4>
+                                        <h4 className="qcart">{product.quantity}</h4>
+                                        {/* <ItemCount initial={1} quantity={product.quantity} /> */}
+                                        <h4 className="deletebtn">
+                                            <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>
+                                                {/* SVG de boton X */}
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M18 6l-12 12" />
+                                                    <path d="M6 6l12 12" />
+                                                </svg>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="priceandempty">
+                                <button className="btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
+                                <h3 className="totalprice">Precio Total: ${totalPrice()}</h3>
+                            </div>
+                        </div>
+                    )}
+                    {showHideButton && (
+                        <div className="btnfinbuy">
+                            <button className="finallybuy" onClick={() => {
+                                setShowCart(false); setShowForm(true); setShowHideButton(false);
+                            }}>
+                                Finalizar Compra
+                            </button>
+                        </div>
+                    )}
+                    {!showHideButton && (
+                        <div className="btn-show-cart">
+                            <button className="finallybuy" onClick={() => {
+                                setShowCart(true); setShowForm(false); setShowHideButton(true);
+                            }}>
+                                Mostrar Carrito
+                            </button>
+                        </div>
+                    )}
+                    {showForm && (
+                        <div className="form-cart">
+                            <div className="title-form">
+                                Llena los campos para continuar con tu orden
+                            </div>
+                            <Form onHandleSubmit={onHandleSubmit} />
+                        </div>
+                    )}
                 </div>}
         </>
     )

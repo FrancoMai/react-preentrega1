@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useCartContext } from "../../context/CartContext"
+import './Form.css'
 
 export const Form = ({ onHandleSubmit }) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -19,46 +20,44 @@ export const Form = ({ onHandleSubmit }) => {
 
     return (
         <center>
+        
             <form className="form-form" onSubmit={handleSubmit(onSubmit)}>
-
-                <label>Email:</label><br></br>
-                <input
-                    type='text'
-                    name='email'
-                    className="email-input"
-                    placeholder="ejemplo@gmail.com"
-                    {...register('email', { required: true },
-                        { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })}
-                />
-                <br />
-                {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
-                {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
-                <br />
-
                 <div>
-                    <label>Nombre:</label> <br />
+                    <label>Email:</label><br />
+                    <input
+                        type='text'
+                        name='email'
+                        className="email-input"
+                        placeholder="ejemplo@gmail.com"
+                        {...register('email', { required: true },
+                            { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })}
+                    />
+                    {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
+                    {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
+                </div>
+                <div>
+                    <label>Nombre:</label><br />
                     <input
                         type='text'
                         name='name'
-                        className="email-input"
+                        className="name-input"
                         placeholder="Ingrese el nombre"
                         {...register('name', { required: true })}
                     />
                     {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}
                 </div>
-                <br />
                 <div>
-                    <label>Dirección:</label><br></br>
-                    <input 
-                    className="email-input"
-                    placeholder="Ingrese la dirección"
-                    type="text" {...register('direccion', {required: true })} />
+                    <label>Dirección:</label><br />
+                    <input
+                        className="direction-input"
+                        placeholder="Ingrese la dirección"
+                        type="text" {...register('direccion', { required: true })} />
                 </div>
                 <div>
-                    <label>Telefono:</label><br></br>
-                    <input className="email-input" 
-                    placeholder="Ingrese el telofono"
-                    type="text" {...register('telefono')} />
+                    <label>Telefono:</label><br />
+                    <input className="phone-input"
+                        placeholder="Ingrese el telofono"
+                        type="text" {...register('telefono')} />
                 </div>
                 <div>
                     <button className="btn btn-primary my-4" type="submit">Generar Orden</button>

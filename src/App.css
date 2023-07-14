@@ -33,7 +33,7 @@ body {
   display: inline-block;
   max-width: 250px;
   margin-top: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   margin-left: 40px;
   margin-right: 20px;
   align-items: center;
@@ -43,6 +43,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-bottom: 10px;
 }
 
 .style-productos {

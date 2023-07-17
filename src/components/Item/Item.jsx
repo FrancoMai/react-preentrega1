@@ -6,8 +6,8 @@ const Item = ({ product }) => {
     <>
       <div className="itemcss">
         <img src={product.img} className='imgclass' alt="imagen" />
-        <label className="name">{product.name}</label>
         <label className="brand">{product.brand}</label>
+        <label className="name">{product.name}</label>
         <label className="price">${product.price}</label>
         <div className='card-footer-buy'>
           <Link className='button1' to={`/detail/${product.id}`}>

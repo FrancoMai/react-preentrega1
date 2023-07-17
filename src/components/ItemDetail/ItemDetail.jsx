@@ -40,7 +40,6 @@ export const ItemDetail = ({ product }) => {
           <ItemCount initial={1} updateQuantity={updateQuantity} quantity={product.quantity} addToCart={addToCart} onAdd={onAdd} />
         }
       </div>
-
     </div>
   )
 }

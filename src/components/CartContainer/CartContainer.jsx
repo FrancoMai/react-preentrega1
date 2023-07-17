@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import { useState } from "react"
 import './CartContainer.css'
-import { ItemCount } from "../ItemCount/ItemCount"
+// import { ItemCount } from "../ItemCount/ItemCount"
 import { Form } from "../FormContainer/Form"
 
 const CartContainer = (formData) => {
@@ -19,7 +19,8 @@ const CartContainer = (formData) => {
         cartList,
         emptyCart,
         totalPrice,
-        deleteProduct
+        deleteProduct,
+        incrementProduct
     } = useCartContext()
 
     console.log(cartList)
@@ -55,7 +56,6 @@ const CartContainer = (formData) => {
         addToCart({ ...product, quantity })
         updateQuantity(true)
     }
-
     return (
         <>
             {id && <h2 className="gracias">Gracias por elegirnos! <br></br><br></br>
@@ -77,6 +77,7 @@ const CartContainer = (formData) => {
                                 <h5 className="h5cart">Marca</h5>
                                 <h5 className="h5cart price-div-cart">Precio</h5>
                                 <h5 className="h5cart quantity-div-cart">Cantidad</h5>
+                                <h5 className="nonosimporta"></h5>
                             </div>
                             <div className="itemcartcss">
                                 {cartList.map((product) => (
@@ -85,18 +86,35 @@ const CartContainer = (formData) => {
                                         <h4 className="namecart">{product.name}</h4>
                                         <h4 className="brandcart">{product.brand}</h4>
                                         <h4 className="pricecart">${product.price}</h4>
-                                        <h4 className="qcart">{product.quantity}</h4>
+                                        <h4 className="qcart">{product.quantity}
+                                            <span className="unit-quant">
+                                                {product.quantity > 1 ? ' Unidades' : ' Unidad'}
+                                            </span>
+                                        </h4>
                                         {/* <ItemCount initial={1} quantity={product.quantity} /> */}
-                                        <h4 className="deletebtn">
-                                            <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>
-                                                {/* SVG de boton X */}
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <div className="delincbtn">
+                                            <div className="btn btn-primary incrementcartbutton" onClick={() => incrementProduct(product.id)}>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M18 6l-12 12" />
-                                                    <path d="M6 6l12 12" />
+                                                    <path d="M12 5l0 14" />
+                                                    <path d="M5 12l14 0" />
                                                 </svg>
                                             </div>
-                                        </h4>
+                                            <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>
+                                                {product.quantity === 1 ?
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M18 6l-12 12" />
+                                                        <path d="M6 6l12 12" />
+                                                    </svg>
+                                                    :
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-minus" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M5 12l14 0" />
+                                                    </svg>
+                                                }
+                                            </div>
+                                        </div>
                                     </div>
                                 ))}
                             </div>

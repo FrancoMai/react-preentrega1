@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import { useState } from "react"
 import './CartContainer.css'
-// import { ItemCount } from "../ItemCount/ItemCount"
 import { Form } from "../FormContainer/Form"
 
 const CartContainer = (formData) => {
@@ -91,7 +90,6 @@ const CartContainer = (formData) => {
                                                 {product.quantity > 1 ? ' Unidades' : ' Unidad'}
                                             </span>
                                         </h4>
-                                        {/* <ItemCount initial={1} quantity={product.quantity} /> */}
                                         <div className="delincbtn">
                                             <div className="btn btn-primary incrementcartbutton" onClick={() => incrementProduct(product.id)}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">

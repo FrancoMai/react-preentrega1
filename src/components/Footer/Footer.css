@@ -1,17 +1,36 @@
+.font-light {
+    font-weight: lighter;
+}
+
 .links {
     text-decoration: none;
     color: rgb(71, 71, 71);
-
 }
 
 .links:hover {
     color: rgb(140, 140, 140);
 }
 
+.wsp,
+.insta {
+    transition: ease-in-out 0.13s;
+}
+
+.wsp:hover {
+    transition: ease-in-out 0.13s;
+    stroke: #25D366;
+}
+
+.insta:hover {
+    transition: ease-in-out 0.13s;
+    stroke: #c1558b;
+}
+
+
 .footer {
     position: sticky;
-    background-color: rgb(218, 218, 218);
-    padding: 0.8rem 20rem 3rem 20rem;
+    background-color: rgb(231, 231, 231);
+    padding: 0.8rem 18rem 1px 18rem;
     margin-top: 2rem;
     bottom: 0%;
     top: 100%;
@@ -25,11 +44,30 @@
 .footer-part-1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    place-content: center;
     gap: 2rem;
+    padding-bottom: 1rem;
 }
 
 .placin {
     display: flex;
     flex-direction: column;
+}
+
+
+.footer-part-2 {
+    display: flex;
+    justify-content: center;
+}
+
+.name-store {
+    font-weight: lighter;
+    font-size: 95%;
+}
+
+.redes-contacto{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
 }

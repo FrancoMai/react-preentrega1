@@ -21,6 +21,7 @@ export const Form = ({ onHandleSubmit }) => {
     return (
         <div className="form-divcss">
         <center>
+        
             <form className="form-form" onSubmit={handleSubmit(onSubmit)}>
 
                 <input
@@ -35,9 +36,24 @@ export const Form = ({ onHandleSubmit }) => {
                 {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
                 {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
                 <br />
+                    {/* <label className="name-inputt">Nombre:</label> <br /> */}
 
                 <div>
-                    {/* <label className="name-inputt">Nombre:</label> <br /> */}
+                    <label>Email:</label><br />
+                    <input
+                        type='text'
+                        name='email'
+                        className="email-input"
+                        placeholder="ejemplo@gmail.com"
+                        {...register('email', { required: true },
+                            { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })}
+                    />
+                    {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
+                    {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
+                </div>
+                <div>
+                    <label>Nombre:</label><br />
+
                     <input
                         type='text'
                         name='name'
@@ -60,6 +76,18 @@ export const Form = ({ onHandleSubmit }) => {
                     <input className="phone-input" 
                     placeholder="Telofono"
                     type="text" {...register('telefono')} />
+
+                    <label>Dirección:</label><br />
+                    <input
+                        className="direction-input"
+                        placeholder="Ingrese la dirección"
+                        type="text" {...register('direccion', { required: true })} />
+                </div>
+                <div>
+                    <label>Telefono:</label><br />
+                    <input className="phone-input"
+                        placeholder="Ingrese el telofono"
+                        type="text" {...register('telefono')} />
                 </div>
                 <div>
                 <br /> 

@@ -29,7 +29,6 @@ export const CartContextProvider = ({children}) => {
 
     // cantidad total de productos
     const totalQuantity = () => cartList.reduce( (totalQuantity, objProduct) => totalQuantity += objProduct.quantity, 0) 
-   
     // retorna un valor
 
     // precio total de productos
@@ -37,11 +36,19 @@ export const CartContextProvider = ({children}) => {
     
     // eliminar por item
     const deleteProduct = (pid) =>{
-
         const indexProduct = cartList.findIndex(product => product.id === pid)
-
         if (cartList[indexProduct].quantity > 1) {
-            cartList[indexProduct].quantity = cartList[indexProduct].quantity -  1            
+            cartList[indexProduct].quantity = cartList[indexProduct].quantity - 1
+            setCartList( [...cartList] )
+        } else {
+            setCartList(cartList.filter(product => product.id !== pid ))          
+        }
+    }
+
+    const incrementProduct = (pid) =>{
+        const indexProduct = cartList.findIndex(product => product.id === pid)
+        if (cartList[indexProduct].quantity >= 1) {
+            cartList[indexProduct].quantity = cartList[indexProduct].quantity + 1
             setCartList( [...cartList] )
         } else {
             setCartList(cartList.filter(product => product.id !== pid ))          
@@ -58,7 +65,8 @@ export const CartContextProvider = ({children}) => {
             emptyCart,
             totalPrice,
             totalQuantity,
-            deleteProduct
+            deleteProduct,
+            incrementProduct
         }}>
             {children}
         </CartContext.Provider>       

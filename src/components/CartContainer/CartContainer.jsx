@@ -3,11 +3,13 @@ import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import { useState } from "react"
 import './CartContainer.css'
-import { ItemCount } from "../ItemCount/ItemCount"
 import { Form } from "../FormContainer/Form"
 
 const CartContainer = (formData) => {
     const [id, setId] = useState(null)
+    const [showCart, setShowCart] = useState(true); /*Mostramos el cart inicialmente*/
+    const [showForm, setShowForm] = useState(false); /*Ocultamos el cart y mostramos el form*/
+    const [showHideButton, setShowHideButton] = useState(true); /* Nos permite ocultar/mostrar un componente y volver */
     // const [inFormData, setinFormData] = useState({})
     //     name: '',
     //     phone: '',
@@ -16,7 +18,8 @@ const CartContainer = (formData) => {
         cartList,
         emptyCart,
         totalPrice,
-        deleteProduct
+        deleteProduct,
+        incrementProduct
     } = useCartContext()
 
     console.log(cartList)
@@ -65,30 +68,51 @@ const CartContainer = (formData) => {
                 :
                 <div >
                     <img className="img-fondo-carrito div-imgcarrito-cart" src="img/fondocarrito.jpg" alt="img" />
-                    <div className="topicscart">
-                        <h5 className="h5cart">Producto</h5>
-                        <h5 className="h5cart">Nombre</h5>
-                        <h5 className="h5cart">Marca</h5>
-                        <h5 className="h5cart price-div-cart">Precio</h5>
-                        <h5 className="h5cart quantity-div-cart">Cantidad</h5>
-                    </div>
-                    <div className="itemcartcss">
-                        {cartList.map((product) => (
-                            <div className="itemcartx" key={product.id}>
-                                <img src={product.img} alt='imagen' className="imgcartcss" />
-                                <h4 className="namecart">{product.name}</h4>
-                                <h4 className="brandcart">{product.brand}</h4>
-                                <h4 className="pricecart">${product.price}</h4>
-                                <h4 className="qcart">{product.quantity}</h4>
-                                {/* <ItemCount initial={1} quantity={product.quantity} /> */}
-                                <h4 className="deletebtn">
-                                    <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>
-                                        {/* SVG de boton X */}
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M18 6l-12 12" />
-                                            <path d="M6 6l12 12" />
-                                        </svg>
+                    {showCart && (
+                        <div id="cart" className="cart">
+                            <div className="topicscart">
+                                <h5 className="h5cart">Producto</h5>
+                                <h5 className="h5cart">Nombre</h5>
+                                <h5 className="h5cart">Marca</h5>
+                                <h5 className="h5cart price-div-cart">Precio</h5>
+                                <h5 className="h5cart quantity-div-cart">Cantidad</h5>
+                                <h5 className="nonosimporta"></h5>
+                            </div>
+                            <div className="itemcartcss">
+                                {cartList.map((product) => (
+                                    <div className="itemcartx" key={product.id}>
+                                        <img src={product.img} alt='imagen' className="imgcartcss" />
+                                        <h4 className="namecart">{product.name}</h4>
+                                        <h4 className="brandcart">{product.brand}</h4>
+                                        <h4 className="pricecart">${product.price}</h4>
+                                        <h4 className="qcart">{product.quantity}
+                                            <span className="unit-quant">
+                                                {product.quantity > 1 ? ' Unidades' : ' Unidad'}
+                                            </span>
+                                        </h4>
+                                        <div className="delincbtn">
+                                            <div className="btn btn-primary incrementcartbutton" onClick={() => incrementProduct(product.id)}>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M12 5l0 14" />
+                                                    <path d="M5 12l14 0" />
+                                                </svg>
+                                            </div>
+                                            <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>
+                                                {product.quantity === 1 ?
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M18 6l-12 12" />
+                                                        <path d="M6 6l12 12" />
+                                                    </svg>
+                                                    :
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-minus" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M5 12l14 0" />
+                                                    </svg>
+                                                }
+                                            </div>
+                                        </div>
                                     </div>
                                 </h4>
                             </div>
@@ -105,7 +129,7 @@ const CartContainer = (formData) => {
                     </div>
                     <div className="form-cart">
 
-                    {/* <Form onHandleSubmit={onHandleSubmit} /> */}
+                    <Form onHandleSubmit={onHandleSubmit} />
                     </div>
                 </div>}
         </>

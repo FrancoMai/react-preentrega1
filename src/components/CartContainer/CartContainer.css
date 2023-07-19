@@ -4,14 +4,18 @@
   padding: 0;
   margin-bottom: -50rem;
   width: 100%;
-  height: 990px;
+  height: 890px;
   z-index: -1;
   user-select: none;
 }
 
+.nonosimporta {
+  width: 180px;
+}
+
 .topicscart {
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-columns: 1.1fr 1fr 1fr 1fr 1fr 0.8fr;
   grid-area: 1;
   margin-left: 10px;
   margin-right: 10px;
@@ -43,14 +47,10 @@
   mix-blend-mode: multiply;
 }
 
-.deletecartbutton {
-  scale: 0.7;
-}
-
 .itemcartx {
   background-color: rgba(255, 255, 255, 0.945);
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-columns: 1.1fr 1fr 1fr 1fr 1fr 0.8fr;
   margin-bottom: 10px;
   gap: 10px;
 }
@@ -81,7 +81,6 @@
   padding: 0px 20px;
   margin: auto;
 }
-
 
 .link-products {
   display: inline-block;
@@ -120,10 +119,22 @@
   grid-column: 5;
 }
 
-.deletebtn {
+.incrementcartbutton {
+  scale: 0.7;
+  background-color: blue;
+}
+
+.deletecartbutton {
+  scale: 0.7;
+}
+
+
+.delincbtn {
+  display: flex;
   grid-column: 6;
-  scale: 90%;
   place-self: center;
+  scale: 0.9;
+  height: auto;
 }
 
 .btnemptycart {
@@ -151,7 +162,31 @@
 
 .finallybuy {
   text-transform: uppercase;
+}
 
+.form-cart {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title-form {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.895);
+  border-radius: 15px;
+  padding: 0 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.btn-show-cart {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2rem 0;
 }
 
 @media (max-width: 479px) {
@@ -177,14 +212,21 @@
   }
 }
 
+/* Oculta la palabra Unidad en la cantidad de productos cuando la resol sea mayor a 767px */
+@media (min-width: 768px) {
+  .unit-quant {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
   .itemcartx {
     display: grid;
     grid-template-columns: 1.3fr 1fr 0.4fr;
     grid-template-rows: repeat(4, 40px);
     padding: 10px 0;
-
   }
+
 
   .imgcartcss {
     grid-row: 1/5;
@@ -200,10 +242,11 @@
     padding-top: 20px;
   }
 
-  .deletebtn {
+  .delincbtn {
     grid-column: 3;
-    grid-row: 2/4;
-
+    grid-row: 1/-1;
+    display: flex;
+    flex-direction: column;
   }
 
   .topicscart {
@@ -213,12 +256,4 @@
   .priceandempty {
     justify-content: center;
   }
-}
-
-.form-cart{
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  margin-right: 100px;
-  margin-bottom: 10px;
 }

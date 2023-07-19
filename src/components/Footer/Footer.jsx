@@ -1,18 +1,36 @@
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 const Footer = () => {
     return (
         <footer className='footer'>
             <div className='footer-part-1'>
-                <div className='placin'>
+            {/* <div className='placin'>
                     <h5 className='title-footer'>Sobre Perfumeria Karina</h5>
                     <a>Nos encontramos en Gdor. Iriondo 2321</a>
                     <a>San Justo, Santa Fe</a>
-                </div>
-                <div className='placin'>
+                </div> */}
+            <div class="box__footer">
+				<h4>Soluciones</h4>
+				<a href="#">Preguntas Frecuentes</a>
+				<a href="#">Ayuda</a>
+				<a href="#">Politica de Privacidad</a>
+			</div>
+
+			<div class="box__footer">
+				<h4>Acerca de Nosotros</h4>
+				<a href="#">Métodos de pago</a>
+                <Link to={'/nuestroLocal'}>               
+				<a>Nuestro Local</a>
+                </Link>
+				<a href="#">Servicios</a>
+			</div>
+
+          
+                {/* <div className='placin'>
                     <h5 className='title-footer'></h5>
                     <a></a>
-                </div>
+                </div> */}
                 <div className='placin contacto'>
                     <h5 className='title-footer'>Contacto</h5>
                     <a className='links' href='https://mail.google.com/mail/?view=cm&to=perfumeriakarina@gmail.com' target='_blank'>perfumeriakarina@gmail.com</a>

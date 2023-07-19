@@ -66,7 +66,7 @@ const CartContainer = (formData) => {
                     <Link to='/' className="link-products"> ⬅ Ir a ver productos</Link>
                 </div>
                 :
-                <div >
+                <><div>
                     <img className="img-fondo-carrito div-imgcarrito-cart" src="img/fondocarrito.jpg" alt="img" />
                     {showCart && (
                         <div id="cart" className="cart">
@@ -109,30 +109,27 @@ const CartContainer = (formData) => {
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-minus" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                         <path d="M5 12l14 0" />
-                                                    </svg>
-                                                }
+                                                    </svg>}
                                             </div>
                                         </div>
-                                    </div>
-                                </h4>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="priceandempty">
+                                    </div>))}    
+                            </div>                  
+                        </div>
+                    )})
+                </div>
+                <div className="priceandempty">
                         <button className="btnemptycart" onClick={emptyCart}>Vaciar Carrito</button>
                         <h3 className="totalprice">Precio Total: ${totalPrice()}</h3>
-                    </div>
-                    <div className="btnfinbuy">
+                    </div><div className="btnfinbuy">
                         <Link to={'/shipping'}>
                             <button className="finallybuy">Finalizar Compra</button>
                         </Link>
-                    </div>
-                    <div className="form-cart">
+                    </div><div className="form-cart">
 
-                    <Form onHandleSubmit={onHandleSubmit} />
-                    </div>
-                </div>}
-        </>
+                        <Form onHandleSubmit={onHandleSubmit} />
+                    </div></>
+            
+}</>
     )
 }
 

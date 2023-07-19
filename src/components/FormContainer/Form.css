@@ -1,0 +1,72 @@
+.formcss {
+    padding: 100px;
+  }
+  
+  .loginuser {
+    display: block;
+    width: 100%;
+    margin-right: 10px;
+  }
+  
+  .form-form{
+    background-color: #fff;
+    padding: 10px;
+    color: black;
+    border: 1px solid black;
+    margin-right: 250px;
+    margin-left: 250px;
+    border-radius: 5px;
+    margin-bottom: 300px;
+    margin-top: 10px
+  }
+  
+  .email-input,
+  .name-input,
+  .direccion-input,
+  .phone-input,
+  .dni-input,
+  .altura-input,
+  .cp-input,
+  .ciudad-input{
+    background-color: #fff;
+    border-radius: 10px;
+    color: black;
+  }
+
+  .email-input{
+    margin-top: 20px;
+    width: 70%;
+  }
+
+  .name-input{
+    display: flex;
+
+
+  }
+
+  .form-divcss{
+    display: grid;
+    grid-template-columns: 4fr 1fr ;
+    
+  }
+
+.form-form {
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 15px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.945);
+    padding: 1.6rem;
+    margin: auto;
+}
+
+.email-input,
+.name-input,
+.direction-input,
+.phone-input {
+    color: black;
+    background-color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+

@@ -2,8 +2,8 @@ import { Form } from "../FormContainer/Form"
 import { useCartContext } from "../../context/CartContext"
 import { addDoc, collection, doc, getFirestore, updateDoc, writeBatch } from "firebase/firestore"
 import { useState } from "react"
-
-
+import './Shipping.css'
+import { Link } from "react-router-dom"
 
 
 const Shipping = (formData) => {
@@ -23,7 +23,8 @@ const Shipping = (formData) => {
 
   const onAdd = (quantity) => {
     addToCart({ ...product, quantity })
-    updateQuantity(true)}
+    updateQuantity(true)
+  }
 
   const onHandleSubmit = () => {
     // formData.preventDefault()
@@ -47,39 +48,46 @@ const Shipping = (formData) => {
 
   return (
     <>
-    
-              
-
-    <div className="itemcartcss">
-
-    <h4>Pago</h4>
-                        {cartList.map((product) => (
-                            <div className="itemcartx" key={product.id}>
-                                <img src={product.img} alt='imagen' className="imgcartcss" />
-                                <h4 className="namecart">{product.name}</h4>
-                                <h4 className="brandcart">{product.brand}</h4>
-                                <h4 className="pricecart">${product.price}</h4>
-                                <h4 className="qcart">{product.quantity}</h4>
-                                {/* <ItemCount initial={1} quantity={product.quantity} /> */}
-                                {/* <h4 className="deletebtn">
+      <div className="shipping-cols">
+        <div className="itemcartcss">
+          <h4>Pago</h4>
+          {cartList.map((product) => (
+            <div className="itemcartx" key={product.id}>
+              <img src={product.img} alt='imagen' className="imgcartcss" />
+              <h4 className="namecart">{product.name}</h4>
+              <h4 className="brandcart">{product.brand}</h4>
+              <h4 className="pricecart">${product.price}</h4>
+              <h4 className="qcart">{product.quantity > 1 ? product.quantity + ' Unidades' : product.quantity + ' Unidad'}</h4>
+              {/* <ItemCount initial={1} quantity={product.quantity} /> */}
+              {/* <h4 className="deletebtn">
                                     <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}> */}
-                                        {/* SVG de boton X */}
-                                        {/* <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              {/* SVG de boton X */}
+              {/* <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                             <path d="M18 6l-12 12" />
                                             <path d="M6 6l12 12" />
                                         </svg>
                                     </div>
                                 </h4> */}
-                            </div>
-                        ))}
-                    </div>
-      
-      <div className="formcart">
-        <h4>Datos del Envío</h4>
-        <Form onHandleSubmit={onHandleSubmit} />
-        {id && <h2 className="gracias">Gracias por elegirnos! <br></br><br></br>
-          El id de la orden de la compra es: {id}</h2>}
+            </div>
+          ))}
+          <div className="price-btntocart">
+            <div className="total-price">
+              <h3>Precio Total: ${totalPrice()}</h3>
+            </div>
+            <Link to={'/cart'} className="back-to-cart">
+              <button className="btn-backcart"> Volver al Carro</button>
+            </Link>
+          </div>
+        </div>
+        <div className="formcart">
+          <h4>Datos del Envío</h4>
+          <Form onHandleSubmit={onHandleSubmit} />
+        </div>
+        <div className="orden-taken">
+          {id && <h2 className="gracias">Gracias por elegirnos! <br></br><br></br>
+            El id de la orden de la compra es: {id}</h2>}
+        </div>
       </div>
 
     </>

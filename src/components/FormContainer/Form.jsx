@@ -1,8 +1,17 @@
 import { useForm } from "react-hook-form";
 import { useCartContext } from "../../context/CartContext"
 import './Form.css'
+import Select from 'react-select'
 
 export const Form = ({ onHandleSubmit }) => {
+    const cities = [
+        { value: 'San Justo', label: 'San Justo' },
+        { value: 'Santa Fe', label: 'Santa Fe' },
+        { value: 'Reconquista', label: 'Reconquista' },
+        { value: 'Videla', label: 'Videla' },
+        { value: 'Crespo', label: 'Crespo' },
+        { value: 'Nelson', label: 'Nelson' }
+    ];
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             name: '',
@@ -20,112 +29,114 @@ export const Form = ({ onHandleSubmit }) => {
 
     return (
         <div className="form-divcss">
-        <center>
-        
             <form className="form-form" onSubmit={handleSubmit(onSubmit)}>
-
-                <input
-                    type='text'
-                    name='email'
-                    className="email-input"
-                    placeholder="ejemplo@gmail.com"
-                    {...register('email', { required: true },
-                        { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })}
-                />
-                <br />
-                {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
-                {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
-                <br />
-                    {/* <label className="name-inputt">Nombre:</label> <br /> */}
-
-                <div>
-                    <label>Email:</label><br />
+                <div className="email-div-label">
+                    <label>Email:</label>
                     <input
                         type='text'
-                        name='email'
                         className="email-input"
-                        placeholder="ejemplo@gmail.com"
+                        placeholder="tuemail@email.com"
                         {...register('email', { required: true },
                             { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })}
                     />
-                    {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
+                    {errors.email?.type === 'required' && <p>El email es requerido</p>}
                     {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
                 </div>
-                <div>
-                    <label>Nombre:</label><br />
-
+                <div className="name-div-label">
+                    <label>Nombre:</label>
                     <input
                         type='text'
-                        name='name'
                         className="name-input"
                         placeholder="Nombre"
                         {...register('name', { required: true })}
                     />
-                    {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}
+                    {errors.name?.type === 'required' && <p>El nombre es requerido</p>}
                 </div>
-                <div>
-                    {/* <label>Dirección:</label>*/}<br /> 
-                    <input 
-                    className="direccion-input"
-                    placeholder="Dirección"
-                    type="text" {...register('direccion', {required: true })} />
-                    {errors.name?.type === 'required' && <p>El campo dirección es requerido</p>}
-                </div>
-                <div>
-                    {/* <label>Telefono:</label>*/}<br /> 
-                    <input className="phone-input" 
-                    placeholder="Telofono"
-                    type="text" {...register('telefono')} />
-
-                    <label>Dirección:</label><br />
+                <div className="surname-div-label">
+                    <label>Apellido:</label>
                     <input
-                        className="direction-input"
-                        placeholder="Ingrese la dirección"
-                        type="text" {...register('direccion', { required: true })} />
+                        type='text'
+                        className="name-input"
+                        placeholder="Apellido"
+                        {...register('surname', { required: true })}
+                    />
+                    {errors.surname?.type === 'required' && <p>El apellido es requerido</p>}
                 </div>
-                <div>
-                    <label>Telefono:</label><br />
-                    <input className="phone-input"
-                        placeholder="Ingrese el telofono"
-                        type="text" {...register('telefono')} />
+                <div className="phone-div-label">
+                    <label>Telefono / Celular:</label>
+                    <input
+                        className="phone-input"
+                        placeholder="Telefono"
+                        type="tel" {...register('phone', { required: true })}
+                    />
+                    {errors.phone?.type === 'required' && <p>El telefono es requerido</p>}
+
                 </div>
-                <div>
-                <br /> 
-                    <input 
-                    className="dni-input"
-                    placeholder="DNI *"
-                    type="text" {...register('dni', {required: true })} />
-                    {errors.dni?.type === 'required' && <p>El campo DNI es requerido</p>}
+                <div className="city-div-label">
+                    <label className="citylabel">Ciudad:</label>
+                    <Select
+                        className="cities"
+                        options={cities}
+                        isSearchable
+                        placeholder="Selecciona tu ciudad"
+                    />
                 </div>
-                <div>
-                <br /> 
-                    <input 
-                    className="altura-input"
-                    placeholder="Altura * ej: 2343"
-                    type="text" {...register('altura', {required: true })} />
-                    {errors.altura?.type === 'required' && <p>El campo Altura es requerido</p>}
+                <div className="street-div-label">
+                    <label>Calle:</label>
+                    <input
+                        className="direccion-input"
+                        placeholder="ej: Gdor. Iriondo"
+                        type="text" {...register('street', { required: true })}
+                    />
+                    {errors.street?.type === 'required' && <p>La calle es requerida</p>}
                 </div>
-                <div>
-                <br /> 
-                    <input 
-                    className="cp-input"
-                    placeholder="Código Postal"
-                    type="text" {...register('cp', {required: true })} />
-                    {errors.cp?.type === 'required' && <p>El Código postal es requerido</p>}
+                <div className="number-div-label">
+                    <label>Numero:</label>
+                    <input
+                        className="numero-input "
+                        placeholder="ej: 2343"
+                        type="tel" {...register('numero', { required: true })}
+                    />
+                    {errors.numero?.type === 'required' && <p>El numero es requerido</p>}
                 </div>
-                <div>
-                <br /> 
-                    <input 
-                    className="ciudad-input"
-                    placeholder="Ciudad"
-                    type="text" {...register('ciudad', {required: true })} />
-                    {errors.ciudad?.type === 'required' && <p>La ciudad es requerido</p>}
+                <div className="cp-div-label">
+                    <label>CP:</label>
+                    <input
+                        className="cp-input"
+                        placeholder="Código Postal"
+                        type="text" {...register('cp', { required: true })} />
+                    {errors.cp?.type === 'required' && <p>El CP es requerido</p>}
                 </div>
-                <div>
+
+                <div className="piso-div-label">
+                    <label>Piso: <span className="opcional">(opcional)</span></label>
+                    <input
+                        className="piso-input"
+                        placeholder="Piso"
+                        type="text" {...register('floor')}
+                    />
+                </div>
+                <div className="depto-div-label">
+                    <label>Departamento: <span className="opcional">(opcional)</span></label>
+                    <input
+                        className="depto-input"
+                        placeholder="Departamento"
+                        type="text" {...register('department')}
+                    />
+                </div>
+                <div className="dni-div-label">
+                    <label>DNI:</label>
+                    <input
+                        className="dni-input"
+                        placeholder="ej: 12.345.678"
+                        type="text" {...register('dni', { required: true })}
+                    />
+                    {errors.dni?.type === 'required' && <p>Este campo es requerido</p>}
+                </div>
+                <div className="genera-orden">
                     <button className="btn btn-primary my-4" type="submit">Generar Orden</button>
                 </div>
             </form>
-        </center>
         </div>
     )
 }

@@ -51,6 +51,8 @@ const Shipping = (formData) => {
               
 
     <div className="itemcartcss">
+
+    <h4>Pago</h4>
                         {cartList.map((product) => (
                             <div className="itemcartx" key={product.id}>
                                 <img src={product.img} alt='imagen' className="imgcartcss" />
@@ -59,27 +61,25 @@ const Shipping = (formData) => {
                                 <h4 className="pricecart">${product.price}</h4>
                                 <h4 className="qcart">{product.quantity}</h4>
                                 {/* <ItemCount initial={1} quantity={product.quantity} /> */}
-                                <h4 className="deletebtn">
-                                    <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}>
+                                {/* <h4 className="deletebtn">
+                                    <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}> */}
                                         {/* SVG de boton X */}
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        {/* <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                             <path d="M18 6l-12 12" />
                                             <path d="M6 6l12 12" />
                                         </svg>
                                     </div>
-                                </h4>
+                                </h4> */}
                             </div>
                         ))}
                     </div>
-      <h4>Pago</h4>
+      
       <div className="formcart">
+        <h4>Datos del Envío</h4>
         <Form onHandleSubmit={onHandleSubmit} />
-        if (onHandleSubmit == true) {
-          id && <h2 className="gracias">Gracias por elegirnos! <br></br><br></br>
-          El id de la orden de la compra es: {id}</h2>
-
-        }
+        {id && <h2 className="gracias">Gracias por elegirnos! <br></br><br></br>
+          El id de la orden de la compra es: {id}</h2>}
       </div>
 
     </>

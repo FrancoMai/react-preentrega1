@@ -19,9 +19,25 @@ export const Form = ({ onHandleSubmit }) => {
     } = useCartContext()
 
     return (
+        <div className="form-divcss">
         <center>
         
             <form className="form-form" onSubmit={handleSubmit(onSubmit)}>
+
+                <input
+                    type='text'
+                    name='email'
+                    className="email-input"
+                    placeholder="ejemplo@gmail.com"
+                    {...register('email', { required: true },
+                        { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })}
+                />
+                <br />
+                {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
+                {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
+                <br />
+                    {/* <label className="name-inputt">Nombre:</label> <br /> */}
+
                 <div>
                     <label>Email:</label><br />
                     <input
@@ -37,16 +53,30 @@ export const Form = ({ onHandleSubmit }) => {
                 </div>
                 <div>
                     <label>Nombre:</label><br />
+
                     <input
                         type='text'
                         name='name'
                         className="name-input"
-                        placeholder="Ingrese el nombre"
+                        placeholder="Nombre"
                         {...register('name', { required: true })}
                     />
                     {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}
                 </div>
                 <div>
+                    {/* <label>Dirección:</label>*/}<br /> 
+                    <input 
+                    className="direccion-input"
+                    placeholder="Dirección"
+                    type="text" {...register('direccion', {required: true })} />
+                    {errors.name?.type === 'required' && <p>El campo dirección es requerido</p>}
+                </div>
+                <div>
+                    {/* <label>Telefono:</label>*/}<br /> 
+                    <input className="phone-input" 
+                    placeholder="Telofono"
+                    type="text" {...register('telefono')} />
+
                     <label>Dirección:</label><br />
                     <input
                         className="direction-input"
@@ -60,10 +90,43 @@ export const Form = ({ onHandleSubmit }) => {
                         type="text" {...register('telefono')} />
                 </div>
                 <div>
+                <br /> 
+                    <input 
+                    className="dni-input"
+                    placeholder="DNI *"
+                    type="text" {...register('dni', {required: true })} />
+                    {errors.dni?.type === 'required' && <p>El campo DNI es requerido</p>}
+                </div>
+                <div>
+                <br /> 
+                    <input 
+                    className="altura-input"
+                    placeholder="Altura * ej: 2343"
+                    type="text" {...register('altura', {required: true })} />
+                    {errors.altura?.type === 'required' && <p>El campo Altura es requerido</p>}
+                </div>
+                <div>
+                <br /> 
+                    <input 
+                    className="cp-input"
+                    placeholder="Código Postal"
+                    type="text" {...register('cp', {required: true })} />
+                    {errors.cp?.type === 'required' && <p>El Código postal es requerido</p>}
+                </div>
+                <div>
+                <br /> 
+                    <input 
+                    className="ciudad-input"
+                    placeholder="Ciudad"
+                    type="text" {...register('ciudad', {required: true })} />
+                    {errors.ciudad?.type === 'required' && <p>La ciudad es requerido</p>}
+                </div>
+                <div>
                     <button className="btn btn-primary my-4" type="submit">Generar Orden</button>
                 </div>
             </form>
         </center>
+        </div>
     )
 }
 

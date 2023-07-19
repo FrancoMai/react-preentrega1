@@ -13,6 +13,7 @@ import { ProtectedRoute } from './components/ProtectedRoutes';
 import { Logout1 } from './components/Logout';
 import Shipping from './components/Shipping/Shipping';
 import Footer from './components/Footer/Footer'
+import { NuestroLocal } from './components/FooterSections/NuestroLocal';
 
 
 
@@ -38,6 +39,7 @@ function App() {
               <Route path='*' element={<Navigate to='/' />}></Route>
               <Route path='/register' element={<Register />}></Route>
               <Route path='/shipping' element={<Shipping />}></Route>
+              <Route path='/nuestroLocal' element={<NuestroLocal />}></Route>
               <Route path='/logout' element={
                 <ProtectedRoute>
                   <Logout1 />

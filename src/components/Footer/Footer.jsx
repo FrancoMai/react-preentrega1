@@ -10,8 +10,8 @@ const Footer = () => {
                     <a>San Justo, Santa Fe</a>
                 </div>
                 <div className='placin'>
-                    <h5 className='title-footer'></h5>
-                    <a></a>
+                    <h5 className='title-footer'>Estoy de ejemplo</h5>
+                    <a>jajaja esta de ejemplo</a>
                 </div>
                 <div className='placin contacto'>
                     <h5 className='title-footer'>Contacto</h5>

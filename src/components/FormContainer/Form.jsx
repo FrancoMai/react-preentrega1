@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useCartContext } from "../../context/CartContext"
+import './Form.css'
 
 export const Form = ({ onHandleSubmit }) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -18,10 +19,10 @@ export const Form = ({ onHandleSubmit }) => {
     } = useCartContext()
 
     return (
+        <div className="form-divcss">
         <center>
             <form className="form-form" onSubmit={handleSubmit(onSubmit)}>
 
-                <label>Email:</label><br></br>
                 <input
                     type='text'
                     name='email'
@@ -36,35 +37,68 @@ export const Form = ({ onHandleSubmit }) => {
                 <br />
 
                 <div>
-                    <label>Nombre:</label> <br />
+                    {/* <label className="name-inputt">Nombre:</label> <br /> */}
                     <input
                         type='text'
                         name='name'
-                        className="email-input"
-                        placeholder="Ingrese el nombre"
+                        className="name-input"
+                        placeholder="Nombre"
                         {...register('name', { required: true })}
                     />
                     {errors.name?.type === 'required' && <p>El campo nombre es requerido</p>}
                 </div>
-                <br />
                 <div>
-                    <label>Dirección:</label><br></br>
+                    {/* <label>Dirección:</label>*/}<br /> 
                     <input 
-                    className="email-input"
-                    placeholder="Ingrese la dirección"
+                    className="direccion-input"
+                    placeholder="Dirección"
                     type="text" {...register('direccion', {required: true })} />
+                    {errors.name?.type === 'required' && <p>El campo dirección es requerido</p>}
                 </div>
                 <div>
-                    <label>Telefono:</label><br></br>
-                    <input className="email-input" 
-                    placeholder="Ingrese el telofono"
+                    {/* <label>Telefono:</label>*/}<br /> 
+                    <input className="phone-input" 
+                    placeholder="Telofono"
                     type="text" {...register('telefono')} />
+                </div>
+                <div>
+                <br /> 
+                    <input 
+                    className="dni-input"
+                    placeholder="DNI *"
+                    type="text" {...register('dni', {required: true })} />
+                    {errors.dni?.type === 'required' && <p>El campo DNI es requerido</p>}
+                </div>
+                <div>
+                <br /> 
+                    <input 
+                    className="altura-input"
+                    placeholder="Altura * ej: 2343"
+                    type="text" {...register('altura', {required: true })} />
+                    {errors.altura?.type === 'required' && <p>El campo Altura es requerido</p>}
+                </div>
+                <div>
+                <br /> 
+                    <input 
+                    className="cp-input"
+                    placeholder="Código Postal"
+                    type="text" {...register('cp', {required: true })} />
+                    {errors.cp?.type === 'required' && <p>El Código postal es requerido</p>}
+                </div>
+                <div>
+                <br /> 
+                    <input 
+                    className="ciudad-input"
+                    placeholder="Ciudad"
+                    type="text" {...register('ciudad', {required: true })} />
+                    {errors.ciudad?.type === 'required' && <p>La ciudad es requerido</p>}
                 </div>
                 <div>
                     <button className="btn btn-primary my-4" type="submit">Generar Orden</button>
                 </div>
             </form>
         </center>
+        </div>
     )
 }
 

@@ -105,7 +105,7 @@ const CartContainer = (formData) => {
                     </div>
                     <div className="form-cart">
 
-                    <Form onHandleSubmit={onHandleSubmit} />
+                    {/* <Form onHandleSubmit={onHandleSubmit} /> */}
                     </div>
                 </div>}
         </>

@@ -234,7 +234,7 @@ export function Login() {
 
 
   return (
-    <div className="alert-class">
+    <div className="alert-className">
       {error && <Alert message={error} />}
       <img className="bg-img" src="img/fondologin.jpg"></img>
 
@@ -302,7 +302,7 @@ export function Login() {
         <div className="button-google">
           sign in with
           <button
-            className='cap-button fa-brands fa-google migoogleclass' style={{ color: '#1266f8' }}
+            className='cap-button fa-brands fa-google migoogleclassName' style={{ color: '#1266f8' }}
             fab icon='google' size="sm"
             onClick={handleGoogleSignin}
           ></button>
@@ -315,7 +315,7 @@ export function Login() {
           </Link>
         </p>
 
-        <div className="div-class1">
+        <div className="div-className1">
           <p className="welcome-p">Welcome: {user.displayName || user.email}</p>
           <div className="logout-div">
             <Link to='/register' className="logout-button">

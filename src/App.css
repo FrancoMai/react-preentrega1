@@ -56,7 +56,7 @@ body {
   transform: scale(1.04);
 }
 
-.imgclass {
+.imgclassName {
   background-size: cover;
   height: auto;
   width: auto;
@@ -67,7 +67,7 @@ body {
 .name {
   display: flex;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 5px;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -79,7 +79,7 @@ body {
 .price {
   display: flex;
   font-size: 20px;
-  margin-top: 10px;
+  margin-top: 5px;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -90,7 +90,7 @@ body {
 .brand {
   display: flex;
   font-size: 20px;
-  margin-top: 10px;
+  margin-top: 5px;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -123,72 +123,13 @@ body {
   font-size: 18px;
 }
 
-.swiper-img-class {
-  background-size: cover;
-  max-height: 200px;
-  max-width: 200px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-.container-swiper {
-  background-size: cover;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  margin-left: 90px;
-  margin-right: 70px;
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
 
 .navbar {
   margin-bottom: 2px;
 }
 
-.micarousel {
-  margin-top: 2px;
-}
 
-.latest-releases h3 {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-  margin-top: 50px;
-
-}
-
-.more-recomend {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-  margin-top: 60px;
-}
-
-.banner-gif {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.banner-gif img {
-  object-fit: contain;
-  align-items: center;
-  box-sizing: border-box;
-  max-width: 100%;
-  max-height: 100%;
-}
 
 .form-control {
   text-align: center;

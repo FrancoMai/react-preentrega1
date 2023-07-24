@@ -33,8 +33,8 @@ export const ItemDetail = ({ product }) => {
       <div className="col">
         {quantity ?
           <div className="end-continue-buy">
-            <Link className="btn btn-outline-dark" to='/cart'>Terminar Compra</Link>
-            <Link className="btn btn-outline-dark" to='/'>Seguir Comprando</Link>
+            <Link className="btn btn-outline-dark mibtn" to='/cart'>Terminar Compra</Link>
+            <Link className="btn btn-outline-dark mibtn" to='/'>Seguir Comprando</Link>
           </div>
           :
           <ItemCount initial={1} updateQuantity={updateQuantity} quantity={product.quantity} addToCart={addToCart} onAdd={onAdd} />

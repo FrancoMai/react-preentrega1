@@ -24,7 +24,7 @@ export function Logout1() {
         >
           Logout
         </button>
-        
+
       </div>
     </div>
   );

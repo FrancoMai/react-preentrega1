@@ -1,9 +1,8 @@
 .price-btntocart {
-    margin-top: 4rem;
+    margin-top: 0rem;
 }
 
-.back-to-cart,
-.total-price {
+.back-to-cart {
     display: flex;
     justify-content: right;
     scale: 0.9;
@@ -11,7 +10,15 @@
 
 .btn-backcart {
     text-transform: uppercase;
-    margin-top: 1rem;
+    margin-top: 0rem;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+}
+
+.total-price h3{
+    display: block;
+    font-size: 20px;
 }
 
 .imgcartcss {
@@ -21,16 +28,45 @@
 .shipping-cols {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 1rem;
+    gap: 0rem;
 }
 
-.itemcartcss {
-    grid-column: 1;
+.itemcartcss2 {
+    grid-column: 2;
+    border: 0.5px solid black;
+    margin-top: 100px;
+}
+
+.itemcartx2{
+    background-color: rgba(255, 255, 255, 0.945);
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
+    border: 0.5px solid black;
+    
 }
 
 .formcart {
-    grid-column: 2;
-    margin: 0.6rem 5rem 0.6rem 0;
+    grid-column: 1;
+    /* margin: 0.6rem 5rem 0.6rem 0; */
+}
+
+.tituloform{
+    margin-left: 10px;
+}
+
+.namecart2,
+.brandcart2,
+.pricecart2,
+.qcart2{
+    font-size: 15px;
+    place-self: center;
+    text-align: center;
+}
+
+.resumen{
+    display: block;
+    padding: 0px;
+    margin-top: 5px;
 }
 
 @media (max-width: 1659px) {

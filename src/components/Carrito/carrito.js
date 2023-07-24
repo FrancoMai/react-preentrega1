@@ -110,14 +110,14 @@
 //     const { id, nombre, precio, img, marca, cantidad } = prod;
 //     if (contenedor) {
 //       contenedor.innerHTML += `
-//       <div class="card mt-3" style="width: 18rem;">
-//       <img class="card-img-top mt-2" src="${img}" alt="Card image cap">
-//       <div class="card-body">
-//         <h5 class="card-title">${nombre}</h5>
-//         <p class="card-marca">${marca}</p>
-//         <p class="card-text">Precio: ${precio}</p>
-//         <p class="card-text">Cantidad: ${cantidad}</p>
-//         <button class="btn btn-primary" id="btnComprar" onclick="agregarProducto(${id})">Comprar Producto</button>
+//       <div className="card mt-3" style="width: 18rem;">
+//       <img className="card-img-top mt-2" src="${img}" alt="Card image cap">
+//       <div className="card-body">
+//         <h5 className="card-title">${nombre}</h5>
+//         <p className="card-marca">${marca}</p>
+//         <p className="card-text">Precio: ${precio}</p>
+//         <p className="card-text">Cantidad: ${cantidad}</p>
+//         <button className="btn btn-primary" id="btnComprar" onclick="agregarProducto(${id})">Comprar Producto</button>
 //       </div>
 //     </div>
 //       `;
@@ -150,16 +150,16 @@
 //         const { id, nombre, precio, img, marca, cantidad } = prod;
 //         console.log(modalBody);
 //         modalBody.innerHTML += `
-//       <div class="modal-contenedor">
+//       <div className="modal-contenedor">
 //         <div>
-//           <img class="img-fluid img-carrito" src="${img}"/>
+//           <img className="img-fluid img-carrito" src="${img}"/>
 //         </div>
 //       <div>
 //         <p>Producto: ${nombre}</p>
 //         <p>Producto: ${marca}</p>
 //         <p>Precio: ${precio}</p>
 //         <p>Cantidad :${cantidad}</p>
-//         <button class="btn btn-danger" onclick="eliminarProducto(${id})">Eliminar producto</button>
+//         <button className="btn btn-danger" onclick="eliminarProducto(${id})">Eliminar producto</button>
 //       </div>
 //     </div>  
   
@@ -170,7 +170,7 @@
 //     if (carrito.length === 0) {
 //       console.log("Nada");
 //       modalBody.innerHTML = `
-//       <p class="text-center text-primary parrafo">¡Aun no agregaste nada!</p>
+//       <p className="text-center text-primary parrafo">¡Aun no agregaste nada!</p>
 //       `;
 //     } else {
 //       console.log("Algo");
@@ -204,7 +204,7 @@
 //         const row = document.createElement("tr");
 //         row.innerHTML += `
 //                 <td>
-//                 <img class="img-fluid img-carrito" src="${img}"/>
+//                 <img className="img-fluid img-carrito" src="${img}"/>
 //                 </td>
 //               <td>${nombre}</td>
 //               <td>${marca}</td>

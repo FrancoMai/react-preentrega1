@@ -49,20 +49,20 @@ const Shipping = (formData) => {
   return (
     <>
       <div className="shipping-cols">
-        <div className="itemcartcss">
-          <h4>Pago</h4>
+        <div className="itemcartcss2">
+          <h4 className="resumen">Resumen</h4>
           {cartList.map((product) => (
-            <div className="itemcartx" key={product.id}>
+            <div className="itemcartx2" key={product.id}>
               <img src={product.img} alt='imagen' className="imgcartcss" />
-              <h4 className="namecart">{product.name}</h4>
-              <h4 className="brandcart">{product.brand}</h4>
-              <h4 className="pricecart">${product.price}</h4>
-              <h4 className="qcart">{product.quantity > 1 ? product.quantity + ' Unidades' : product.quantity + ' Unidad'}</h4>
+              <h4 className="namecart2">{product.name}</h4>
+              <h4 className="brandcart2">{product.brand}</h4>
+              <h4 className="pricecart2">${product.price}</h4>
+              <h4 className="qcart2">{product.quantity > 1 ? product.quantity + ' Unidades' : product.quantity + ' Unidad'}</h4>
               {/* <ItemCount initial={1} quantity={product.quantity} /> */}
               {/* <h4 className="deletebtn">
                                     <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}> */}
               {/* SVG de boton X */}
-              {/* <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              {/* <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                             <path d="M18 6l-12 12" />
                                             <path d="M6 6l12 12" />
@@ -75,13 +75,14 @@ const Shipping = (formData) => {
             <div className="total-price">
               <h3>Precio Total: ${totalPrice()}</h3>
             </div>
-            <Link to={'/cart'} className="back-to-cart">
-              <button className="btn-backcart"> Volver al Carro</button>
-            </Link>
+
           </div>
         </div>
+        <Link to={'/cart'} className="back-to-cart">
+          <button className="btn-backcart"> Volver al Carro</button>
+        </Link>
         <div className="formcart">
-          <h4>Datos del Envío</h4>
+          <h4 className="tituloform">Datos del Envío</h4>
           <Form onHandleSubmit={onHandleSubmit} />
         </div>
         <div className="orden-taken">

@@ -27,7 +27,7 @@ export function Register() {
   };
 
   return (
-    <div className="alert-class">
+    <div className="alert-className">
       {error && <Alert message={error} />}
       <img className="bg-img" src="img/fondologin.jpg"></img>
       <div className="register-div">

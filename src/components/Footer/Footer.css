@@ -31,9 +31,8 @@
   position: sticky;
   background-color: rgb(231, 231, 231);
   padding: 0.8rem 2rem 1px 2rem;
+  height: 300px;
   margin-top: 2rem;
-  bottom: 0%;
-  top: 100%;
   font-family: 'Work Sans', sans-serif;
 }
 

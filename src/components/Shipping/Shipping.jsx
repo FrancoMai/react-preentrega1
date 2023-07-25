@@ -75,12 +75,12 @@ const Shipping = (formData) => {
             <div className="total-price">
               <h3>Precio Total: ${totalPrice()}</h3>
             </div>
+            {/* <Link to={'/cart'} className="back-to-cart">
+              <button className="btn-backcart"> Volver al Carro</button>
+            </Link> */}
 
           </div>
         </div>
-        <Link to={'/cart'} className="back-to-cart">
-          <button className="btn-backcart"> Volver al Carro</button>
-        </Link>
         <div className="formcart">
           <h4 className="tituloform">Datos del Envío</h4>
           <Form onHandleSubmit={onHandleSubmit} />

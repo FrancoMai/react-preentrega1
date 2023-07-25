@@ -15,12 +15,16 @@
 
 .topicscart {
   display: grid;
-  grid-template-columns: 0.80fr 1.3fr 0.8fr 1fr 1fr 0.8fr;
+  grid-template-columns: 0.8fr 1.3fr 0.8fr 1fr 1fr 0.8fr;
   grid-area: 1;
   margin-left: 10px;
   margin-right: 10px;
   background-color: rgb(87, 90, 94, 0.7);
   text-align: center;
+}
+
+.product {
+  text-align: justify;
 }
 
 .h5cart {
@@ -42,7 +46,7 @@
 
 .imgcartcss {
   display: inline;
-  width: 50%;
+  width: 60%;
   filter: brightness(0.9);
   mix-blend-mode: multiply;
 }
@@ -50,7 +54,7 @@
 .itemcartx {
   background-color: rgba(255, 255, 255, 0.945);
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1fr 1fr 1fr 0.8fr;
+  grid-template-columns: 0.8fr 1.3fr 0.8fr 1fr 1fr 0.8fr;
   margin-bottom: 10px;
   gap: 10px;
 }
@@ -157,7 +161,7 @@
   justify-content: center;
   margin: 1.3rem;
   scale: 1.0;
-  margin-bottom: 50px;
+  margin-bottom: 7rem;
 }
 
 .finallybuy {

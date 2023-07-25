@@ -67,7 +67,7 @@ const CartContainer = (formData) => {
                     <img className="img-fondo-carrito div-imgcarrito-cart" src="img/fondocarrito.jpg" alt="img" />
                     <div id="cart" className="cart">
                         <div className="topicscart">
-                            <h5 className="h5cart">Producto</h5>
+                            <h5 className="h5cart product">Producto</h5>
                             <h5 className="h5cart">Nombre</h5>
                             <h5 className="h5cart">Marca</h5>
                             <h5 className="h5cart price-div-cart">Precio</h5>

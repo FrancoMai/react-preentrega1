@@ -2,6 +2,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './Swiper.css'
 import { useMediaQuery } from 'react-responsive'
+import {video} from '../../../public/img/videopublicidad.mp4'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -100,51 +101,53 @@ const Swiperjsx = ({ slides }) => {
         <img src="/img/goodgirl.jpg" alt="foto" />
       </div>
 
-  <div className='bloque-contenedor'>
-      <div className="video-container">
-        <iframe src="/public/img/videopublicidad.mp4" style={{ width: 570, height: 405, frameborder: 0, allowFullScreen: "allowFullScreen" }} ></iframe>
-      </div> 
-    
-      <div className='container-swiper2'>
-        <Swiper
-          slidesPerView={2}
-          spaceBetween={0}
+      <div className='bloque-contenedor'>
+        <div className="video-container">
+          <video muted="true" style={{ width: 570, height: 405, frameborder: 0, allowFullScreen: "allowFullScreen" }}>
+            <source src={video} />
+          </video>
+        </div>
 
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-            waitForTransition: false,
-          }}
+        <div className='container-swiper2'>
+          <Swiper
+            slidesPerView={2}
+            spaceBetween={0}
 
-          modules={[Pagination, Autoplay]}
-          loop={true}
-          className="mySwiper swiper2">
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+              waitForTransition: false,
+            }}
 
-          {slides.map((slide) => (
+            modules={[Pagination, Autoplay]}
+            loop={true}
+            className="mySwiper swiper2">
 
-            <SwiperSlide key={slide.img} >
-              <img className='swiper-img-className2' src={slide.img} alt="imagen" />
-              <label className='name'>{slide.name}</label>
-              <label className='brand'>{slide.brand}</label>
-              <label className='price'>${slide.price}</label>
+            {slides.map((slide) => (
 
-              <div className='buttondetalle'>
-                <Link className='button1' to={`/detail/${slide.id}`}>
-                  <button className='btndetalle'>Detalle</button>
-                </Link>
-              </div>
-            </SwiperSlide>
+              <SwiperSlide key={slide.img} >
+                <img className='swiper-img-className2' src={slide.img} alt="imagen" />
+                <label className='name'>{slide.name}</label>
+                <label className='brand'>{slide.brand}</label>
+                <label className='price'>${slide.price}</label>
 
-          ))}
+                <div className='buttondetalle'>
+                  <Link className='button1' to={`/detail/${slide.id}`}>
+                    <button className='btndetalle'>Detalle</button>
+                  </Link>
+                </div>
+              </SwiperSlide>
 
-        </Swiper>
+            ))}
+
+          </Swiper>
+        </div>
       </div>
-</div>
-     
 
-      
 
-      
+
+
+
 
       <div className="more-recomend">
         <h4>Nuestros Más Recomendados</h4>

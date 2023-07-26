@@ -46,7 +46,7 @@ const Swiperjsx = ({ slides }) => {
 
               <div>
                 <Link className='button1' to={`/detail/${slide.id}`}>
-                  <button className='btn btn-outline-dark'>Detalle</button>
+                  <button className='btndetalle'>Detalle</button>
                 </Link>
               </div>
             </SwiperSlide>
@@ -86,7 +86,7 @@ const Swiperjsx = ({ slides }) => {
 
               <div>
                 <Link className='button1' to={`/detail/${slide.id}`}>
-                  <button className='btn btn-outline-dark'>Detalle</button>
+                  <button className='btndetalle'>Detalle</button>
                 </Link>
               </div>
             </SwiperSlide>
@@ -97,13 +97,14 @@ const Swiperjsx = ({ slides }) => {
       </div>
 
       <div className="imagen-publicidad">
-        <img src="https://d3cdlnm7te7ky2.cloudfront.net/media/wysiwyg/Campanas/Navidad/BM_LANCOME_INP_DESK.jpg" alt="foto" />
+        <img src="/img/goodgirl.jpg" alt="foto" />
       </div>
 
+  <div className='bloque-contenedor'>
       <div className="video-container">
         <iframe src="/public/img/videopublicidad.mp4" style={{ width: 570, height: 405, frameborder: 0, allowFullScreen: "allowFullScreen" }} ></iframe>
-      </div>
-
+      </div> 
+    
       <div className='container-swiper2'>
         <Swiper
           slidesPerView={2}
@@ -122,14 +123,14 @@ const Swiperjsx = ({ slides }) => {
           {slides.map((slide) => (
 
             <SwiperSlide key={slide.img} >
-              <img className='swiper-img-className' src={slide.img} alt="imagen" />
+              <img className='swiper-img-className2' src={slide.img} alt="imagen" />
               <label className='name'>{slide.name}</label>
               <label className='brand'>{slide.brand}</label>
               <label className='price'>${slide.price}</label>
 
               <div>
                 <Link className='button1' to={`/detail/${slide.id}`}>
-                  <button className='btn btn-outline-dark'>Detalle</button>
+                  <button className='btndetalle'>Detalle</button>
                 </Link>
               </div>
             </SwiperSlide>
@@ -138,6 +139,12 @@ const Swiperjsx = ({ slides }) => {
 
         </Swiper>
       </div>
+</div>
+     
+
+      
+
+      
 
       <div className="more-recomend">
         <h4>Nuestros Más Recomendados</h4>

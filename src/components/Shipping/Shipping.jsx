@@ -57,7 +57,8 @@ const Shipping = (formData) => {
               <h4 className="namecart2">{product.name}</h4>
               <h4 className="brandcart2">{product.brand}</h4>
               <h4 className="pricecart2">${product.price}</h4>
-              <h4 className="qcart2">{product.quantity > 1 ? product.quantity + ' Unidades' : product.quantity + ' Unidad'}</h4>
+              <h4 className="qcart2">{product.quantity + '/u'}</h4>
+              {/* <h4 className="qcart2">{product.quantity > 1 ? product.quantity + ' /U' : product.quantity + ' /U'}</h4> */}
               {/* <ItemCount initial={1} quantity={product.quantity} /> */}
               {/* <h4 className="deletebtn">
                                     <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}> */}

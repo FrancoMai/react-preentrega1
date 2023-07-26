@@ -111,7 +111,7 @@ const Swiperjsx = ({ slides }) => {
           spaceBetween={0}
 
           autoplay={{
-            delay: 1500,
+            delay: 2500,
             disableOnInteraction: false,
             waitForTransition: false,
           }}
@@ -128,7 +128,7 @@ const Swiperjsx = ({ slides }) => {
               <label className='brand'>{slide.brand}</label>
               <label className='price'>${slide.price}</label>
 
-              <div>
+              <div className='buttondetalle'>
                 <Link className='button1' to={`/detail/${slide.id}`}>
                   <button className='btndetalle'>Detalle</button>
                 </Link>

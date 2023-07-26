@@ -2,7 +2,6 @@ import { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './Swiper.css'
 import { useMediaQuery } from 'react-responsive'
-import {video} from '../../../public/img/videopublicidad.mp4'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -103,9 +102,7 @@ const Swiperjsx = ({ slides }) => {
 
       <div className='bloque-contenedor'>
         <div className="video-container">
-          <video muted="true" style={{ width: 570, height: 405, frameborder: 0, allowFullScreen: "allowFullScreen" }}>
-            <source src={video} />
-          </video>
+          <iframe src="/public/img/videopublicidad.mp4" style={{ width: 570, height: 405, frameborder: 0, allowFullScreen: "allowFullScreen" }} ></iframe>
         </div>
 
         <div className='container-swiper2'>

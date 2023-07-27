@@ -5,11 +5,6 @@ const Footer = () => {
     return (
         <footer className='footer'>
             <div className='footer-part-1'>
-                {/* <div className='placin'>
-                    <h5 className='title-footer'>Sobre Perfumeria Karina</h5>
-                    <a>Nos encontramos en Gdor. Iriondo 2321</a>
-                    <a>San Justo, Santa Fe</a>
-                </div> */}
                 <div className="box__footer">
                     <h4>Soluciones</h4>
                     <a href="#">Preguntas Frecuentes</a>

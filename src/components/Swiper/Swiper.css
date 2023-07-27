@@ -110,7 +110,7 @@
   grid-template-columns: auto;
   grid-template-rows:  1fr;
   gap: 30px;
-  max-width: 97%;
+  max-width: 80%;
   margin: 0 auto;
   padding: 0;
   background-position: center;
@@ -154,8 +154,20 @@ color: black;
 
 }
 
+
 .btndetalle:hover{
   background-color: rgb(186, 171, 73);
+}
+
+.buttondetalle{
+  opacity: 0;
+}
+.buttondetalle:hover{
+  opacity: 1;
+}
+.btndetalle:after{
+  visibility: visible;
+
 }
 
 @media (max-width: 480px) {

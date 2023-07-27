@@ -147,18 +147,15 @@
 
 .btndetalle{
 background-color: #fff;
-padding: 2px 50px 2px 50px;
+padding: 1px 50px 1px 50px;
 border: 1px solid black;
 border-radius: 20px;
 color: black;
 
-
 }
 
-.btndetalle:after{
-  visibility: visible;
-
-  
+.btndetalle:hover{
+  background-color: rgb(186, 171, 73);
 }
 
 @media (max-width: 480px) {

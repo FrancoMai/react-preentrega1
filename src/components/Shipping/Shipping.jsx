@@ -46,6 +46,7 @@ const Shipping = (formData) => {
   }
   console.log(formData)
 
+
   return (
     <>
       <div className="shipping-cols">
@@ -92,7 +93,20 @@ const Shipping = (formData) => {
             El id de la orden de la compra es: {id}</h2>}
         </div>
       </div>
-
+      
+      
+      <div >
+      <Link to='/Shipping2'>
+        <img src="/img/140142_450.jpg" style={{cursor:'pointer'}} alt="img" />
+      </Link>
+      </div>
+      
+      <div >
+      <Link to='/shipping'>
+        <img src="/img/103313_450.jpg" style={{cursor:'pointer'}} alt="img" />
+      </Link>
+      </div>
+    
     </>
   )
 }

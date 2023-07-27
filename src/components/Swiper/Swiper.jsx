@@ -90,58 +90,6 @@ const Swiperjsx = ({ slides }) => {
           ))}
         </Swiper>
       </div>
-      <div className="imagen-publicidad">
-        <img src="/img/goodgirl.jpg" alt="foto" />
-      </div>
-      <div className="bloque-contenedor">
-        <div className="video-container">
-          <iframe
-            src="/img/videopublicidad.mp4"
-            style={{
-              width: 570,
-              height: 405,
-              frameborder: 0,
-              allowFullScreen: "allowFullScreen",
-            }}
-          ></iframe>
-        </div>
-
-
-        <div className="container-swiper2">
-          <Swiper
-            slidesPerView={2}
-            spaceBetween={0}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-              waitForTransition: false,
-            }}
-            modules={[Pagination, Autoplay]}
-            loop={true}
-            className="mySwiper swiper2"
-          >
-            {slides.map((slide) => (
-              <SwiperSlide key={slide.img}>
-                <img
-                  className="swiper-img-className2"
-                  src={slide.img}
-                  alt="imagen"
-                />
-                <label className="name">{slide.name}</label>
-                <label className="brand">{slide.brand}</label>
-                <label className="price">${slide.price}</label>
-
-                <div>
-                  <Link className="button1" to={`/detail/${slide.id}`}>
-                    <button className="btndetalle">Comprar</button>
-                  </Link>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-
       <div className='bloque-contenedor'>
         <div className="video-container">
           <iframe src="/img/videopublicidad.mp4" style={{ width: 570, height: 405, frameborder: 0, allowFullScreen: "allowFullScreen" }} ></iframe>
@@ -164,7 +112,7 @@ const Swiperjsx = ({ slides }) => {
 
             {slides.map((slide) => (
 
-              <SwiperSlide key={slide.img} >
+              <SwiperSlide className="swiperhover" key={slide.img} >
                 <img className='swiper-img-className2' src={slide.img} alt="imagen" />
                 <label className='name'>{slide.name}</label>
                 <label className='brand'>{slide.brand}</label>

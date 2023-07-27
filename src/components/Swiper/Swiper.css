@@ -152,8 +152,6 @@
   border: 1px solid black;
   border-radius: 20px;
   color: black;
-
-
 }
 
 
@@ -161,14 +159,10 @@
   opacity: 0;
 }
 
-.buttondetalle:hover {
+.swiperhover:hover .buttondetalle {
   opacity: 1;
 }
 
-.btndetalle:after {
-  visibility: visible;
-
-}
 
 @media (max-width: 480px) {
   .banner-gif {

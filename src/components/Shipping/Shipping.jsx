@@ -83,6 +83,7 @@ const Shipping = (formData) => {
           </div>
         </div>
         <div className="formcart">
+          
           <h4 className="tituloform">Datos del Envío</h4>
           <Form onHandleSubmit={onHandleSubmit} />
         </div>

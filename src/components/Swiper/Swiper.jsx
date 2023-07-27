@@ -96,7 +96,7 @@ const Swiperjsx = ({ slides }) => {
       <div className="bloque-contenedor">
         <div className="video-container">
           <iframe
-            src="/public/img/videopublicidad.mp4"
+            src="/img/videopublicidad.mp4"
             style={{
               width: 570,
               height: 405,
@@ -182,10 +182,6 @@ const Swiperjsx = ({ slides }) => {
           </Swiper>
         </div>
       </div>
-
-
-
-
 
 
 

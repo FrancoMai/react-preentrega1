@@ -8,7 +8,13 @@
   text-align: center;
   justify-content: center;
   margin-top: 50px;
+  background-color: antiquewhite;
 
+}
+
+.latest-releases{
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .more-recomend {
@@ -26,10 +32,12 @@
   justify-content: center;
   padding-left: 20px;
   padding-right: 20px;
+  margin-bottom: 50px;
 }
 
 
-.imagen-publicidad {
+.imagen-publicidad,
+.imagen-publicidad2 {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -37,7 +45,12 @@
   max-width: 1250px;
   box-sizing: border-box;
   margin-top: 30px;
+  margin-bottom: 60px;
 
+}
+
+.imagen-publicidad2{
+  margin-top: 60px;
 }
 
 .imagen-publicidad img {
@@ -66,7 +79,8 @@
   font-size: 20px;
 }
 
-.swiper-img-className {
+.swiper-img-className,
+.swiper-img-className2 {
   background-size: cover;
   max-height: 200px;
   max-width: 200px;
@@ -74,12 +88,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+
 }
+
 
 .container-swiper {
   background-size: cover;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   margin-left: 90px;
   margin-right: 70px;
   text-align: center;
@@ -110,7 +126,7 @@
   grid-template-columns: auto;
   grid-template-rows: 1fr;
   gap: 30px;
-  max-width: 80%;
+  max-width: 96%;
   margin: 0 auto;
   padding: 0;
   background-position: center;
@@ -131,24 +147,26 @@
 
 
 .container-swiper2 {
-  grid-row: 2 / 3;
+  grid-row: 1 / 3;
   display: grid;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 
 .swiper2 {
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   display: flex;
   grid-row: 2 / 3;
 }
 
 
+
 .btndetalle {
   background-color: #fff;
-  padding: 2px 30px 2px 30px;
+  padding: 0px 23px 0px 23px;
   border: 1px solid black;
   border-radius: 20px;
   color: black;

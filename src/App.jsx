@@ -13,7 +13,7 @@ import { Logout1 } from './components/Logout';
 import Shipping from './components/Shipping/Shipping';
 import Footer from './components/Footer/Footer'
 import { NuestroLocal } from './components/FooterSections/NuestroLocal';
-import Shipping2 from './components/Shipping2/Shipping2';
+
 
 
 
@@ -39,7 +39,6 @@ function App() {
               <Route path='*' element={<Navigate to='/' />}></Route>
               <Route path='/register' element={<Register />}></Route>
               <Route path='/shipping' element={<Shipping />}></Route>
-              <Route path='/shipping2' element={<Shipping2 />}></Route>
               <Route path='/nuestroLocal' element={<NuestroLocal />}></Route>
               <Route path='/logout' element={
                 <ProtectedRoute>

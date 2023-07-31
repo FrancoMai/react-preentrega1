@@ -79,16 +79,32 @@
   font-size: 20px;
 }
 
+.name2,
+.brand2,
+.price2 {
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  color: black;
+}
+
 .swiper-img-className,
 .swiper-img-className2 {
   background-size: cover;
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 100%;
+  max-width: 100%;
   display: block;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  object-position: center;
+  position: center;
+  align-items: center;
+  align-content: center;
 
+}
+
+
+.swiper-img-className2 img{
+  width: 100%;
 }
 
 
@@ -109,23 +125,13 @@
   height: 100%;
 }
 
-.swiper-img-className2 img {
-  background-size: cover;
-  max-height: 200px;
-  max-width: 200px;
-  display: block;
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .bloque-contenedor {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 1fr;
-  gap: 30px;
+  gap: 60px;
   max-width: 96%;
   margin: 0 auto;
   padding: 0;
@@ -151,7 +157,7 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
 }
 
 
@@ -180,6 +186,9 @@
 .swiperhover:hover .buttondetalle {
   opacity: 1;
 }
+
+
+
 
 
 @media (max-width: 480px) {

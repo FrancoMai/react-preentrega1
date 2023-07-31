@@ -119,9 +119,9 @@ const Swiperjsx = ({ slides }) => {
 
               <SwiperSlide className="swiperhover" key={slide.img} >
                 <img className='swiper-img-className2' src={slide.img} alt="imagen" />
-                <label className='name'>{slide.name}</label>
-                <label className='brand'>{slide.brand}</label>
-                <label className='price'>${slide.price}</label>
+                <label className='name2'>{slide.name}</label>
+                <label className='brand2'>{slide.brand}</label>
+                <label className='price2'>${slide.price}</label>
 
                 <div className='buttondetalle'>
                   <Link className='button1' to={`/detail/${slide.id}`}>

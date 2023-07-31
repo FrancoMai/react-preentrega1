@@ -24,6 +24,8 @@ const ItemListContainer = () => {
             .then(resp => setproducts(resp.docs.map(products => ({ id: products.id, ...products.data() }))))
             .catch(err => console.log(err))
             .finally(() => setIsLoading(false))
+        
+        
 
     }, [cid])
 
@@ -50,6 +52,7 @@ const ItemListContainer = () => {
         <>
             <Banner />
             <Swiperjsx slides={products} />
+            
             {isLoading
                 ?
                 <Loading />

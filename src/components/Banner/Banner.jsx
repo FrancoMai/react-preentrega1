@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <>
             <div className="textobanner">
-                <h2 className="textobanner">ENVIOS GRATIS EN COMPRAS SUPERIORES A $10000</h2>
+                <h2 className="textobanner">ENVIOS GRATIS EN COMPRAS SUPERIORES A $20.000</h2>
             </div>
             <div id="carouselExampleInterval" className="carousel slide micarousel" data-bs-ride="carousel">
                 <div className="carousel-inner">

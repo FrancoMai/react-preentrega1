@@ -1,6 +1,4 @@
-.micarousel {
-  margin-top: 2px;
-}
+
 
 .latest-releases h3 {
   display: inline-block;
@@ -8,13 +6,19 @@
   text-align: center;
   justify-content: center;
   margin-top: 50px;
-  background-color: antiquewhite;
+  background-image: radial-gradient(40% 90%, rgb(155, 142, 98), transparent);
+  color: #fff;
+
+  padding-top: 22px;
+  padding-bottom: 22px;
 
 }
 
 .latest-releases{
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 00px;
+  padding-right: 00px;
+  
+  
 }
 
 .more-recomend {
@@ -191,9 +195,25 @@
 
 
 
-@media (max-width: 480px) {
+@media (min-width: 387px) {
   .banner-gif {
-    scale: 2;
+    width: 100%;
+    height: auto;
+  }
+  .banner-gif img{
+    object-fit: contain;
+    
+  }
+  .imagen-publicidad,
+  .imagen-publicidad2{
+    width: 100%;
+    height: auto;
+  }
+  .video-container{
+    display: none;
+  }
+  body{
+    overflow-x: hidden;
   }
 }
 

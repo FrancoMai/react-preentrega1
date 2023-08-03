@@ -3,9 +3,7 @@ import './Banner.css'
 const Banner = () => {
     return (
         <>
-            <div className="textobanner">
-                <h2 className="textobanner">ENVIOS GRATIS EN COMPRAS SUPERIORES A $20.000</h2>
-            </div>
+            
             <div id="carouselExampleInterval" className="carousel slide micarousel" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active" data-bs-interval="2500">
@@ -37,6 +35,9 @@ const Banner = () => {
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
+            </div>
+            <div className="textobanner">
+                <h2 className="textobanner">ENVIOS GRATIS EN COMPRAS SUPERIORES A $20.000</h2>
             </div>
         </>
 

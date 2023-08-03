@@ -6,11 +6,37 @@ import { Loading } from "../Loading/Loading.jsx"
 import Banner from "../Banner/Banner.jsx"
 import Swiperjsx from "../Swiper/Swiper.jsx"
 import { Filter } from "../RenderProps/Filter.jsx"
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 import './ItemListContainer.css'
 
 const ItemListContainer = () => {
     const [products, setproducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [preferenceId, setPreferenceId] = useState(null)
+    initMercadoPago('YOUR_PUBLIC_KEY');
+
+    const createPreference = async () => {
+        try {
+          const response = await axios.post("http://localhost:8080/create_preference", {
+            description: "Bananita contenta",
+            price: 100,
+            quantity: 1,
+          });
+    
+          const { id } = response.data;
+          return id;
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+      const handleBuy = async () => {
+        const id = await createPreference();
+        if (id) {
+          setPreferenceId(id);
+        }
+      };
+
 
     const { cid } = useParams()
 

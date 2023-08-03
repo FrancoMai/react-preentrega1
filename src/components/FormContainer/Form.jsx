@@ -134,7 +134,8 @@ export const Form = ({ onHandleSubmit }) => {
                     {errors.dni?.type === 'required' && <p>Este campo es requerido</p>}
                 </div>
                 <div className="genera-orden">
-                    <button className="btn btn-primary my-4" type="submit">Generar Orden</button>
+                    <button className="btn btn-primary my-4" onClick={handleBuy} type="submit">Generar Orden</button>
+                    {preferenceId && <Wallet initialization={{ preferenceId }} />}
                 </div>
             </form>
         </div>

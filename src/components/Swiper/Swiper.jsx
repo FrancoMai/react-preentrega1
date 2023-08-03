@@ -16,7 +16,7 @@ const Swiperjsx = ({ slides }) => {
   return (
     <>
       <div className="latest-releases">
-        <h3>Últimos Lanzamientos</h3>
+        <h3>ÚLTIMOS LANZAMIENTOS</h3>
       </div>
 
       <div className="container-swiper">
@@ -137,7 +137,7 @@ const Swiperjsx = ({ slides }) => {
       </div>
 
         <div className="div-img">
-          <img src="/public/img/BM_LANCOME_INP_DESK.jpg" className="imagen-publicidad2" alt="img" />
+          <img src="/img/BM_LANCOME_INP_DESK.jpg" className="imagen-publicidad2" alt="img" />
         </div>
 
 

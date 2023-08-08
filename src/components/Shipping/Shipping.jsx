@@ -127,7 +127,7 @@ const Shipping = (formData) => {
         </div>
         <div className="orden-taken">
           {id && <h2 className="gracias">Gracias por elegirnos! <br></br><br></br>
-            El id de la orden de la compra es: {id}</h2>}
+            El id de tu orden de compra es: {id}</h2>}
         </div>
       </div>
 

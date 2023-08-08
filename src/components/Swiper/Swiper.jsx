@@ -16,7 +16,7 @@ const Swiperjsx = ({ slides }) => {
   return (
     <>
       <div className="latest-releases">
-        <h3>Últimos Lanzamientos</h3>
+        <h3>ÚLTIMOS LANZAMIENTOS</h3>
       </div>
 
       <div className="container-swiper">
@@ -33,7 +33,7 @@ const Swiperjsx = ({ slides }) => {
           className="mySwiper swiper"
         >
           {slides.map((slide) => (
-            <SwiperSlide key={slide.img}>
+            <SwiperSlide className="swiperhover" key={slide.img}>
               <img
                 className="swiper-img-className"
                 src={slide.img}
@@ -43,7 +43,7 @@ const Swiperjsx = ({ slides }) => {
               <label className="brand">{slide.brand}</label>
               <label className="price">${slide.price}</label>
 
-              <div>
+              <div className="buttondetalle">
                 <Link className="button1" to={`/detail/${slide.id}`}>
                   <button className="btndetalle">Comprar</button>
                 </Link>
@@ -71,7 +71,7 @@ const Swiperjsx = ({ slides }) => {
           className="mySwiper swiper"
         >
           {slides.map((slide) => (
-            <SwiperSlide key={slide.img}>
+            <SwiperSlide className="swiperhover" key={slide.img}>
               <img
                 className="swiper-img-className"
                 src={slide.img}
@@ -81,7 +81,7 @@ const Swiperjsx = ({ slides }) => {
               <label className="brand">{slide.brand}</label>
               <label className="price">${slide.price}</label>
 
-              <div>
+              <div className="buttondetalle">
                 <Link className="button1" to={`/detail/${slide.id}`}>
                   <button className="btndetalle">Comprar</button>
                 </Link>
@@ -90,6 +90,11 @@ const Swiperjsx = ({ slides }) => {
           ))}
         </Swiper>
       </div>
+
+            <div className="div-img">
+              <img src="/img/goodgirl.jpg" className="imagen-publicidad" alt="img" />
+            </div>
+
       <div className='bloque-contenedor'>
         <div className="video-container">
           <iframe src="/img/videopublicidad.mp4" style={{ width: 570, height: 405, frameborder: 0, allowFullScreen: "allowFullScreen" }} ></iframe>
@@ -114,13 +119,13 @@ const Swiperjsx = ({ slides }) => {
 
               <SwiperSlide className="swiperhover" key={slide.img} >
                 <img className='swiper-img-className2' src={slide.img} alt="imagen" />
-                <label className='name'>{slide.name}</label>
-                <label className='brand'>{slide.brand}</label>
-                <label className='price'>${slide.price}</label>
+                <label className='name2'>{slide.name}</label>
+                <label className='brand2'>{slide.brand}</label>
+                <label className='price2'>${slide.price}</label>
 
                 <div className='buttondetalle'>
                   <Link className='button1' to={`/detail/${slide.id}`}>
-                    <button className='btndetalle'>Detalle</button>
+                    <button className='btndetalle'>Comprar</button>
                   </Link>
                 </div>
               </SwiperSlide>
@@ -131,6 +136,9 @@ const Swiperjsx = ({ slides }) => {
         </div>
       </div>
 
+        <div className="div-img">
+          <img src="/img/BM_LANCOME_INP_DESK.jpg" className="imagen-publicidad2" alt="img" />
+        </div>
 
 
       <div className="more-recomend">

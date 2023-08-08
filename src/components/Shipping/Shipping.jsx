@@ -51,6 +51,13 @@ const Shipping = (formData) => {
 
   return (
     <>
+      <div className="div-mtdenv">
+              <h5 className="mtdenv">Metodos de Envío</h5>
+            </div>
+            <div className="div-mtdenv2">
+              <h5 className="localh5">Envío</h5>
+              <h5 className="envioh5">Retiro Por Local</h5>
+            </div>
       <div className="shipping-cols">
         <div className="itemcartcss2">
           <h4 className="resumen">Resumen</h4>
@@ -61,30 +68,18 @@ const Shipping = (formData) => {
               <h4 className="brandcart2">{product.brand}</h4>
               <h4 className="pricecart2">${product.price}</h4>
               <h4 className="qcart2">{product.quantity + '/u'}</h4>
-              {/* <h4 className="qcart2">{product.quantity > 1 ? product.quantity + ' /U' : product.quantity + ' /U'}</h4> */}
-              {/* <ItemCount initial={1} quantity={product.quantity} /> */}
-              {/* <h4 className="deletebtn">
-                                    <div className="btn btn-danger deletecartbutton" onClick={() => deleteProduct(product.id)}> */}
-              {/* SVG de boton X */}
-              {/* <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width="40" height="56" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M18 6l-12 12" />
-                                            <path d="M6 6l12 12" />
-                                        </svg>
-                                    </div>
-                                </h4> */}
+      
             </div>
           ))}
           <div className="price-btntocart">
             <div className="total-price">
               <h3>Precio Total: ${totalPrice()}</h3>
             </div>
-            {/* <Link to={'/cart'} className="back-to-cart">
-              <button className="btn-backcart"> Volver al Carro</button>
-            </Link> */}
+
           </div>
         </div>
 
+          
         <div className="formcart">
           <div className="contenedor-opciones">
             <div className="enviodomicilio-div">
@@ -131,18 +126,6 @@ const Shipping = (formData) => {
         </div>
       </div>
 
-
-      <div >
-        <Link to='/Shipping2'>
-          <img src="/img/140142_450.jpg" style={{ cursor: 'pointer' }} alt="img" />
-        </Link>
-      </div>
-
-      <div >
-        <Link to='/shipping'>
-          <img src="/img/103313_450.jpg" style={{ cursor: 'pointer' }} alt="img" />
-        </Link>
-      </div>
 
     </>
   )

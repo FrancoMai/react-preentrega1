@@ -152,3 +152,13 @@ footer .box__footer a .fab {
     flex-direction: column;
   }
 }
+
+@media (min-width: 340px) {
+  .footer-part-1,
+  .footer-part-2{
+   gap: 0;
+  }
+  footer .box__footer{
+    margin-top: 10px;
+  }
+}

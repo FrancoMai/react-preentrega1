@@ -157,3 +157,19 @@ div .svg-envio:hover {
         grid-column: 2;
     }
 }
+
+@media (min-width: 340px) and (max-width:990px){
+    .localh5,
+    .envioh5{
+        display: none;
+    }
+    .itemcartx2{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .itemcartcss2{
+        margin-top: 20px;
+        
+    }
+
+}

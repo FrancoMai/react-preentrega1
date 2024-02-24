@@ -40,6 +40,7 @@ const Banner = () => {
                 <h2 className="textobanner">ENVIOS GRATIS EN COMPRAS SUPERIORES A $20.000</h2>
             </div>
         </>
+        
 
     )
 }

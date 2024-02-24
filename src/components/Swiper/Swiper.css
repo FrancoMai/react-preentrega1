@@ -195,22 +195,25 @@
 
 
 
-@media (min-width: 387px) {
+@media (max-width: 387px) {
   .banner-gif {
     width: 100%;
-    height: auto;
   }
   .banner-gif img{
+    display: flex;
     object-fit: contain;
     
   }
   .imagen-publicidad,
   .imagen-publicidad2{
     width: 100%;
-    height: auto;
+    height: 150px;
   }
   .video-container{
     display: none;
+  }
+  .buttondetalle{
+    opacity: 1;
   }
   body{
     overflow-x: hidden;

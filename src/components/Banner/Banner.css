@@ -14,14 +14,13 @@
     margin-top: 2px;}
 
 
-@media (min-width: 378px) and (max-width: 991px){
+@media (min-width: 330px) and (max-width: 991px){
     .micarousel{
         width: 100%;
-        height: 250px;
+        height: 200px;
     }
     .textobanner{
         display: none;
     }
 }
-    
     

@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
 import { useCartContext } from "../../context/CartContext"
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'  
 import './Form.css'
 import Select from 'react-select'
+import { useState } from "react";
 
 export const Form = ({ onHandleSubmit }) => {
     const cities = [
@@ -12,6 +14,33 @@ export const Form = ({ onHandleSubmit }) => {
         { value: 'Crespo', label: 'Crespo' },
         { value: 'Nelson', label: 'Nelson' }
     ];
+
+    const [preferenceId, setPreferenceId] = useState(null)
+    initMercadoPago('YOUR_PUBLIC_KEY');
+
+    const createPreference = async () => {
+        try {
+          const response = await axios.post("http://localhost:8080/create_preference", {
+            description: "Bananita contenta",
+            price: 100,
+            quantity: 1,
+            currency_id: "ARS"
+          });
+    
+          const { id } = response.data;
+          return id;
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+     const handleBuy = async () => {
+        const id = await createPreference();
+        if (id) {
+          setPreferenceId(id);
+        }
+      };
+
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             name: '',
